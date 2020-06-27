@@ -14,10 +14,13 @@ public class PlayerView : MonoBehaviour
 
 	private float _xAxisClamp = 0;
 
-	private void Update()
-	{
+    private void Awake()
+    {
 		Cursor.lockState = CursorLockMode.Locked;
+    }
 
+    private void Update()
+	{
 		RotateCamera();
 	}
 
