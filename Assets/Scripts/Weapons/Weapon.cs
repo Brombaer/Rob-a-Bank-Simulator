@@ -54,11 +54,13 @@ public class Weapon : MonoBehaviour
 	{
 		AudioSource.PlayClipAtPoint(_debugSound, transform.position);
 		
+		Debug.Log(Time.time - _lastBulletTime);
+		
+		
 		_lastBulletTime = Time.time;
 		
-
-		// Spawn Bullet
 		GameObject bullet = Instantiate(_bulletPrefab, _bulletSpawnPoint.position, _bulletSpawnPoint.rotation);
+		
 		bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * _bulletForce;
 	}
 

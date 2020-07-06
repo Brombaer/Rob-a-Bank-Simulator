@@ -6165,7 +6165,7 @@ GameObject:
   - component: {fileID: 7197758619687773033}
   - component: {fileID: 7146464303218366453}
   - component: {fileID: 7199676116352204604}
-  - component: {fileID: 8377300944993637091}
+  - component: {fileID: 7199676116352204607}
   - component: {fileID: 7199676116352204606}
   m_Layer: 8
   m_Name: Player
@@ -6223,7 +6223,7 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8377300944993637091
+--- !u!114 &7199676116352204607
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6232,16 +6232,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 7199676116352204593}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e37698c0e6e7da6479aa2630841fd816, type: 3}
+  m_Script: {fileID: 11500000, guid: 94fa3c873e942ec43afbb97703e3bc47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerArms: {fileID: 7197789385149385969}
-  _mouseSensitivity: 1
   _jumpSpeed: 30
-  _gravity: 1
-  _walkSpeed: 2
-  _sprintSpeed: 8
-  _animator: {fileID: 7115374600532676353}
+  _gravity: 2
 --- !u!114 &7199676116352204606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6257,12 +6252,9 @@ MonoBehaviour:
   _name: AK47
   _currentAmmo: 0
   _magazineSize: 0
-  _bulletPrefab: {fileID: 1086664671600574, guid: 5953171a59c27394e9ad5cbb564affa8,
-    type: 3}
+  _bulletPrefab: {fileID: 0}
   _isSingleFire: 0
   _fireRate: 600
-  _bulletSpawnPoint: {fileID: 7205093899415833265}
-  _bulletForce: 100
   _debugSound: {fileID: 8300000, guid: 90569c280dc600b4db7b930e34add56d, type: 3}
 --- !u!1 &7199679197657665465
 GameObject:
@@ -11674,6 +11666,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7197789385149385969}
+  - component: {fileID: 7201153987352800788}
   m_Layer: 0
   m_Name: Arms
   m_TagString: Player
@@ -11697,6 +11690,21 @@ Transform:
   m_Father: {fileID: 7197758619687773033}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7201153987352800788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7201153987352800791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45b7ebbcad8a8d841aecb69b623c8453, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _player: {fileID: 7197758619687773033}
+  _playerArms: {fileID: 7197789385149385969}
+  _mouseSensitivity: 1
 --- !u!1 &7201166082866663177
 GameObject:
   m_ObjectHideFlags: 0
