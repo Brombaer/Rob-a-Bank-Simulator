@@ -9,12 +9,20 @@ public class PlayerCharacter : MonoBehaviour
 
 	[Space][Space]
 	[Header("Movement Settings")]
-	[SerializeField] private float _jumpSpeed = 30;
-	[SerializeField] private float _gravity = 1;
+	[SerializeField] private float _jumpSpeed = 15;
+	[SerializeField] private float _gravity = 0.1f;
 	[SerializeField] private float _walkSpeed = 4;
 	[SerializeField] private float _sprintSpeed = 2;
+	
+	
+	[Space][Space]
+	[Header("Animation References")]
 	[SerializeField] private Animator _animator;
 	[SerializeField] private Animator[] _camAnimator;
+
+
+	[SerializeField] private Weapon _automaticRifle;
+
 
 
 	private float _xAxisClamp = 0;
@@ -23,6 +31,8 @@ public class PlayerCharacter : MonoBehaviour
 	private CharacterController _controller;
 	private float _moveSpeed;
 	
+
+
 	
 	
 	private void Awake()
@@ -36,6 +46,7 @@ public class PlayerCharacter : MonoBehaviour
 		Move();
 		RotateCamera();
 		Aim();
+		Shoot();
 	}
 
 	private void Move()
@@ -79,24 +90,6 @@ public class PlayerCharacter : MonoBehaviour
 		_controller.Move(_moveDirection * Time.deltaTime);
 	}
 
-	private void Aim()
-	{
-		if(Input.GetMouseButton(1))
-		{
-			_animator.SetBool("Aim", true);
-			
-			for(int i = 0; i < _camAnimator.Length; i++)
-				_camAnimator[i].SetBool("Aim", true);
-		}
-		else
-		{
-			_animator.SetBool("Aim", false);
-			
-			for(int i = 0; i < _camAnimator.Length; i++)
-				_camAnimator[i].SetBool("Aim", false);
-		}
-	}
-
 	private void RotateCamera()
 	{
 		float mouseX = Input.GetAxis("Mouse X");
@@ -127,5 +120,36 @@ public class PlayerCharacter : MonoBehaviour
 
 		_playerArms.rotation = Quaternion.Euler(rotPlayerArms);
 		transform.rotation = Quaternion.Euler(rotPlayer);
+	}
+
+	private void Aim()
+	{
+		if(Input.GetMouseButton(1))
+		{
+			_animator.SetBool("Aim", true);
+			
+			for(int i = 0; i < _camAnimator.Length; i++)
+				_camAnimator[i].SetBool("Aim", true);
+		}
+		else
+		{
+			_animator.SetBool("Aim", false);
+			
+			for(int i = 0; i < _camAnimator.Length; i++)
+				_camAnimator[i].SetBool("Aim", false);
+		}
+	}
+
+	private void Shoot()
+	{
+		if(Input.GetMouseButton(0))
+		{
+			_animator.SetTrigger("Shoot");
+			_automaticRifle.BeginFire();
+		}
+		else
+		{
+			_automaticRifle.StopFire();
+		}
 	}
 }
