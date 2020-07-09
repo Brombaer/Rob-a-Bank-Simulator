@@ -12,10 +12,8 @@ public class Weapon : MonoBehaviour
 	[SerializeField] private Transform _bulletSpawnPoint;
 	[SerializeField] private float _bulletForce;
 
-	[SerializeField] private AudioClip _debugSound;
-
-
-
+	[FMODUnity.EventRef]
+	[SerializeField] private string _shotFEvent;
 
 	[SerializeField] private bool weaponSway;
 	[SerializeField] private float swayAmount = 0.02f;
@@ -63,8 +61,8 @@ public class Weapon : MonoBehaviour
 
 	protected void Fire()
 	{
-		AudioSource.PlayClipAtPoint(_debugSound, transform.position);
-		
+		FMODUnity.RuntimeManager.PlayOneShotAttached(_shotFEvent, gameObject);
+
 		_lastBulletTime = Time.time;
 		
 

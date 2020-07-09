@@ -5384,11 +5384,11 @@ MonoBehaviour:
   _fireRate: 600
   _bulletSpawnPoint: {fileID: 7205093899415833265}
   _bulletForce: 100
-  _debugSound: {fileID: 8300000, guid: 90569c280dc600b4db7b930e34add56d, type: 3}
+  _shotFEvent: event:/Weapons/AK47
   weaponSway: 1
-  swayAmount: 0.05
-  maxSwayAmount: 0.1
-  swaySmoothValue: 4
+  swayAmount: 0.02
+  maxSwayAmount: 0.05
+  swaySmoothValue: 2
 --- !u!1 &7199277435190744919
 GameObject:
   m_ObjectHideFlags: 0
@@ -11321,6 +11321,7 @@ GameObject:
   - component: {fileID: 7119735014241204839}
   - component: {fileID: 7043250998054872783}
   - component: {fileID: 1874643576}
+  - component: {fileID: 8887605162498628101}
   m_Layer: 8
   m_Name: Gun Camera
   m_TagString: MainCamera
@@ -11392,7 +11393,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7199751500677796741}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!167 &7043250998054872783
 AudioReverbZone:
   m_ObjectHideFlags: 0
@@ -11436,6 +11437,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8887605162498628101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7199751500677796741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ListenerNumber: -1
 --- !u!1 &7199800353405074765
 GameObject:
   m_ObjectHideFlags: 0

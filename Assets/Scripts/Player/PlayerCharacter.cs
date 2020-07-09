@@ -142,12 +142,12 @@ public class PlayerCharacter : MonoBehaviour
 
 	private void Shoot()
 	{
-		if(Input.GetMouseButton(0))
+		if(Input.GetMouseButtonDown(0))
 		{
 			_animator.SetTrigger("Shoot");
 			_automaticRifle.BeginFire();
 		}
-		else
+		else if(Input.GetMouseButtonUp(0))
 		{
 			_automaticRifle.StopFire();
 		}
