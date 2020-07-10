@@ -1,5 +1,27 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6663486721690787349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Weapons/New Event
+  m_EditorClassIdentifier: 
+  Path: event:/Weapons/New Event
+  guid: f5f705cfeed94740aa9d7558b2c9be12
+  Banks: []
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1500
 --- !u!114 &-2016039281569092170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14,11 +36,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: C:/Users/eagee/OneDrive/Documents/FMOD Studio/GPR4300_RobABank/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637299090480957386
+  lastModified: 637299993428560713
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 738
+    Value: 786
   Exists: 1
 --- !u!114 &-235413134234770804
 MonoBehaviour:
@@ -34,11 +56,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: C:/Users/eagee/OneDrive/Documents/FMOD Studio/GPR4300_RobABank/Build/Desktop/Master.bank
   SubDir: 
-  lastModified: 637299090480937444
+  lastModified: 637299993428532418
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 161984
+    Value: 337632
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -57,13 +79,37 @@ MonoBehaviour:
   - {fileID: -235413134234770804}
   EditorEvents:
   - {fileID: 3421142537968690911}
+  - {fileID: 1465404208727274750}
   EditorParameters: []
   MasterBanks:
   - {fileID: -235413134234770804}
   StringsBanks:
   - {fileID: -2016039281569092170}
-  stringsBankWriteTime: 637299090480957386
+  stringsBankWriteTime: 637299993428560713
   cacheVersion: 3
+--- !u!114 &1465404208727274750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Weapons/NoAmmo
+  m_EditorClassIdentifier: 
+  Path: event:/Weapons/NoAmmo
+  guid: f5f705cfeed94740aa9d7558b2c9be12
+  Banks:
+  - {fileID: -235413134234770804}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &2174320652803277308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101,10 +147,10 @@ MonoBehaviour:
   guid: baa64fd05afe60498ce1e8a974d01ad8
   Banks:
   - {fileID: -235413134234770804}
-  IsStream: 1
+  IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 2.6000001
   MaxDistance: 8.2
-  Length: 1500
+  Length: 2000

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class PlayerCharacter : MonoBehaviour
 {
@@ -7,15 +8,17 @@ public class PlayerCharacter : MonoBehaviour
 	[Range(0, 2)]
 	[SerializeField] private float _mouseSensitivity;
 
-	[Space][Space]
+	[Space]
+	[Space]
 	[Header("Movement Settings")]
 	[SerializeField] private float _jumpSpeed = 15;
 	[SerializeField] private float _gravity = 0.1f;
 	[SerializeField] private float _walkSpeed = 4;
 	[SerializeField] private float _sprintSpeed = 2;
-	
-	
-	[Space][Space]
+
+
+	[Space]
+	[Space]
 	[Header("Animation References")]
 	[SerializeField] private Animator _animator;
 	[SerializeField] private Animator[] _camAnimator;
@@ -30,15 +33,26 @@ public class PlayerCharacter : MonoBehaviour
 	private Vector3 _moveDirection;
 	private CharacterController _controller;
 	private float _moveSpeed;
-	
+
+	private bool _isAiming;
 
 
-	
-	
+
+
 	private void Awake()
 	{
 		Cursor.lockState = CursorLockMode.Locked;
 		_controller = GetComponent<CharacterController>();
+
+		_automaticRifle.Fired += OnFired;
+	}
+
+	private void OnFired()
+	{
+		if (!_isAiming)
+			_animator.Play("Fire", 0, 0f);
+		else
+			_animator.Play("Aim Fire", 0, 0f);
 	}
 
 	private void Update()
@@ -47,6 +61,9 @@ public class PlayerCharacter : MonoBehaviour
 		RotateCamera();
 		Aim();
 		Shoot();
+
+		if (Input.GetKeyDown(KeyCode.R))
+			Reload();
 	}
 
 	private void Move()
@@ -54,7 +71,7 @@ public class PlayerCharacter : MonoBehaviour
 		float moveX = Input.GetAxis("Horizontal");
 		float moveZ = Input.GetAxis("Vertical");
 
-		if(moveX != 0 || moveZ != 0)
+		if (moveX != 0 || moveZ != 0)
 			_animator.SetBool("Walk", true);
 		else
 			_animator.SetBool("Walk", false);
@@ -78,7 +95,7 @@ public class PlayerCharacter : MonoBehaviour
 			}
 
 
-				_moveDirection *= _moveSpeed;
+			_moveDirection *= _moveSpeed;
 
 			if (Input.GetButtonDown("Jump"))
 			{
@@ -124,32 +141,43 @@ public class PlayerCharacter : MonoBehaviour
 
 	private void Aim()
 	{
-		if(Input.GetMouseButton(1))
+		if (Input.GetMouseButton(1))
 		{
 			_animator.SetBool("Aim", true);
-			
-			for(int i = 0; i < _camAnimator.Length; i++)
+			_isAiming = true;
+
+			for (int i = 0; i < _camAnimator.Length; i++)
 				_camAnimator[i].SetBool("Aim", true);
 		}
 		else
 		{
 			_animator.SetBool("Aim", false);
-			
-			for(int i = 0; i < _camAnimator.Length; i++)
+			_isAiming = false;
+
+			for (int i = 0; i < _camAnimator.Length; i++)
 				_camAnimator[i].SetBool("Aim", false);
 		}
 	}
 
 	private void Shoot()
 	{
-		if(Input.GetMouseButtonDown(0))
+		if (Input.GetMouseButtonDown(0))
 		{
-			_animator.SetTrigger("Shoot");
 			_automaticRifle.BeginFire();
 		}
-		else if(Input.GetMouseButtonUp(0))
+		else if (Input.GetMouseButtonUp(0))
 		{
 			_automaticRifle.StopFire();
 		}
+	}
+
+	private void Reload()
+	{
+		_automaticRifle.Reload();
+
+		if (_automaticRifle.CurrentAmmo > 0)
+			_animator.Play("Reload Ammo Left");
+		else
+			_animator.Play("Reload Out Of Ammo");
 	}
 }

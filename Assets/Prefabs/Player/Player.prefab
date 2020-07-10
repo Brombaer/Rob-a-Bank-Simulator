@@ -5376,19 +5376,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _name: AK47
-  _currentAmmo: 0
-  _magazineSize: 0
-  _bulletPrefab: {fileID: 1086664671600574, guid: 5953171a59c27394e9ad5cbb564affa8,
-    type: 3}
   _isSingleFire: 0
   _fireRate: 600
+  _muzzleParticle: {fileID: 7002435280593312963}
+  _muzzleLight: {fileID: 7092498708416146095}
+  _muzzleLocation: {fileID: 7197755963990173805}
+  _magazineSize: 30
+  _reloadTime: 3
+  _bulletPrefab: {fileID: 1086664671600574, guid: 5953171a59c27394e9ad5cbb564affa8,
+    type: 3}
   _bulletSpawnPoint: {fileID: 7205093899415833265}
   _bulletForce: 100
-  _shotFEvent: event:/Weapons/AK47
   weaponSway: 1
   swayAmount: 0.02
   maxSwayAmount: 0.05
   swaySmoothValue: 2
+  _shotFEvent: event:/Weapons/AK47
+  _noAmmoFEvent: event:/Weapons/NoAmmo
 --- !u!1 &7199277435190744919
 GameObject:
   m_ObjectHideFlags: 0
