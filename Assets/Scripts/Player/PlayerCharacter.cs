@@ -173,7 +173,8 @@ public class PlayerCharacter : MonoBehaviour
 
 	private void Reload()
 	{
-		_automaticRifle.Reload();
+		if(!_automaticRifle.isReloading())
+			_automaticRifle.Reload();
 
 		if (_automaticRifle.CurrentAmmo > 0)
 			_animator.Play("Reload Ammo Left");

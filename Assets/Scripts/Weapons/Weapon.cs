@@ -36,6 +36,10 @@ public class Weapon : MonoBehaviour
 	[SerializeField] private string _shotFEvent;
 	[FMODUnity.EventRef]
 	[SerializeField] private string _noAmmoFEvent;
+	[FMODUnity.EventRef]
+	[SerializeField] private string _reloadFEvent;
+	[FMODUnity.EventRef]
+	[SerializeField] private string _chargeFEvent;
 
 
 	public event System.Action Fired;
@@ -57,6 +61,8 @@ public class Weapon : MonoBehaviour
 		CurrentAmmo = _magazineSize;
 
 		_muzzleLight.enabled = false;
+
+		FMODUnity.RuntimeManager.PlayOneShotAttached(_chargeFEvent, gameObject);
 	}
 	
 	protected virtual void Update()
@@ -108,6 +114,7 @@ public class Weapon : MonoBehaviour
 		else
 		{
 			FMODUnity.RuntimeManager.PlayOneShotAttached(_noAmmoFEvent, gameObject);
+			_lastBulletTime = Time.time;
 		}
 	}
 
@@ -140,11 +147,12 @@ public class Weapon : MonoBehaviour
 	public void Reload()
 	{
 		CurrentAmmo = _magazineSize;
+		FMODUnity.RuntimeManager.PlayOneShotAttached(_reloadFEvent, gameObject);
 
 		_lastReloadTime = Time.time;
 	}
 
-	private bool isReloading()
+	public bool isReloading()
 	{
 		return Time.time - _lastReloadTime < _reloadTime;
 	}

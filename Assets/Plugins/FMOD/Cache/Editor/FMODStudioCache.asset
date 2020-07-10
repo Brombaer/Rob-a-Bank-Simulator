@@ -1,5 +1,71 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8355376947959049739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Weapons/NoAmmo
+  m_EditorClassIdentifier: 
+  Path: event:/Weapons/NoAmmo
+  guid: f5f705cfeed94740aa9d7558b2c9be12
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 516
+--- !u!114 &-7517347623256929833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Weapons/AK47/AK47_Reload
+  m_EditorClassIdentifier: 
+  Path: event:/Weapons/AK47/AK47_Reload
+  guid: b69565d68743bd49b1211745615d1dba
+  Banks:
+  - {fileID: -235413134234770804}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 4
+  MaxDistance: 9.2
+  Length: 2688
+--- !u!114 &-7209014161423089051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Weapons/New Event
+  m_EditorClassIdentifier: 
+  Path: event:/Weapons/New Event
+  guid: f5f705cfeed94740aa9d7558b2c9be12
+  Banks: []
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 641
 --- !u!114 &-6663486721690787349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22,6 +88,74 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1500
+--- !u!114 &-5849530122082934505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Weapons/AK47/AK47_NoAmmo
+  m_EditorClassIdentifier: 
+  Path: event:/Weapons/AK47/AK47_NoAmmo
+  guid: f5f705cfeed94740aa9d7558b2c9be12
+  Banks:
+  - {fileID: -235413134234770804}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 516
+--- !u!114 &-4750479208168772413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Weapons/Reload/AK47_Reload
+  m_EditorClassIdentifier: 
+  Path: event:/Weapons/Reload/AK47_Reload
+  guid: b69565d68743bd49b1211745615d1dba
+  Banks: []
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 4
+  MaxDistance: 9.2
+  Length: 2688
+--- !u!114 &-2867499995694105699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Weapons/AK47/AK47_Fire
+  m_EditorClassIdentifier: 
+  Path: event:/Weapons/AK47/AK47_Fire
+  guid: baa64fd05afe60498ce1e8a974d01ad8
+  Banks:
+  - {fileID: -235413134234770804}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 2.6000001
+  MaxDistance: 8.2
+  Length: 5423
 --- !u!114 &-2016039281569092170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36,12 +170,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: C:/Users/eagee/OneDrive/Documents/FMOD Studio/GPR4300_RobABank/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637299993428560713
+  lastModified: 637300212519640953
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 786
+    Value: 930
   Exists: 1
+--- !u!114 &-1998290920736987619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Weapons/AK47/AK47_Charge
+  m_EditorClassIdentifier: 
+  Path: event:/Weapons/AK47/AK47_Charge
+  guid: 5bfe11257bc51c4f912eb5aae6e0c234
+  Banks:
+  - {fileID: -235413134234770804}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 4
+  MaxDistance: 9.2
+  Length: 515
 --- !u!114 &-235413134234770804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56,11 +213,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: C:/Users/eagee/OneDrive/Documents/FMOD Studio/GPR4300_RobABank/Build/Desktop/Master.bank
   SubDir: 
-  lastModified: 637299993428532418
+  lastModified: 637300212519611057
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 337632
+    Value: 3893184
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -78,14 +235,17 @@ MonoBehaviour:
   - {fileID: -2016039281569092170}
   - {fileID: -235413134234770804}
   EditorEvents:
-  - {fileID: 3421142537968690911}
-  - {fileID: 1465404208727274750}
+  - {fileID: 8933288528289583865}
+  - {fileID: -1998290920736987619}
+  - {fileID: -7517347623256929833}
+  - {fileID: -2867499995694105699}
+  - {fileID: -5849530122082934505}
   EditorParameters: []
   MasterBanks:
   - {fileID: -235413134234770804}
   StringsBanks:
   - {fileID: -2016039281569092170}
-  stringsBankWriteTime: 637299993428560713
+  stringsBankWriteTime: 637300212519640953
   cacheVersion: 3
 --- !u!114 &1465404208727274750
 MonoBehaviour:
@@ -101,8 +261,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Weapons/NoAmmo
   guid: f5f705cfeed94740aa9d7558b2c9be12
-  Banks:
-  - {fileID: -235413134234770804}
+  Banks: []
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -145,12 +304,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Weapons/AK47
   guid: baa64fd05afe60498ce1e8a974d01ad8
-  Banks:
-  - {fileID: -235413134234770804}
+  Banks: []
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 2.6000001
   MaxDistance: 8.2
-  Length: 2000
+  Length: 5423
+--- !u!114 &8933288528289583865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience/CityAmb
+  m_EditorClassIdentifier: 
+  Path: event:/Ambience/CityAmb
+  guid: 204651509e953542a7d520edb4f64370
+  Banks:
+  - {fileID: -235413134234770804}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 300
+  MaxDistance: 800
+  Length: 60000
