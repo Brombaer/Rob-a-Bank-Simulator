@@ -5,6 +5,7 @@ public class PlayerCharacter : MonoBehaviour
 {
 	[Header("View Settings")]
 	[SerializeField] private Transform _playerArms;
+	[SerializeField] private Transform _playerTransform;
 	[Range(0, 2)]
 	[SerializeField] private float _mouseSensitivity;
 
@@ -15,6 +16,9 @@ public class PlayerCharacter : MonoBehaviour
 	[SerializeField] private float _gravity = 0.1f;
 	[SerializeField] private float _walkSpeed = 4;
 	[SerializeField] private float _sprintSpeed = 2;
+	[SerializeField] private float _crouchSpeed = 1;
+
+	private bool isCrouched = false;
 
 
 	[Space]
@@ -82,11 +86,18 @@ public class PlayerCharacter : MonoBehaviour
 			_moveDirection = new Vector3(moveX, 0, moveZ);
 			_moveDirection = transform.TransformDirection(_moveDirection);
 
+			isCrouched = false;
 
 			if (Input.GetKey(KeyCode.LeftShift) && moveZ == 1)
 			{
 				_moveSpeed = _sprintSpeed;
 				_animator.SetBool("Run", true);
+			}
+			else if(Input.GetKey(KeyCode.LeftControl))
+			{
+				_controller.height = 1.5f;
+				isCrouched = true;
+				_moveSpeed = _crouchSpeed;
 			}
 			else
 			{
@@ -94,6 +105,10 @@ public class PlayerCharacter : MonoBehaviour
 				_animator.SetBool("Run", false);
 			}
 
+			if (!isCrouched)
+			{
+				_controller.height = 2.5f;
+			}
 
 			_moveDirection *= _moveSpeed;
 

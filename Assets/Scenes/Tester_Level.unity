@@ -492,6 +492,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &838746041 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7197758619687773033, guid: 1432f0a791d8c96458f56fdfe3a3ab50,
+    type: 3}
+  m_PrefabInstance: {fileID: 7820220289306220742}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1168943950
 GameObject:
   m_ObjectHideFlags: 0
@@ -879,7 +885,7 @@ PrefabInstance:
     - target: {fileID: 7197758619687773033, guid: 1432f0a791d8c96458f56fdfe3a3ab50,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.98
+      value: 1.54
       objectReference: {fileID: 0}
     - target: {fileID: 7197758619687773033, guid: 1432f0a791d8c96458f56fdfe3a3ab50,
         type: 3}
@@ -931,6 +937,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7199676116352204604, guid: 1432f0a791d8c96458f56fdfe3a3ab50,
+        type: 3}
+      propertyPath: m_Height
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8377300944993637091, guid: 1432f0a791d8c96458f56fdfe3a3ab50,
         type: 3}
       propertyPath: _gravity
@@ -941,5 +952,15 @@ PrefabInstance:
       propertyPath: _jumpSpeed
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 8377300944993637091, guid: 1432f0a791d8c96458f56fdfe3a3ab50,
+        type: 3}
+      propertyPath: _crouchSpeed
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8377300944993637091, guid: 1432f0a791d8c96458f56fdfe3a3ab50,
+        type: 3}
+      propertyPath: _playerTransform
+      value: 
+      objectReference: {fileID: 838746041}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1432f0a791d8c96458f56fdfe3a3ab50, type: 3}
