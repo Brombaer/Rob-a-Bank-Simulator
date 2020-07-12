@@ -156,7 +156,7 @@ public class PlayerCharacter : MonoBehaviour
 
 	private void Aim()
 	{
-		if (Input.GetMouseButton(1))
+		if (Input.GetMouseButton(1) || Input.GetAxis("Aim") > 0)
 		{
 			_animator.SetBool("Aim", true);
 			_isAiming = true;
@@ -176,7 +176,7 @@ public class PlayerCharacter : MonoBehaviour
 
 	private void Shoot()
 	{
-		if (Input.GetMouseButtonDown(0))
+		if (Input.GetMouseButtonDown(0) || Input.GetAxis("Shoot") > 0)
 		{
 			_automaticRifle.BeginFire();
 		}
