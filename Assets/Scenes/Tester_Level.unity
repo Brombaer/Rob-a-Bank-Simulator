@@ -945,12 +945,12 @@ PrefabInstance:
     - target: {fileID: 8377300944993637091, guid: 1432f0a791d8c96458f56fdfe3a3ab50,
         type: 3}
       propertyPath: _gravity
-      value: 0.1
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 8377300944993637091, guid: 1432f0a791d8c96458f56fdfe3a3ab50,
         type: 3}
       propertyPath: _jumpSpeed
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8377300944993637091, guid: 1432f0a791d8c96458f56fdfe3a3ab50,
         type: 3}
