@@ -176,8 +176,10 @@ public class PlayerCharacter : MonoBehaviour
 
 	private void Shoot()
 	{
-		if (Input.GetMouseButtonDown(0) || Input.GetAxis("Shoot") > 0)
+		if (Input.GetMouseButtonDown(0) || Input.GetAxis("Shoot") < 0)
 		{
+			Debug.Log(Input.GetAxis("Shoot"));
+
 			_automaticRifle.BeginFire();
 		}
 		else if (Input.GetMouseButtonUp(0))
