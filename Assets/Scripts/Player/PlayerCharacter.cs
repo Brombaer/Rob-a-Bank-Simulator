@@ -18,7 +18,6 @@ public class PlayerCharacter : MonoBehaviour
 	[SerializeField] private float _sprintSpeed = 2;
 	[SerializeField] private float _crouchSpeed = 1;
 
-	private bool isCrouched = false;
 
 
 	[Space]
@@ -29,6 +28,8 @@ public class PlayerCharacter : MonoBehaviour
 
 
 	[SerializeField] private Weapon _automaticRifle;
+	[Range(0, 2)]
+	[SerializeField] private float _aimTime;
 
 
 
@@ -37,9 +38,11 @@ public class PlayerCharacter : MonoBehaviour
 	private Vector3 _moveDirection;
 	private CharacterController _controller;
 	private float _moveSpeed;
+	private float _lastAimTime;
 
 	private bool _isAiming;
-
+	private bool _isCrouched;
+	private bool _isSprinting;
 
 
 
@@ -66,7 +69,7 @@ public class PlayerCharacter : MonoBehaviour
 		Aim();
 		Shoot();
 
-		if (Input.GetKeyDown(KeyCode.R))
+		if (!_isSprinting && Input.GetKeyDown(KeyCode.R))
 			Reload();
 	}
 
@@ -86,26 +89,31 @@ public class PlayerCharacter : MonoBehaviour
 			_moveDirection = new Vector3(moveX, 0, moveZ);
 			_moveDirection = transform.TransformDirection(_moveDirection);
 
-			isCrouched = false;
+			_isCrouched = false;
 
-			if (Input.GetKey(KeyCode.LeftShift) && moveZ == 1)
+			// Sprint & Crouch
+			if (!_isAiming && Input.GetKey(KeyCode.LeftShift) && moveZ == 1)
 			{
+				_isSprinting = true;
+				
 				_moveSpeed = _sprintSpeed;
 				_animator.SetBool("Run", true);
 			}
-			else if(Input.GetKey(KeyCode.LeftControl))
+			else if(!_isSprinting && Input.GetKey(KeyCode.LeftControl))
 			{
 				_controller.height = 1.5f;
-				isCrouched = true;
 				_moveSpeed = _crouchSpeed;
+				_isCrouched = true;
 			}
 			else
 			{
+				_isSprinting = false;
+
 				_moveSpeed = _walkSpeed;
 				_animator.SetBool("Run", false);
 			}
 
-			if (!isCrouched)
+			if (!_isCrouched)
 			{
 				_controller.height = 2.5f;
 			}
@@ -156,9 +164,11 @@ public class PlayerCharacter : MonoBehaviour
 
 	private void Aim()
 	{
-		if (Input.GetMouseButton(1) || Input.GetAxis("Aim") > 0)
+		if (CanAim() && !_isSprinting && Input.GetMouseButton(1) || Input.GetAxis("Aim") > 0)
 		{
+			
 			_animator.SetBool("Aim", true);
+			
 			_isAiming = true;
 
 			for (int i = 0; i < _camAnimator.Length; i++)
@@ -171,12 +181,18 @@ public class PlayerCharacter : MonoBehaviour
 
 			for (int i = 0; i < _camAnimator.Length; i++)
 				_camAnimator[i].SetBool("Aim", false);
+			
 		}
+	}
+
+	private bool CanAim()
+	{
+		return Time.time - _lastAimTime < _aimTime;
 	}
 
 	private void Shoot()
 	{
-		if (Input.GetMouseButtonDown(0))
+		if (!_isSprinting && Input.GetMouseButtonDown(0))
 		{
 			Debug.Log(Input.GetAxis("Shoot"));
 
