@@ -29,8 +29,8 @@ public class PlayerCharacter : MonoBehaviour
 
 	[SerializeField] private Weapon _automaticRifle;
 	[Range(0, 2)]
-	[SerializeField] private float _aimTime = 1.0f;
-	[SerializeField] private float _currentAimTime = 1.0f;
+	[SerializeField] private float _aimTime = 0.085f; 
+	[SerializeField] private float _currentAimTime = 3f;
 
 
 
@@ -189,7 +189,7 @@ public class PlayerCharacter : MonoBehaviour
 			
 		}
 		else
-			_currentAimTime += 1 * Time.deltaTime;
+			_currentAimTime += 2.5f * Time.deltaTime;
 	}
 
 	private void Shoot()
