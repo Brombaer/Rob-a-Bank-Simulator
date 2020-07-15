@@ -29,7 +29,8 @@ public class PlayerCharacter : MonoBehaviour
 
 	[SerializeField] private Weapon _automaticRifle;
 	[Range(0, 2)]
-	[SerializeField] private float _aimTime;
+	[SerializeField] private float _aimTime = 1.0f;
+	[SerializeField] private float _currentAimTime = 1.0f;
 
 
 
@@ -164,9 +165,10 @@ public class PlayerCharacter : MonoBehaviour
 
 	private void Aim()
 	{
-		if (CanAim() && !_isSprinting && Input.GetMouseButton(1) || Input.GetAxis("Aim") > 0)
+		if ((!_isSprinting && Input.GetMouseButton(1) || Input.GetAxis("Aim") > 0) && _currentAimTime >= _aimTime)
 		{
-			
+			Debug.Log("ADS");
+
 			_animator.SetBool("Aim", true);
 			
 			_isAiming = true;
@@ -174,8 +176,11 @@ public class PlayerCharacter : MonoBehaviour
 			for (int i = 0; i < _camAnimator.Length; i++)
 				_camAnimator[i].SetBool("Aim", true);
 		}
-		else
+		else if(Input.GetMouseButtonUp(1) && _isAiming)
 		{
+			_currentAimTime = 0;
+			_isAiming = false;
+
 			_animator.SetBool("Aim", false);
 			_isAiming = false;
 
@@ -183,11 +188,8 @@ public class PlayerCharacter : MonoBehaviour
 				_camAnimator[i].SetBool("Aim", false);
 			
 		}
-	}
-
-	private bool CanAim()
-	{
-		return Time.time - _lastAimTime < _aimTime;
+		else
+			_currentAimTime += 1 * Time.deltaTime;
 	}
 
 	private void Shoot()
