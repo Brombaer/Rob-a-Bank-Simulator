@@ -27,7 +27,7 @@ public class BulletScript : MonoBehaviour {
 
 	private void OnCollisionEnter(Collision collision) 
 	{
-		Instantiate(metalImpactPrefabs [Random.Range(0, metalImpactPrefabs.Length)], transform.position, Quaternion.LookRotation (collision.contacts [0].normal));
+		Instantiate(metalImpactPrefabs [Random.Range(0, metalImpactPrefabs.Length)], transform.position, Quaternion.LookRotation (collision.contacts [0].normal), collision.transform);
 		Destroy(gameObject);
 		
 		

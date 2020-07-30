@@ -1043,7 +1043,7 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 2.5
+  m_Height: 2
   m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.3
@@ -1066,14 +1066,13 @@ MonoBehaviour:
   _playerTransform: {fileID: 7197758619687773033}
   _mouseSensitivity: 1
   _jumpSpeed: 6
-  _gravity: 0.15
+  _gravity: 13
   _walkSpeed: 2
   _sprintSpeed: 8
   _crouchSpeed: 1
   _camAnimator:
   - {fileID: 1874643576}
   - {fileID: 6254893266991522293}
-  _automaticRifle: {fileID: 7091305522459368424}
   _aimTime: 0.085
   _currentAimTime: 3
   _weaponList:

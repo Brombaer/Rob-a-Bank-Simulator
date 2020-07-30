@@ -148,7 +148,7 @@ public class PlayerCharacter : MonoBehaviour
 
 			if (!_isCrouched)
 			{
-				_controller.height = 2.5f;
+				_controller.height = 2;
 			}
 
 			_moveDirection *= _moveSpeed;
@@ -159,7 +159,7 @@ public class PlayerCharacter : MonoBehaviour
 			}
 		}
 
-		_moveDirection.y -= _gravity;
+		_moveDirection.y -= _gravity * Time.deltaTime;
 		_controller.Move(_moveDirection * Time.deltaTime);
 	}
 
@@ -292,5 +292,16 @@ public class PlayerCharacter : MonoBehaviour
 		
 		CurrentWeapon = _weaponList[weaponIndex];
 		_weaponAnimator = CurrentWeapon.GetComponent<Animator>();
+	}
+
+	private void OnControllerColliderHit(ControllerColliderHit hit)
+	{
+		if (hit.rigidbody == null || hit.rigidbody.isKinematic) { return; }
+
+		if (hit.moveDirection.y < -0.3) { return; }
+
+		var pushDir = new Vector3(hit.moveDirection.x, 0, hit.moveDirection.z);
+
+		hit.rigidbody.velocity = pushDir * 2;
 	}
 }
