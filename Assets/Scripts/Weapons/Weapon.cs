@@ -3,7 +3,8 @@
 public class Weapon : MonoBehaviour
 {
 	[Header("Weapon Properties")]
-	[SerializeField] private string _name;
+	[SerializeField] protected WeaponHUD _weaponHUD;
+	public string Name;
 	[SerializeField] private bool _isSingleFire;
 	[SerializeField] private float _fireRate;
 
@@ -12,11 +13,11 @@ public class Weapon : MonoBehaviour
 	[SerializeField] private ParticleSystem _muzzleParticle;
 	[SerializeField] private Light _muzzleLight;
 	[SerializeField] private Transform _muzzleLocation;
-	
+
 	[Space]
 	[Header("Reload Settings")]
-	[SerializeField] private int _magazineSize = 30;
 	[SerializeField] private float _reloadTime;
+	public int MagazineSize { get; private set; } = 31;
 
 	[Space]
 	[Header("Bullet Settings")]
@@ -53,12 +54,11 @@ public class Weapon : MonoBehaviour
 
 
 
-
 	private void Start()
 	{
 		initialSwayPosition = transform.localPosition;
 
-		CurrentAmmo = _magazineSize;
+		CurrentAmmo = MagazineSize;
 
 		_muzzleLight.enabled = false;
 
@@ -146,7 +146,7 @@ public class Weapon : MonoBehaviour
 
 	public void Reload()
 	{
-		CurrentAmmo = _magazineSize;
+		CurrentAmmo = MagazineSize;
 		FMODUnity.RuntimeManager.PlayOneShotAttached(_reloadFEvent, gameObject);
 
 		_lastReloadTime = Time.time;

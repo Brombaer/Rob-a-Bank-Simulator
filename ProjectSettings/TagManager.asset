@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Terrain
   - Metal
+  - Target
   layers:
   - Default
   - TransparentFX

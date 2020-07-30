@@ -7,7 +7,7 @@
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Priority: 2, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Priority: 3, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 00000202FB234B68 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 0000017B294DE0C8 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Priority: 0, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -18,10 +18,676 @@
 [LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
 [LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
 [LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] SystemI::mixerResume                     : Resuming output.
+[LOG] SystemI::createSound                     : filename = C:\Users\eagee\OneDrive\Documents\FMOD Studio\GPR4300_RobABank\Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000017BB1DE37B8 : node = 0000017B2843C710
+[LOG] SystemI::createSound                     : add node to async list : head = 0000017B4CC66D88.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000017BB1DE37B8
+[LOG] SystemI::createSoundInternal             :     Create name='C:\Users\eagee\OneDrive\Documents\FMOD Studio\GPR4300_RobABank\Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 7802304
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 54336
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000017B2843C820
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 215
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[WRN] File::open                               :     File offset: 54336 + length: 7802304 > actual file size 7697216, truncating length.
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='1911-45cal-6-single-shots-processed-A', format=2, channels=2, frequency=48000, lengthbytes=158624, lengthpcm=856919, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.966056.
+[ERR] CodecVorbis::readInternal                :     Packet length 41223 exceeds buffer size of 6144.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000017BB1DE37B8
+[WRN] SoundSourceInstrumentInstance::startChannelIfReady : Waveform instance in error state 28
+[LOG] SoundI::release                          : 1911-45cal-6-single-shots-processed-A (0000017BB1DE37B8)
+[LOG] SoundI::release                          :     1911-45cal-6-single-shots-processed-A (000001794349E098)
+[LOG] SoundI::release                          :     1911-45cal-6-single-shots-processed-A (0000017BAA53FC38)
+[LOG] SystemI::createSound                     : filename = C:\Users\eagee\OneDrive\Documents\FMOD Studio\GPR4300_RobABank\Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000017BB52760E8 : node = 0000017B4D4E6260
+[LOG] SystemI::createSound                     : add node to async list : head = 0000017B4CC66D88.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000017BB52760E8
+[LOG] SystemI::createSoundInternal             :     Create name='C:\Users\eagee\OneDrive\Documents\FMOD Studio\GPR4300_RobABank\Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 7802304
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 54336
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000017B4D4E6370
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 215
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[WRN] File::open                               :     File offset: 54336 + length: 7802304 > actual file size 7697216, truncating length.
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='1911-45cal-6-single-shots-processed-A', format=2, channels=2, frequency=48000, lengthbytes=158624, lengthpcm=856919, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.966056.
+[ERR] CodecVorbis::readInternal                :     Packet length 41223 exceeds buffer size of 6144.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000017BB52760E8
+[WRN] SoundSourceInstrumentInstance::startChannelIfReady : Waveform instance in error state 28
+[LOG] SoundI::release                          : 1911-45cal-6-single-shots-processed-A (0000017BB52760E8)
+[LOG] SoundI::release                          :     1911-45cal-6-single-shots-processed-A (0000017BB7B5DA68)
+[LOG] SoundI::release                          :     1911-45cal-6-single-shots-processed-A (0000017BAA53FF98)
+[LOG] SystemI::createSound                     : filename = C:\Users\eagee\OneDrive\Documents\FMOD Studio\GPR4300_RobABank\Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000017BB5274CA8 : node = 0000017B4D4E59A0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000017B4CC66D88.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000017BB5274CA8
+[LOG] SystemI::createSoundInternal             :     Create name='C:\Users\eagee\OneDrive\Documents\FMOD Studio\GPR4300_RobABank\Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 7802304
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 54336
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000017B4D4E5AB0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 215
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[WRN] File::open                               :     File offset: 54336 + length: 7802304 > actual file size 7697216, truncating length.
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='1911-45cal-6-single-shots-processed-A', format=2, channels=2, frequency=48000, lengthbytes=158624, lengthpcm=856919, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.966056.
+[ERR] CodecVorbis::readInternal                :     Packet length 41223 exceeds buffer size of 6144.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000017BB5274CA8
+[WRN] SoundSourceInstrumentInstance::startChannelIfReady : Waveform instance in error state 28
+[LOG] SoundI::release                          : 1911-45cal-6-single-shots-processed-A (0000017BB5274CA8)
+[LOG] SoundI::release                          :     1911-45cal-6-single-shots-processed-A (0000017BB7B5D588)
+[LOG] SoundI::release                          :     1911-45cal-6-single-shots-processed-A (0000017BAA53F8D8)
+[LOG] SystemI::createSound                     : filename = C:\Users\eagee\OneDrive\Documents\FMOD Studio\GPR4300_RobABank\Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000017BB733D598 : node = 0000017B73E1D2D0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000017B4CC66D88.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000017BB733D598
+[LOG] SystemI::createSoundInternal             :     Create name='C:\Users\eagee\OneDrive\Documents\FMOD Studio\GPR4300_RobABank\Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 7802304
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 54336
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000017B73E1D3E0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 215
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[WRN] File::open                               :     File offset: 54336 + length: 7802304 > actual file size 7697216, truncating length.
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='1911-45cal-6-single-shots-processed-A', format=2, channels=2, frequency=48000, lengthbytes=158624, lengthpcm=856919, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.966056.
+[ERR] CodecVorbis::readInternal                :     Packet length 41223 exceeds buffer size of 6144.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000017BB733D598
+[WRN] SoundSourceInstrumentInstance::startChannelIfReady : Waveform instance in error state 28
+[LOG] SoundI::release                          : 1911-45cal-6-single-shots-processed-A (0000017BB733D598)
+[LOG] SoundI::release                          :     1911-45cal-6-single-shots-processed-A (0000017BA10C5088)
+[LOG] SoundI::release                          :     1911-45cal-6-single-shots-processed-A (0000017BAA53FF98)
+[LOG] SystemI::createSound                     : filename = C:\Users\eagee\OneDrive\Documents\FMOD Studio\GPR4300_RobABank\Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000017BAA53F728 : node = 0000017BB85E0570
+[LOG] SystemI::createSound                     : add node to async list : head = 0000017B4CC66D88.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000017BAA53F728
+[LOG] SystemI::createSoundInternal             :     Create name='C:\Users\eagee\OneDrive\Documents\FMOD Studio\GPR4300_RobABank\Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 7802304
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 54336
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000017BB85E0680
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 215
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[WRN] File::open                               :     File offset: 54336 + length: 7802304 > actual file size 7697216, truncating length.
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='1911-45cal-6-single-shots-processed-A', format=2, channels=2, frequency=48000, lengthbytes=158624, lengthpcm=856919, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.966056.
+[ERR] CodecVorbis::readInternal                :     Packet length 41223 exceeds buffer size of 6144.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000017BAA53F728
+[WRN] SoundSourceInstrumentInstance::startChannelIfReady : Waveform instance in error state 28
+[LOG] SoundI::release                          : 1911-45cal-6-single-shots-processed-A (0000017BAA53F728)
+[LOG] SoundI::release                          :     1911-45cal-6-single-shots-processed-A (0000017B6E4EF388)
+[LOG] SoundI::release                          :     1911-45cal-6-single-shots-processed-A (0000017BB1DE4538)
+[LOG] SystemI::createSound                     : filename = C:\Users\eagee\OneDrive\Documents\FMOD Studio\GPR4300_RobABank\Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000017BAA53F728 : node = 0000017BB85DFDF0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000017B4CC66D88.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000017BAA53F728
+[LOG] SystemI::createSoundInternal             :     Create name='C:\Users\eagee\OneDrive\Documents\FMOD Studio\GPR4300_RobABank\Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 7802304
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 54336
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000017BB85DFF00
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 215
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[WRN] File::open                               :     File offset: 54336 + length: 7802304 > actual file size 7697216, truncating length.
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='1911-45cal-6-single-shots-processed-A', format=2, channels=2, frequency=48000, lengthbytes=158624, lengthpcm=856919, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.966056.
+[ERR] CodecVorbis::readInternal                :     Packet length 41223 exceeds buffer size of 6144.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000017BAA53F728
+[WRN] SoundSourceInstrumentInstance::startChannelIfReady : Waveform instance in error state 28
+[LOG] SoundI::release                          : 1911-45cal-6-single-shots-processed-A (0000017BAA53F728)
+[LOG] SoundI::release                          :     1911-45cal-6-single-shots-processed-A (0000017B4CC631B8)
+[LOG] SoundI::release                          :     1911-45cal-6-single-shots-processed-A (0000017BB5277018)
+[LOG] SystemI::createSound                     : filename = C:\Users\eagee\OneDrive\Documents\FMOD Studio\GPR4300_RobABank\Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000017BAA53F8D8 : node = 0000017BB85DFDF0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000017B4CC66D88.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000017BAA53F8D8
+[LOG] SystemI::createSoundInternal             :     Create name='C:\Users\eagee\OneDrive\Documents\FMOD Studio\GPR4300_RobABank\Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 7802304
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 54336
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000017BB85DFF00
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 215
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[WRN] File::open                               :     File offset: 54336 + length: 7802304 > actual file size 7697216, truncating length.
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='1911-45cal-6-single-shots-processed-A', format=2, channels=2, frequency=48000, lengthbytes=158624, lengthpcm=856919, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.966056.
+[ERR] CodecVorbis::readInternal                :     Packet length 41223 exceeds buffer size of 6144.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000017BAA53F8D8
+[WRN] SoundSourceInstrumentInstance::startChannelIfReady : Waveform instance in error state 28
+[LOG] SoundI::release                          : 1911-45cal-6-single-shots-processed-A (0000017BAA53F8D8)
+[LOG] SoundI::release                          :     1911-45cal-6-single-shots-processed-A (0000017B4CC62E78)
+[LOG] SoundI::release                          :     1911-45cal-6-single-shots-processed-A (0000017BB5272428)
+[LOG] SystemI::createSound                     : filename = C:\Users\eagee\OneDrive\Documents\FMOD Studio\GPR4300_RobABank\Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000017BAA53FC38 : node = 0000017BB85E01B0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000017B4CC66D88.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000017BAA53FC38
+[LOG] SystemI::createSoundInternal             :     Create name='C:\Users\eagee\OneDrive\Documents\FMOD Studio\GPR4300_RobABank\Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 7802304
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 54336
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000017BB85E02C0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 215
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[WRN] File::open                               :     File offset: 54336 + length: 7802304 > actual file size 7697216, truncating length.
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='1911-45cal-6-single-shots-processed-A', format=2, channels=2, frequency=48000, lengthbytes=158624, lengthpcm=856919, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.966056.
+[ERR] CodecVorbis::readInternal                :     Packet length 41223 exceeds buffer size of 6144.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000017BAA53FC38
+[WRN] SoundSourceInstrumentInstance::startChannelIfReady : Waveform instance in error state 28
+[LOG] SoundI::release                          : 1911-45cal-6-single-shots-processed-A (0000017BAA53FC38)
+[LOG] SoundI::release                          :     1911-45cal-6-single-shots-processed-A (0000017B4CC65BF8)
+[LOG] SoundI::release                          :     1911-45cal-6-single-shots-processed-A (0000017BB5272938)
+[LOG] SystemI::createSound                     : filename = C:\Users\eagee\OneDrive\Documents\FMOD Studio\GPR4300_RobABank\Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000017BAA53FF98 : node = 0000017BB85DFDF0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000017B4CC66D88.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000017BAA53FF98
+[LOG] SystemI::createSoundInternal             :     Create name='C:\Users\eagee\OneDrive\Documents\FMOD Studio\GPR4300_RobABank\Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 7802304
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 54336
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000017BB85DFF00
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 215
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[WRN] File::open                               :     File offset: 54336 + length: 7802304 > actual file size 7697216, truncating length.
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='1911-45cal-6-single-shots-processed-A', format=2, channels=2, frequency=48000, lengthbytes=158624, lengthpcm=856919, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.966056.
+[ERR] CodecVorbis::readInternal                :     Packet length 41223 exceeds buffer size of 6144.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000017BAA53FF98
+[WRN] SoundSourceInstrumentInstance::startChannelIfReady : Waveform instance in error state 28
+[LOG] SoundI::release                          : 1911-45cal-6-single-shots-processed-A (0000017BAA53FF98)
+[LOG] SoundI::release                          :     1911-45cal-6-single-shots-processed-A (0000017943492848)
+[LOG] SoundI::release                          :     1911-45cal-6-single-shots-processed-A (0000017B749C9088)
+[LOG] SystemI::createSound                     : filename = C:\Users\eagee\OneDrive\Documents\FMOD Studio\GPR4300_RobABank\Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000017BAA540148 : node = 0000017BB85E06B0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000017B4CC66D88.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000017BAA540148
+[LOG] SystemI::createSoundInternal             :     Create name='C:\Users\eagee\OneDrive\Documents\FMOD Studio\GPR4300_RobABank\Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 7802304
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 54336
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000017BB85E07C0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 215
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[WRN] File::open                               :     File offset: 54336 + length: 7802304 > actual file size 7697216, truncating length.
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='1911-45cal-6-single-shots-processed-A', format=2, channels=2, frequency=48000, lengthbytes=158624, lengthpcm=856919, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.966056.
+[ERR] CodecVorbis::readInternal                :     Packet length 41223 exceeds buffer size of 6144.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000017BAA540148
+[WRN] SoundSourceInstrumentInstance::startChannelIfReady : Waveform instance in error state 28
+[LOG] SoundI::release                          : 1911-45cal-6-single-shots-processed-A (0000017BAA540148)
+[LOG] SoundI::release                          :     1911-45cal-6-single-shots-processed-A (0000017BA16361F8)
+[LOG] SoundI::release                          :     1911-45cal-6-single-shots-processed-A (0000017BB733D598)
+[LOG] SystemI::createSound                     : filename = C:\Users\eagee\OneDrive\Documents\FMOD Studio\GPR4300_RobABank\Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000017BAA53FF98 : node = 0000017BB85DFDF0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000017B4CC66D88.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000017BAA53FF98
+[LOG] SystemI::createSoundInternal             :     Create name='C:\Users\eagee\OneDrive\Documents\FMOD Studio\GPR4300_RobABank\Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 7802304
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 54336
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000017BB85DFF00
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 215
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[WRN] File::open                               :     File offset: 54336 + length: 7802304 > actual file size 7697216, truncating length.
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='1911-45cal-6-single-shots-processed-A', format=2, channels=2, frequency=48000, lengthbytes=158624, lengthpcm=856919, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.966056.
+[ERR] CodecVorbis::readInternal                :     Packet length 41223 exceeds buffer size of 6144.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000017BAA53FF98
+[WRN] SoundSourceInstrumentInstance::startChannelIfReady : Waveform instance in error state 28
+[LOG] SoundI::release                          : 1911-45cal-6-single-shots-processed-A (0000017BAA53FF98)
+[LOG] SoundI::release                          :     1911-45cal-6-single-shots-processed-A (0000017BA1635D18)
+[LOG] SoundI::release                          :     1911-45cal-6-single-shots-processed-A (0000017BB733D8F8)
+[LOG] SystemI::createSound                     : filename = C:\Users\eagee\OneDrive\Documents\FMOD Studio\GPR4300_RobABank\Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000017BB78683F8 : node = 0000017B27FA7AC0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000017B4CC66D88.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000017BB78683F8
+[LOG] SystemI::createSoundInternal             :     Create name='C:\Users\eagee\OneDrive\Documents\FMOD Studio\GPR4300_RobABank\Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 7802304
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 54336
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000017B27FA7BD0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 215
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[WRN] File::open                               :     File offset: 54336 + length: 7802304 > actual file size 7697216, truncating length.
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='1911-45cal-6-single-shots-processed-A', format=2, channels=2, frequency=48000, lengthbytes=158624, lengthpcm=856919, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.966056.
+[ERR] CodecVorbis::readInternal                :     Packet length 41223 exceeds buffer size of 6144.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000017BB78683F8
+[WRN] SoundSourceInstrumentInstance::startChannelIfReady : Waveform instance in error state 28
+[LOG] SoundI::release                          : 1911-45cal-6-single-shots-processed-A (0000017BB78683F8)
+[LOG] SoundI::release                          :     1911-45cal-6-single-shots-processed-A (0000017B6E4EED08)
+[LOG] SoundI::release                          :     1911-45cal-6-single-shots-processed-A (0000017BB1DE4538)
+[LOG] SystemI::createSound                     : filename = C:\Users\eagee\OneDrive\Documents\FMOD Studio\GPR4300_RobABank\Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000017BB7868908 : node = 0000017B27FA7200
+[LOG] SystemI::createSound                     : add node to async list : head = 0000017B4CC66D88.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000017BB7868908
+[LOG] SystemI::createSoundInternal             :     Create name='C:\Users\eagee\OneDrive\Documents\FMOD Studio\GPR4300_RobABank\Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 7802304
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 54336
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000017B27FA7310
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 215
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[WRN] File::open                               :     File offset: 54336 + length: 7802304 > actual file size 7697216, truncating length.
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='1911-45cal-6-single-shots-processed-A', format=2, channels=2, frequency=48000, lengthbytes=158624, lengthpcm=856919, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.966056.
+[ERR] CodecVorbis::readInternal                :     Packet length 41223 exceeds buffer size of 6144.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000017BB7868908
+[WRN] SoundSourceInstrumentInstance::startChannelIfReady : Waveform instance in error state 28
+[LOG] SoundI::release                          : 1911-45cal-6-single-shots-processed-A (0000017BB7868908)
+[LOG] SoundI::release                          :     1911-45cal-6-single-shots-processed-A (0000017B6E4EE9C8)
+[LOG] SoundI::release                          :     1911-45cal-6-single-shots-processed-A (0000017BB1DE3B18)
+[LOG] SystemI::createSound                     : filename = C:\Users\eagee\OneDrive\Documents\FMOD Studio\GPR4300_RobABank\Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000017BB733D238 : node = 0000017B73E1D190
+[LOG] SystemI::createSound                     : add node to async list : head = 0000017B4CC66D88.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000017BB733D238
+[LOG] SystemI::createSoundInternal             :     Create name='C:\Users\eagee\OneDrive\Documents\FMOD Studio\GPR4300_RobABank\Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 7802304
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 54336
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000017B73E1D2A0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 215
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[WRN] File::open                               :     File offset: 54336 + length: 7802304 > actual file size 7697216, truncating length.
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='1911-45cal-6-single-shots-processed-A', format=2, channels=2, frequency=48000, lengthbytes=158624, lengthpcm=856919, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.966056.
+[ERR] CodecVorbis::readInternal                :     Packet length 41223 exceeds buffer size of 6144.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000017BB733D238
+[WRN] SoundSourceInstrumentInstance::startChannelIfReady : Waveform instance in error state 28
+[LOG] SoundI::release                          : 1911-45cal-6-single-shots-processed-A (0000017BB733D238)
+[LOG] SoundI::release                          :     1911-45cal-6-single-shots-processed-A (0000017B6E4EF1E8)
+[LOG] SoundI::release                          :     1911-45cal-6-single-shots-processed-A (0000017BB1DE3968)
+[LOG] SystemI::createSound                     : filename = C:\Users\eagee\OneDrive\Documents\FMOD Studio\GPR4300_RobABank\Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000017BB733D238 : node = 0000017B73E1D410
+[LOG] SystemI::createSound                     : add node to async list : head = 0000017B4CC66D88.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000017BB733D238
+[LOG] SystemI::createSoundInternal             :     Create name='C:\Users\eagee\OneDrive\Documents\FMOD Studio\GPR4300_RobABank\Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 7802304
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 54336
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000017B73E1D520
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 215
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[WRN] File::open                               :     File offset: 54336 + length: 7802304 > actual file size 7697216, truncating length.
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='1911-45cal-6-single-shots-processed-A', format=2, channels=2, frequency=48000, lengthbytes=158624, lengthpcm=856919, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.966056.
+[ERR] CodecVorbis::readInternal                :     Packet length 41223 exceeds buffer size of 6144.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000017BB733D238
+[WRN] SoundSourceInstrumentInstance::startChannelIfReady : Waveform instance in error state 28
+[LOG] SoundI::release                          : 1911-45cal-6-single-shots-processed-A (0000017BB733D238)
+[LOG] SoundI::release                          :     1911-45cal-6-single-shots-processed-A (0000017BA1635B78)
+[LOG] SoundI::release                          :     1911-45cal-6-single-shots-processed-A (0000017BB733D3E8)
+[LOG] SystemI::createSound                     : filename = C:\Users\eagee\OneDrive\Documents\FMOD Studio\GPR4300_RobABank\Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000017B74A98428 : node = 0000017BB3F81090
+[LOG] SystemI::createSound                     : add node to async list : head = 0000017B4CC66D88.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000017B74A98428
+[LOG] SystemI::createSoundInternal             :     Create name='C:\Users\eagee\OneDrive\Documents\FMOD Studio\GPR4300_RobABank\Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 7802304
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 54336
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000017BB3F811A0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 215
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[WRN] File::open                               :     File offset: 54336 + length: 7802304 > actual file size 7697216, truncating length.
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='1911-45cal-6-single-shots-processed-A', format=2, channels=2, frequency=48000, lengthbytes=158624, lengthpcm=856919, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.966056.
+[ERR] CodecVorbis::readInternal                :     Packet length 41223 exceeds buffer size of 6144.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000017B74A98428
+[WRN] SoundSourceInstrumentInstance::startChannelIfReady : Waveform instance in error state 28
+[LOG] SoundI::release                          : 1911-45cal-6-single-shots-processed-A (0000017B74A98428)
+[LOG] SoundI::release                          :     1911-45cal-6-single-shots-processed-A (0000017BA16361F8)
+[LOG] SoundI::release                          :     1911-45cal-6-single-shots-processed-A (0000017BB733DC58)
+[LOG] SystemI::createSound                     : filename = C:\Users\eagee\OneDrive\Documents\FMOD Studio\GPR4300_RobABank\Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000017B74A98428 : node = 0000017BB3F80F50
+[LOG] SystemI::createSound                     : add node to async list : head = 0000017B4CC66D88.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000017B74A98428
+[LOG] SystemI::createSoundInternal             :     Create name='C:\Users\eagee\OneDrive\Documents\FMOD Studio\GPR4300_RobABank\Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 7802304
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 54336
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000017BB3F81060
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 215
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[WRN] File::open                               :     File offset: 54336 + length: 7802304 > actual file size 7697216, truncating length.
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='1911-45cal-6-single-shots-processed-A', format=2, channels=2, frequency=48000, lengthbytes=158624, lengthpcm=856919, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.966056.
+[ERR] CodecVorbis::readInternal                :     Packet length 41223 exceeds buffer size of 6144.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000017B74A98428
+[WRN] SoundSourceInstrumentInstance::startChannelIfReady : Waveform instance in error state 28
+[LOG] SoundI::release                          : 1911-45cal-6-single-shots-processed-A (0000017B74A98428)
+[LOG] SoundI::release                          :     1911-45cal-6-single-shots-processed-A (0000017BA1636538)
+[LOG] SoundI::release                          :     1911-45cal-6-single-shots-processed-A (0000017BB733D238)
+[LOG] SystemI::createSound                     : filename = C:\Users\eagee\OneDrive\Documents\FMOD Studio\GPR4300_RobABank\Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000017BB78683F8 : node = 0000017B27FA7AC0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000017B4CC66D88.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000017BB78683F8
+[LOG] SystemI::createSoundInternal             :     Create name='C:\Users\eagee\OneDrive\Documents\FMOD Studio\GPR4300_RobABank\Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 7802304
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 54336
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000017B27FA7BD0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 215
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[WRN] File::open                               :     File offset: 54336 + length: 7802304 > actual file size 7697216, truncating length.
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='1911-45cal-6-single-shots-processed-A', format=2, channels=2, frequency=48000, lengthbytes=158624, lengthpcm=856919, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.966056.
+[ERR] CodecVorbis::readInternal                :     Packet length 41223 exceeds buffer size of 6144.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000017BB78683F8
+[WRN] SoundSourceInstrumentInstance::startChannelIfReady : Waveform instance in error state 28
+[LOG] SoundI::release                          : 1911-45cal-6-single-shots-processed-A (0000017BB78683F8)
+[LOG] SoundI::release                          :     1911-45cal-6-single-shots-processed-A (0000017B6E4EF048)
+[LOG] SoundI::release                          :     1911-45cal-6-single-shots-processed-A (0000017BB1DE3CC8)
+[LOG] SystemI::createSound                     : filename = C:\Users\eagee\OneDrive\Documents\FMOD Studio\GPR4300_RobABank\Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000017BB7868098 : node = 0000017B27FA7AC0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000017B4CC66D88.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000017BB7868098
+[LOG] SystemI::createSoundInternal             :     Create name='C:\Users\eagee\OneDrive\Documents\FMOD Studio\GPR4300_RobABank\Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 7802304
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 54336
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000017B27FA7BD0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 215
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[WRN] File::open                               :     File offset: 54336 + length: 7802304 > actual file size 7697216, truncating length.
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='1911-45cal-6-single-shots-processed-A', format=2, channels=2, frequency=48000, lengthbytes=158624, lengthpcm=856919, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.966056.
+[ERR] CodecVorbis::readInternal                :     Packet length 41223 exceeds buffer size of 6144.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000017BB7868098
+[WRN] SoundSourceInstrumentInstance::startChannelIfReady : Waveform instance in error state 28
+[LOG] SoundI::release                          : 1911-45cal-6-single-shots-processed-A (0000017BB7868098)
+[LOG] SoundI::release                          :     1911-45cal-6-single-shots-processed-A (0000017B6E4EF528)
+[LOG] SoundI::release                          :     1911-45cal-6-single-shots-processed-A (0000017BB1DE3E78)
+[LOG] SystemI::createSound                     : filename = C:\Users\eagee\OneDrive\Documents\FMOD Studio\GPR4300_RobABank\Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000017BB78683F8 : node = 0000017B27FA7AC0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000017B4CC66D88.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000017BB78683F8
+[LOG] SystemI::createSoundInternal             :     Create name='C:\Users\eagee\OneDrive\Documents\FMOD Studio\GPR4300_RobABank\Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 7802304
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 54336
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000017B27FA7BD0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 215
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[WRN] File::open                               :     File offset: 54336 + length: 7802304 > actual file size 7697216, truncating length.
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='1911-45cal-6-single-shots-processed-A', format=2, channels=2, frequency=48000, lengthbytes=158624, lengthpcm=856919, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.966056.
+[ERR] CodecVorbis::readInternal                :     Packet length 41223 exceeds buffer size of 6144.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000017BB78683F8
+[WRN] SoundSourceInstrumentInstance::startChannelIfReady : Waveform instance in error state 28
+[LOG] SoundI::release                          : 1911-45cal-6-single-shots-processed-A (0000017BB78683F8)
+[LOG] SoundI::release                          :     1911-45cal-6-single-shots-processed-A (0000017B6E4EF388)
+[LOG] SoundI::release                          :     1911-45cal-6-single-shots-processed-A (0000017BB1DE4028)
+[LOG] SystemI::createSound                     : filename = C:\Users\eagee\OneDrive\Documents\FMOD Studio\GPR4300_RobABank\Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000017BB4150E58 : node = 0000017BB16BD000
+[LOG] SystemI::createSound                     : add node to async list : head = 0000017B4CC66D88.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000017BB4150E58
+[LOG] SystemI::createSoundInternal             :     Create name='C:\Users\eagee\OneDrive\Documents\FMOD Studio\GPR4300_RobABank\Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 7802304
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 54336
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000017BB16BD110
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 215
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[WRN] File::open                               :     File offset: 54336 + length: 7802304 > actual file size 7697216, truncating length.
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='1911-45cal-6-single-shots-processed-A', format=2, channels=2, frequency=48000, lengthbytes=158624, lengthpcm=856919, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.966056.
+[ERR] CodecVorbis::readInternal                :     Packet length 41223 exceeds buffer size of 6144.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000017BB4150E58
+[WRN] SoundSourceInstrumentInstance::startChannelIfReady : Waveform instance in error state 28
+[LOG] SoundI::release                          : 1911-45cal-6-single-shots-processed-A (0000017BB4150E58)
+[LOG] SoundI::release                          :     1911-45cal-6-single-shots-processed-A (0000017B6E4EF1E8)
+[LOG] SoundI::release                          :     1911-45cal-6-single-shots-processed-A (0000017BB1DE37B8)
+[LOG] SoundI::release                          :  (0000017BA3684C28)
+[LOG] SoundI::release                          :     3DS01 0001 Urban Downtown Busy Spacious 2.0 (0000017BB379D258)
+[LOG] SoundI::release                          :  (0000017B74BEDAE8)
+[LOG] SoundI::release                          :     m4-rifle-foley-bolt-charge-3 (0000017BB5A8ED48)
+[LOG] SoundI::release                          :  (0000017BB32BA218)
+[LOG] SoundI::release                          :     mp5-submachinegun-foley-magazine-replace-5 (0000017BB46D6088)
+[LOG] SoundI::release                          :  (0000017BA3CA6E48)
+[LOG] SoundI::release                          :     mp5-submachinegun-foley-magazine-replace-6 (0000017BB78DB478)
+[LOG] SoundI::release                          :  (0000017B28D74848)
+[LOG] SoundI::release                          :     mp5-submachinegun-foley-magazine-replace-7 (0000017BB5A8F088)
+[LOG] SoundI::release                          :  (0000017B74A77988)
+[LOG] SoundI::release                          :     Click1 (0000017BB46D63C8)
+[LOG] SoundI::release                          :  (0000017BB4D022B8)
+[LOG] SoundI::release                          :     Click2 (0000017BB57D1908)
+[LOG] SoundI::release                          :  (0000017B28D74E08)
+[LOG] SoundI::release                          :     Click3 (0000017BA38362D8)
+[LOG] SoundI::release                          :  (0000017B74BED698)
+[LOG] SoundI::release                          :     Click4 (0000017B4D79C2B8)
+[LOG] SoundI::release                          :  (0000017B74BECF68)
+[LOG] SoundI::release                          :     Click5 (0000017BB5A8EBA8)
+[LOG] SoundI::release                          :  (0000017B28D75258)
+[LOG] SoundI::release                          :     Click6 (0000017BA3835DF8)
+[LOG] SoundI::release                          :  (0000017B74C6FD78)
+[LOG] SoundI::release                          :     MUI TEXT High Clicks (0000017BAACCD3E8)
+[LOG] SoundI::release                          :  (0000017BA36840A8)
+[LOG] SoundI::release                          :     AWCK ADD Metal Sweetener Medium 03 (0000017BB379D8D8)
+[LOG] SoundI::release                          :  (0000017BA3CA7578)
+[LOG] SoundI::release                          :     pistol_end_01 (0000017BB379D0B8)
+[LOG] SoundI::release                          :  (0000017B28D74C98)
+[LOG] SoundI::release                          :     pistol_end_02 (0000017BA3835F98)
+[LOG] SoundI::release                          :  (0000017BB6CD03C8)
+[LOG] SoundI::release                          :     pistol_end_03 (0000017BB360EE18)
+[LOG] SoundI::release                          :  (0000017BB4D01B88)
+[LOG] SoundI::release                          :     pistol_end_04 (0000017BB57D1DE8)
+[LOG] SoundI::release                          :  (0000017BB4D02148)
+[LOG] SoundI::release                          :     pistol_end_05 (0000017BB57D1428)
+[LOG] SoundI::release                          :  (0000017B74BEDC58)
+[LOG] SoundI::release                          :     pistol_end_06 (0000017BB5A8EA08)
+[LOG] SoundI::release                          :  (0000017BB6CD0538)
+[LOG] SoundI::release                          :     pistol_low_01 (0000017BB360EAD8)
+[LOG] SoundI::release                          :  (0000017BA3CA6FB8)
+[LOG] SoundI::release                          :     pistol_low_02 (0000017BB78DB618)
+[LOG] SoundI::release                          :  (0000017BA3CA6CD8)
+[LOG] SoundI::release                          :     pistol_low_03 (0000017BB78DB2D8)
+[LOG] SoundI::release                          :  (0000017BB4D01CF8)
+[LOG] SoundI::release                          :     pistol_low_04 (0000017BB57D15C8)
+[LOG] SoundI::release                          :  (0000017B74BED978)
+[LOG] SoundI::release                          :     pistol_low_05 (0000017BB5A8E6C8)
+[LOG] SoundI::release                          :  (0000017BB6CD0AF8)
+[LOG] SoundI::release                          :     pistol_low_06 (0000017BB360EC78)
+[LOG] SoundI::release                          :  (0000017BB4D01A18)
+[LOG] SoundI::release                          :     pistol_low_07 (0000017BA3835918)
+[LOG] SoundI::release                          :  (0000017BA3684AB8)
+[LOG] SoundI::release                          :     pistol_main_01 (0000017BB379D738)
+[LOG] SoundI::release                          :  (0000017B74C6F928)
+[LOG] SoundI::release                          :     pistol_main_02 (0000017BAACCDA68)
+[LOG] SoundI::release                          :  (0000017BB6CD0988)
+[LOG] SoundI::release                          :     pistol_main_03 (0000017BB360EFB8)
+[LOG] SoundI::release                          :  (0000017B74C6F1F8)
+[LOG] SoundI::release                          :     pistol_main_04 (0000017BAACCD248)
+[LOG] SoundI::release                          :  (0000017B74C6F4D8)
+[LOG] SoundI::release                          :     pistol_main_05 (0000017BB78DAF98)
+[LOG] SoundI::release                          :  (0000017BB6CD06A8)
+[LOG] SoundI::release                          :     pistol_main_06 (0000017BB360E2B8)
+[LOG] SoundI::release                          :  (0000017B74A77AF8)
+[LOG] SoundI::release                          :     pistol_main_07 (0000017BB46D7408)
+[LOG] SoundI::release                          :  (0000017BB32BAAB8)
+[LOG] SoundI::release                          :     glock-pistol-foley-plastic-holser-draw-1 (0000017BB1C5AF28)
+[LOG] SoundI::release                          :  (0000017BB6CD0258)
+[LOG] SoundI::release                          :     glock-pistol-foley-plastic-holser-draw-2 (0000017BB360E938)
+[LOG] SoundI::release                          :  (0000017B74C6F648)
+[LOG] SoundI::release                          :     glock-pistol-foley-plastic-holser-draw-3 (0000017BB78DB138)
+[LOG] SoundI::release                          :  (0000017B28D74F78)
+[LOG] SoundI::release                          :     glock-pistol-foley-plastic-holser-draw-4 (0000017BA3836618)
+[LOG] SoundI::release                          :  (0000017BA3684218)
+[LOG] SoundI::release                          :     glock-pistol-foley-plastic-holser-put-in-1 (0000017B4D79C5F8)
+[LOG] SoundI::release                          :  (0000017BB4D015C8)
+[LOG] SoundI::release                          :     glock-pistol-foley-plastic-holser-put-in-2 (0000017BB57D1AA8)
+[LOG] SoundI::release                          :  (0000017BB32BA948)
+[LOG] SoundI::release                          :     glock-pistol-foley-plastic-holser-put-in-3 (0000017BB1C5AA48)
+[LOG] SoundI::release                          :  (0000017B74BED3B8)
+[LOG] SoundI::release                          :     glock-pistol-foley-plastic-holser-put-in-4 (0000017B4D79C118)
+[LOG] SoundI::release                          :  (0000017BA3684668)
+[LOG] SoundI::release                          :     glock-pistol-foley-plastic-holser-put-in-6 (0000017BB379D598)
+[LOG] SoundI::release                          :  (0000017B28D74568)
+[LOG] SoundI::release                          :     m4-rifle-foley-magazine-remove-1 (0000017BA3835AB8)
+[LOG] SoundI::release                          :  (0000017B74A77F48)
+[LOG] SoundI::release                          :     m4-rifle-foley-magazine-remove-2 (0000017BB46D6708)
+[LOG] SoundI::release                          :  (0000017B28D746D8)
+[LOG] SoundI::release                          :     m4-rifle-foley-magazine-remove-3 (0000017BA3836478)
+[LOG] SoundI::release                          :  (0000017B74C6FC08)
+[LOG] SoundI::release                          :     m4-rifle-foley-magazine-remove-4 (0000017BAACCD8C8)
+[LOG] SoundI::release                          :  (0000017B74A77DD8)
+[LOG] SoundI::release                          :     m4-rifle-foley-magazine-replace-1 (0000017BB46D6A48)
+[LOG] SoundI::release                          :  (0000017BA3684D98)
+[LOG] SoundI::release                          :     m4-rifle-foley-magazine-replace-2 (0000017B4D79C458)
+[LOG] SoundI::release                          :  (0000017BA3684948)
+[LOG] SoundI::release                          :     m4-rifle-foley-magazine-replace-3 (0000017BB379D3F8)
+[LOG] SoundI::release                          :  (0000017BA3684388)
+[LOG] SoundI::release                          :     m4-rifle-foley-short-rattle-1 (0000017B4D79CAD8)
+[LOG] SoundI::release                          :  (0000017BB6CD0DD8)
+[LOG] SoundI::release                          :     m4-rifle-foley-short-rattle-2 (0000017BB57D1C48)
+[LOG] SoundI::release                          :  (0000017BA3CA69F8)
+[LOG] SoundI::release                          :     m4-rifle-foley-short-rattle-3 (0000017BB78DB7B8)
+[LOG] SoundI::release                          :  (0000017BB6CD00E8)
+[LOG] SoundI::release                          :     m4-rifle-foley-short-rattle-4 (0000017BB360E458)
+[LOG] SoundI::release                          :  (0000017BB32BA4F8)
+[LOG] SoundI::release                          :     AK47_01 (0000017BB1C5B0C8)
+[LOG] SoundI::release                          :  (0000017BB4D018A8)
+[LOG] SoundI::release                          :     AK47_02 (0000017BA3835C58)
+[LOG] SoundI::release                          :  (0000017BA36847D8)
+[LOG] SoundI::release                          :     AK47_03 (0000017B4D79C938)
+[LOG] SoundI::release                          :  (0000017B28D74B28)
+[LOG] SoundI::release                          :     AK47_04 (0000017BB5A8E388)
+[LOG] SoundI::release                          :  (0000017BB6CD0818)
+[LOG] SoundI::release                          :     weapons_bullet_casing_01 (0000017BB360E798)
+[LOG] SoundI::release                          :  (0000017B28D749B8)
+[LOG] SoundI::release                          :     weapons_bullet_casing_02 (0000017BB5A8E528)
+[LOG] SoundI::release                          :  (0000017BB4D01738)
+[LOG] SoundI::release                          :     weapons_bullet_casing_03 (0000017BB57D10E8)
+[LOG] SoundI::release                          :  (0000017BB32BA668)
+[LOG] SoundI::release                          :     weapons_bullet_casing_04 (0000017BB1C5ABE8)
+[LOG] SoundI::release                          :  (0000017BB32BA388)
+[LOG] SoundI::release                          :     AWCK AR AK 47 Close 01 (0000017BB1C5B268)
+[LOG] SoundI::release                          :  (0000017BA3CA6888)
+[LOG] SoundI::release                          :     AWCK AR AK 47 Close 02 (0000017BB379DA78)
+[LOG] SoundI::release                          :  (0000017B74BED808)
+[LOG] SoundI::release                          :     AWCK AR AK 47 Close 03 (0000017BB5A8E868)
+[LOG] SoundI::release                          :  (0000017BA3CA7128)
+[LOG] SoundI::release                          :     AWCK AR AK 47 Close 04 (0000017BB379DC18)
+[LOG] SoundI::release                          :  (0000017B74BED528)
+[LOG] SoundI::release                          :     glock-pistol-foley-dry-fire-1 (0000017B4D79CC78)
+[LOG] SoundI::release                          :  (0000017BB32BAD98)
+[LOG] SoundI::release                          :     glock-pistol-foley-dry-fire-2 (0000017BB1C5B408)
+[LOG] SoundI::release                          :  (0000017B74A78228)
+[LOG] SoundI::release                          :     glock-pistol-foley-dry-fire-3 (0000017BB46D70C8)
+[LOG] SoundI::release                          :  (0000017B74A776A8)
+[LOG] SoundI::release                          :     glock-pistol-foley-dry-fire-4 (0000017BB46D7A88)
+[LOG] SoundI::release                          :  (0000017BA3CA7408)
+[LOG] SoundI::release                          :     Hihat01 (0000017BB78DAAB8)
+[LOG] SoundI::release                          :  (0000017BA3CA6B68)
+[LOG] SoundI::release                          :     snare (0000017BB78DAC58)
+[LOG] SoundI::release                          :  (0000017BA3CA7298)
+[LOG] SoundI::release                          :     Kick (0000017BB379DDB8)
+[LOG] SoundI::release                          :  (0000017BB6CD0C68)
+[LOG] SoundI::release                          :     Hihat02 (0000017BB360E5F8)
+[LOG] SoundI::release                          :  (0000017BA36844F8)
+[LOG] SoundI::release                          :     Synth (0000017B4D79C798)
+[LOG] SoundI::release                          :  (0000017B74A77818)
+[LOG] SoundI::release                          :     Drone (0000017BB46D7C28)
+[LOG] SoundI::release                          :  (0000017BB32BA0A8)
+[LOG] SoundI::release                          :     MECK SNAP Calculating Machine Fazit (0000017BB1C5AD88)
+[LOG] SoundI::release                          :  (0000017BB4D01FD8)
+[LOG] SoundI::release                          :     mp5-submachinegun-foley-dry-fire-1 (0000017BB57D1768)
+[LOG] SoundI::release                          :  (0000017BB32BAC28)
+[LOG] SoundI::release                          :     mp5-submachinegun-foley-dry-fire-2 (0000017BB1C5A8A8)
+[LOG] SoundI::release                          :  (0000017BB32BA7D8)
+[LOG] SoundI::release                          :     mp5-submachinegun-foley-dry-fire-3 (0000017BB1C5B5A8)
+[LOG] SoundI::release                          :  (0000017B74BED0D8)
+[LOG] SoundI::release                          :     mp5-submachinegun-foley-dry-fire-4 (0000017BB5A8EEE8)
+[LOG] SoundI::release                          :  (0000017B74BED248)
+[LOG] SoundI::release                          :     Accept3 (0000017B4D79CE18)
+[LOG] SoundI::release                          :  (0000017B74C6F088)
+[LOG] SoundI::release                          :     Accept4 (0000017BAACCD728)
+[LOG] SoundI::release                          :  (0000017B74C6F368)
+[LOG] SoundI::release                          :     Accept5 (0000017BB78DADF8)
+[LOG] SoundI::release                          :  (0000017B28D750E8)
+[LOG] SoundI::release                          :     Accept6 (0000017BA3836138)
+[LOG] SoundI::release                          :  (0000017BB4D01E68)
+[LOG] SoundI::release                          :     Accept1 (0000017BB57D1288)
+[LOG] SoundI::release                          :  (0000017B74C6FA98)
+[LOG] SoundI::release                          :     Accept2 (0000017BAACCD0A8)
+[LOG] Thread::callback                         : FMOD Studio update thread finished.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Thread::callback                         : FMOD Studio sample load thread finished.
 [LOG] LiveUpdate::release                      : 
 [LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
 [LOG] Thread::callback                         : FMOD stream thread finished.
 [LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] SystemI::close                           : Closed.
+[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
+[LOG] LiveUpdate::release                      : 
+[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
+[LOG] Thread::callback                         : FMOD stream thread finished.
+[LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] Thread::callback                         : FMOD nonblocking thread (0) finished.
+[LOG] Thread::callback                         : FMOD file thread finished.
 [LOG] SystemI::close                           : Closed.

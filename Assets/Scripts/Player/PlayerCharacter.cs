@@ -1,5 +1,7 @@
-﻿using System;
+﻿using System.Collections.Generic;
+using System;
 using UnityEngine;
+
 
 public class PlayerCharacter : MonoBehaviour
 {
@@ -23,16 +25,17 @@ public class PlayerCharacter : MonoBehaviour
 	[Space]
 	[Space]
 	[Header("Animation References")]
-	[SerializeField] private Animator _animator;
 	[SerializeField] private Animator[] _camAnimator;
 
 
-	[SerializeField] private Weapon _automaticRifle;
 	[Range(0, 2)]
-	[SerializeField] private float _aimTime = 0.085f; 
+	[SerializeField] private float _aimTime = 0.085f;
 	[SerializeField] private float _currentAimTime = 3f;
 
+	[SerializeField] private List<Weapon> _weaponList = new List<Weapon>();
 
+	[HideInInspector] public Weapon CurrentWeapon { get; private set; }
+	[HideInInspector] public bool IsHolstered;
 
 	private float _xAxisClamp = 0;
 
@@ -40,7 +43,9 @@ public class PlayerCharacter : MonoBehaviour
 	private CharacterController _controller;
 	private float _moveSpeed;
 	private float _lastAimTime;
+	private int weaponIndex = 0;
 
+	private Animator _weaponAnimator;
 	private bool _isAiming;
 	private bool _isCrouched;
 	private bool _isSprinting;
@@ -51,27 +56,48 @@ public class PlayerCharacter : MonoBehaviour
 	{
 		Cursor.lockState = CursorLockMode.Locked;
 		_controller = GetComponent<CharacterController>();
+		ChangeWeapon();
 
-		_automaticRifle.Fired += OnFired;
+		foreach (Weapon weapon in _weaponList)
+		{
+			weapon.Fired += OnFired;
+		}
 	}
 
 	private void OnFired()
 	{
 		if (!_isAiming)
-			_animator.Play("Fire", 0, 0f);
+		{
+			_weaponAnimator.Play("Fire", 0, 0f);
+		}
 		else
-			_animator.Play("Aim Fire", 0, 0f);
+		{
+			_weaponAnimator.Play("Aim Fire", 0, 0f);
+		}
 	}
 
 	private void Update()
 	{
+		if(Input.mouseScrollDelta.y != 0)
+			ChangeWeapon();
+
+
 		Move();
 		RotateCamera();
-		Aim();
-		Shoot();
 
-		if (!_isSprinting && Input.GetKeyDown(KeyCode.R))
-			Reload();
+
+		if (Input.GetKeyDown(KeyCode.E))
+			HolsterWeapon();
+
+
+		if (!IsHolstered)
+		{
+			Aim();
+			Shoot();
+
+			if (!_isSprinting && Input.GetKeyDown(KeyCode.R))
+				Reload();
+		}
 	}
 
 	private void Move()
@@ -80,9 +106,13 @@ public class PlayerCharacter : MonoBehaviour
 		float moveZ = Input.GetAxis("Vertical");
 
 		if (moveX != 0 || moveZ != 0)
-			_animator.SetBool("Walk", true);
+		{
+			_weaponAnimator.SetBool("Walk", true);
+		}
 		else
-			_animator.SetBool("Walk", false);
+		{
+			_weaponAnimator.SetBool("Walk", false);
+		}
 
 
 		if (_controller.isGrounded)
@@ -98,7 +128,8 @@ public class PlayerCharacter : MonoBehaviour
 				_isSprinting = true;
 				
 				_moveSpeed = _sprintSpeed;
-				_animator.SetBool("Run", true);
+
+				_weaponAnimator.SetBool("Run", true);
 			}
 			else if(!_isSprinting && Input.GetKey(KeyCode.LeftControl))
 			{
@@ -111,7 +142,8 @@ public class PlayerCharacter : MonoBehaviour
 				_isSprinting = false;
 
 				_moveSpeed = _walkSpeed;
-				_animator.SetBool("Run", false);
+
+				_weaponAnimator.SetBool("Run", false);
 			}
 
 			if (!_isCrouched)
@@ -167,10 +199,8 @@ public class PlayerCharacter : MonoBehaviour
 	{
 		if ((!_isSprinting && Input.GetMouseButton(1) || Input.GetAxis("Aim") > 0) && _currentAimTime >= _aimTime)
 		{
-			Debug.Log("ADS");
+			_weaponAnimator.SetBool("Aim", true);
 
-			_animator.SetBool("Aim", true);
-			
 			_isAiming = true;
 
 			for (int i = 0; i < _camAnimator.Length; i++)
@@ -181,7 +211,10 @@ public class PlayerCharacter : MonoBehaviour
 			_currentAimTime = 0;
 			_isAiming = false;
 
-			_animator.SetBool("Aim", false);
+			_weaponAnimator.SetBool("Aim", false);
+
+
+
 			_isAiming = false;
 
 			for (int i = 0; i < _camAnimator.Length; i++)
@@ -196,24 +229,68 @@ public class PlayerCharacter : MonoBehaviour
 	{
 		if (!_isSprinting && Input.GetMouseButtonDown(0))
 		{
-			Debug.Log(Input.GetAxis("Shoot"));
-
-			_automaticRifle.BeginFire();
+			CurrentWeapon.BeginFire();
 		}
 		else if (Input.GetMouseButtonUp(0))
 		{
-			_automaticRifle.StopFire();
+			CurrentWeapon.StopFire();
 		}
 	}
 
 	private void Reload()
 	{
-		if(!_automaticRifle.isReloading())
-			_automaticRifle.Reload();
+		if (CurrentWeapon.isReloading())
+			return;
 
-		if (_automaticRifle.CurrentAmmo > 0)
-			_animator.Play("Reload Ammo Left");
+		CurrentWeapon.Reload();
+		
+		if (CurrentWeapon.CurrentAmmo > 0)
+		{
+			_weaponAnimator.Play("Reload Ammo Left");
+		}
 		else
-			_animator.Play("Reload Out Of Ammo");
+		{
+			_weaponAnimator.Play("Reload Out Of Ammo");
+		}
+			
+	}
+
+	private void HolsterWeapon()
+	{
+		if(IsHolstered)
+		{
+			_weaponAnimator.SetBool("Holster", false);
+			IsHolstered = false;
+		}
+		else
+		{
+			_weaponAnimator.SetBool("Holster", true);
+			IsHolstered = true;
+		}
+	}
+
+	private void ChangeWeapon()
+	{
+		IsHolstered = false;
+
+		if (CurrentWeapon != null)
+			CurrentWeapon.StopFire();
+		
+		weaponIndex = Mathf.Clamp( weaponIndex + Mathf.RoundToInt(Input.mouseScrollDelta.y), 0, _weaponList.Count - 1);
+
+		for (int i = 0; i < _weaponList.Count; i++)
+		{
+			if(i != weaponIndex)
+			{
+				_weaponList[i].gameObject.SetActive(false);
+			}
+			else
+			{
+				_weaponList[i].gameObject.SetActive(true);
+			}
+		}
+		
+		CurrentWeapon = _weaponList[weaponIndex];
+		_weaponAnimator = CurrentWeapon.GetComponent<Animator>();
 	}
 }

@@ -17,6 +17,8 @@ public class BulletScript : MonoBehaviour {
 	[Header("Impact Effect Prefabs")]
 	public Transform [] metalImpactPrefabs;
 
+	private Surface _surface;
+
 	private void Start() 
 	{
 		StartCoroutine (DestroyAfter());
@@ -25,28 +27,16 @@ public class BulletScript : MonoBehaviour {
 
 	private void OnCollisionEnter(Collision collision) 
 	{
+		Instantiate(metalImpactPrefabs [Random.Range(0, metalImpactPrefabs.Length)], transform.position, Quaternion.LookRotation (collision.contacts [0].normal));
+		Destroy(gameObject);
+		
+		
 		if (!destroyOnImpact) 
 		{
 			StartCoroutine (DestroyTimer());
 		}
 		else 
 		{
-			Destroy(gameObject);
-		}
-		
-
-
-		if (collision.transform.tag == "Metal") 
-		{
-			Instantiate(metalImpactPrefabs [Random.Range(0, metalImpactPrefabs.Length)], transform.position, Quaternion.LookRotation (collision.contacts [0].normal));
-			Destroy(gameObject);
-		}
-
-
-
-		if (collision.transform.tag == "Target") 
-		{
-			collision.transform.gameObject.GetComponent<TargetScript>().isHit = true;
 			Destroy(gameObject);
 		}
 	}
