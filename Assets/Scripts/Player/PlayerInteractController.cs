@@ -11,9 +11,21 @@ public class PlayerInteractController : MonoBehaviour
     [SerializeField]
     private Transform _interactionCenter;
 
+    // public List<string> CollectableItems;
+
+    [SerializeField]
+    private float PlayerWallet;
+    [SerializeField]
+    public float SafedMoney;
+
+    private void Awake()
+    {
+
+    }
+
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.I))
         {
             RaycastHit raycastHit;
 
@@ -27,8 +39,24 @@ public class PlayerInteractController : MonoBehaviour
                     {
                         interactable.Interact();
                     }
+
+                    if (raycastHit.collider.gameObject.CompareTag("CollectableItem") && raycastHit.collider != null)
+                    {
+                        // string itemType = raycastHit.transform.gameObject.GetComponent<CollectableItem>().ItemType;
+                        float itemValue = raycastHit.transform.gameObject.GetComponent<CollectableItem>().ItemValue;
+
+                        PlayerWallet += itemValue;
+
+                        Destroy(raycastHit.transform.gameObject);
+                    }
                 }
             }
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        SafedMoney = PlayerWallet;
+        PlayerWallet = 0;
     }
 }
