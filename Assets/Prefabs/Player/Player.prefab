@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: {fileID: 263930226}
-  slider: {fileID: 0}
+  slider: {fileID: 4160642893992441771}
   _speed: 0.5
 --- !u!1 &107811062207873172
 GameObject:
@@ -1879,12 +1879,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9da690435616d8b4bb8513c14cc29f13, type: 3}
---- !u!4 &110950222963392316 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 835568784792269496, guid: 9da690435616d8b4bb8513c14cc29f13,
-    type: 3}
-  m_PrefabInstance: {fileID: 725824743299157380}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &7091305522459368424 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7528827870471116396, guid: 9da690435616d8b4bb8513c14cc29f13,
@@ -1897,3 +1891,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c55a0d010df63714eb0ffbdadffd059b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &110950222963392316 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 835568784792269496, guid: 9da690435616d8b4bb8513c14cc29f13,
+    type: 3}
+  m_PrefabInstance: {fileID: 725824743299157380}
+  m_PrefabAsset: {fileID: 0}
