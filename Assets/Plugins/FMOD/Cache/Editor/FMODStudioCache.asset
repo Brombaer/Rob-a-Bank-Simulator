@@ -44,6 +44,40 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1368
+--- !u!114 &-8017355959476116845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Bank/State
+  m_EditorClassIdentifier: 
+  Name: State
+  Min: 0
+  Max: 5
+  Default: 0
+  Exists: 0
+--- !u!114 &-7546472783206903140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Bank/State
+  m_EditorClassIdentifier: 
+  Name: State
+  Min: 0
+  Max: 5
+  Default: 0
+  Exists: 1
 --- !u!114 &-7517347623256929833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,6 +101,29 @@ MonoBehaviour:
   MinDistance: 4
   MaxDistance: 9.2
   Length: 2688
+--- !u!114 &-7501798666586578382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/GameComplete
+  m_EditorClassIdentifier: 
+  Path: event:/UI/GameComplete
+  guid: 053363dde6f3904da5cfbc249bf48042
+  Banks:
+  - {fileID: -235413134234770804}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 7656
 --- !u!114 &-7209014161423089051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,8 +184,8 @@ MonoBehaviour:
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
-  MaxDistance: 20
-  Length: 1393
+  MaxDistance: 40
+  Length: 5543
 --- !u!114 &-6886797302432393490
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,6 +277,23 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 516
+--- !u!114 &-5809605560421451004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Bank/State
+  m_EditorClassIdentifier: 
+  Name: State
+  Min: 0
+  Max: 5
+  Default: 0
+  Exists: 0
 --- !u!114 &-5463932161247849323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -240,10 +314,27 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 7651139140937595708}
+  - {fileID: -7546472783206903140}
   MinDistance: 0
   MaxDistance: 0
   Length: 28825
+--- !u!114 &-5406467056108468144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Bank/State
+  m_EditorClassIdentifier: 
+  Name: State
+  Min: 0
+  Max: 5
+  Default: 0
+  Exists: 0
 --- !u!114 &-4750479208168772413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -280,8 +371,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/UI/OnClicked
   guid: 624c0dde32b3ce47b9acb3e79de54bd3
-  Banks:
-  - {fileID: -235413134234770804}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -289,6 +379,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1326
+--- !u!114 &-4361769477047342259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Bank/State
+  m_EditorClassIdentifier: 
+  Name: State
+  Min: 0
+  Max: 5
+  Default: 0
+  Exists: 0
 --- !u!114 &-3453812801873497176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -326,8 +433,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/UI/OnHover
   guid: 6aab0091804f614593efda48735be04e
-  Banks:
-  - {fileID: -235413134234770804}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -356,8 +462,31 @@ MonoBehaviour:
   IsOneShot: 1
   Parameters: []
   MinDistance: 2.6000001
-  MaxDistance: 8.2
-  Length: 5423
+  MaxDistance: 35
+  Length: 5603
+--- !u!114 &-2797316376102457414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/Menu/StartGame
+  m_EditorClassIdentifier: 
+  Path: event:/UI/Menu/StartGame
+  guid: f97e1f8e166594438b54c089ac589e82
+  Banks:
+  - {fileID: -235413134234770804}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2427
 --- !u!114 &-2663782882244443178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -372,8 +501,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/UI/StartGame
   guid: f97e1f8e166594438b54c089ac589e82
-  Banks:
-  - {fileID: -235413134234770804}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -429,11 +557,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: C:/Users/eagee/OneDrive/Documents/FMOD Studio/GPR4300_RobABank/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637317193790138904
+  lastModified: 637322264161176796
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1400
+    Value: 1594
   Exists: 1
 --- !u!114 &-1998290920736987619
 MonoBehaviour:
@@ -492,6 +620,29 @@ MonoBehaviour:
   Max: 5
   Default: 0
   Exists: 0
+--- !u!114 &-852121589135716798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/Menu/OnHover
+  m_EditorClassIdentifier: 
+  Path: event:/UI/Menu/OnHover
+  guid: 6aab0091804f614593efda48735be04e
+  Banks:
+  - {fileID: -235413134234770804}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 34
 --- !u!114 &-235413134234770804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -506,12 +657,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: C:/Users/eagee/OneDrive/Documents/FMOD Studio/GPR4300_RobABank/Build/Desktop/Master.bank
   SubDir: 
-  lastModified: 637317193790079055
+  lastModified: 637322264161106936
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 7697216
+    Value: 9644544
   Exists: 1
+--- !u!114 &-199131855211759765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Weapons/AK47/AK47_AimIn
+  m_EditorClassIdentifier: 
+  Path: event:/Weapons/AK47/AK47_AimIn
+  guid: 733963ccdffd1d42bb2d9a7d3ca7b284
+  Banks:
+  - {fileID: -235413134234770804}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -533,22 +707,65 @@ MonoBehaviour:
   - {fileID: -7517347623256929833}
   - {fileID: -2867499995694105699}
   - {fileID: -5849530122082934505}
-  - {fileID: -4634178415630151555}
-  - {fileID: -3272489885993251413}
   - {fileID: -3453812801873497176}
   - {fileID: -5463932161247849323}
   - {fileID: 3083132891861769916}
-  - {fileID: -2663782882244443178}
   - {fileID: -6968718518549938293}
   - {fileID: -6058390451197882088}
   - {fileID: -6886797302432393490}
+  - {fileID: -7501798666586578382}
+  - {fileID: 568773971900762278}
+  - {fileID: -852121589135716798}
+  - {fileID: -199131855211759765}
+  - {fileID: 1816508353520474076}
+  - {fileID: -2797316376102457414}
   EditorParameters: []
   MasterBanks:
   - {fileID: -235413134234770804}
   StringsBanks:
   - {fileID: -2016039281569092170}
-  stringsBankWriteTime: 637317193790138904
+  stringsBankWriteTime: 637322264161176796
   cacheVersion: 3
+--- !u!114 &568773971900762278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/Menu/OnClicked
+  m_EditorClassIdentifier: 
+  Path: event:/UI/Menu/OnClicked
+  guid: 624c0dde32b3ce47b9acb3e79de54bd3
+  Banks:
+  - {fileID: -235413134234770804}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1326
+--- !u!114 &885944178125655831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Bank/State
+  m_EditorClassIdentifier: 
+  Name: State
+  Min: 0
+  Max: 5
+  Default: 0
+  Exists: 0
 --- !u!114 &1014960842335223276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -605,6 +822,29 @@ MonoBehaviour:
   Max: 5
   Default: 0
   Exists: 0
+--- !u!114 &1816508353520474076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Weapons/AK47/AK47_AimOut
+  m_EditorClassIdentifier: 
+  Path: event:/Weapons/AK47/AK47_AimOut
+  guid: 99bb55a9a92b9c4194eb16c35545d6d2
+  Banks:
+  - {fileID: -235413134234770804}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &2174320652803277308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -625,6 +865,23 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 470
+  Exists: 0
+--- !u!114 &2368300909307473855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Bank/State
+  m_EditorClassIdentifier: 
+  Name: State
+  Min: 0
+  Max: 5
+  Default: 0
   Exists: 0
 --- !u!114 &3083132891861769916
 MonoBehaviour:
@@ -648,7 +905,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 24147
+  Length: 12000
 --- !u!114 &3297240570413835865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -783,6 +1040,23 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 516
+--- !u!114 &7248991343847460282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Bank/State
+  m_EditorClassIdentifier: 
+  Name: State
+  Min: 0
+  Max: 5
+  Default: 0
+  Exists: 0
 --- !u!114 &7651139140937595708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -799,7 +1073,7 @@ MonoBehaviour:
   Min: 0
   Max: 5
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &8933288528289583865
 MonoBehaviour:
   m_ObjectHideFlags: 0
