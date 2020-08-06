@@ -3432,6 +3432,12 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!4 &753922438 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7197758619687773033, guid: 1432f0a791d8c96458f56fdfe3a3ab50,
+    type: 3}
+  m_PrefabInstance: {fileID: 7820220289306220742}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &826076616
 GameObject:
   m_ObjectHideFlags: 0
@@ -4670,11 +4676,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e84831a1c50d0804db5840f2ee3e4648, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _event01: event:/Music/Bank
-  _bank01: 
+  _soundEvent: 
   _loop: 0
   _loopDuration: 0
-  _loopAmount: 0
 --- !u!65 &1208834998
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4812,11 +4816,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e84831a1c50d0804db5840f2ee3e4648, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _event01: event:/Weapons/AK47/AK47_Fire
-  _bank01: 
+  _soundEvent: 
   _loop: 1
   _loopDuration: 0.25
-  _loopAmount: 20
 --- !u!65 &1229650379
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5822,11 +5824,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e84831a1c50d0804db5840f2ee3e4648, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _event01: event:/Ambience/CityAmb
-  _bank01: 
+  _soundEvent: 
   _loop: 0
   _loopDuration: 0
-  _loopAmount: 0
 --- !u!65 &1546774896
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7173,7 +7173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _img: {fileID: 1438381704}
-  _target: {fileID: 2071042300}
+  _target: {fileID: 753922438}
   _meter: {fileID: 1590599545}
   _offset: {x: 0, y: 0, z: 0}
 --- !u!4 &2071042300

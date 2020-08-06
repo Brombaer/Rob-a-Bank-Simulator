@@ -17,7 +17,7 @@ public class Weapon : MonoBehaviour
 	[Space]
 	[Header("Reload Settings")]
 	[SerializeField] private float _reloadTime;
-	public int MagazineSize { get; private set; } = 31;
+	[SerializeField] private int _magazineSize = 31;
 
 	[Space]
 	[Header("Bullet Settings")]
@@ -45,6 +45,7 @@ public class Weapon : MonoBehaviour
 
 	public event System.Action Fired;
 	public int CurrentAmmo { get; private set; }
+	public int MagazineSize { get => _magazineSize; }
 
 	private Vector3 initialSwayPosition;
 	private float _lastBulletTime;
