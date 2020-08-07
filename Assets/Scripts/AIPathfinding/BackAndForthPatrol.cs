@@ -13,6 +13,12 @@ namespace Assets.Scripts.AIPathfinding
 
 		private float _currentWaitTime = 4.0f;
 		[SerializeField] private float _waitTime = 4.0f;
+
+		protected override void PlayerDistance()
+		{
+			throw new NotImplementedException();
+		}
+
 		protected override void SetDestination()
 		{
 			if (((_destination == null) || (_destination.position == transform.position)))
