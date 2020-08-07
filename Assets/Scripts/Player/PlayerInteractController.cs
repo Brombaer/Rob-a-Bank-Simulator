@@ -18,6 +18,8 @@ public class PlayerInteractController : MonoBehaviour
     [SerializeField]
     public float SafedMoney;
 
+    public float WalletAmount { get => PlayerWallet; }
+
     private void Awake()
     {
 

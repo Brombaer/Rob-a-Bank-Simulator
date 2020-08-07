@@ -32,18 +32,18 @@ public class PlayerCharacter : MonoBehaviour
 	[SerializeField] private float _aimTime = 0.085f;
 	[SerializeField] private float _currentAimTime = 3f;
 
-	[SerializeField] private List<Weapon> _weaponList = new List<Weapon>();
+	public List<Weapon> WeaponList = new List<Weapon>();
 
 	[HideInInspector] public Weapon CurrentWeapon { get; private set; }
 	[HideInInspector] public bool IsHolstered;
 
+	public int WeaponIndex { get; private set; }
 	private float _xAxisClamp = 0;
 
 	private Vector3 _moveDirection;
 	private CharacterController _controller;
 	private float _moveSpeed;
 	private float _lastAimTime;
-	private int weaponIndex = 0;
 
 	private Animator _weaponAnimator;
 	private bool _isAiming;
@@ -58,7 +58,7 @@ public class PlayerCharacter : MonoBehaviour
 		_controller = GetComponent<CharacterController>();
 		ChangeWeapon();
 
-		foreach (Weapon weapon in _weaponList)
+		foreach (Weapon weapon in WeaponList)
 		{
 			weapon.Fired += OnFired;
 		}
@@ -276,21 +276,21 @@ public class PlayerCharacter : MonoBehaviour
 		if (CurrentWeapon != null)
 			CurrentWeapon.StopFire();
 		
-		weaponIndex = Mathf.Clamp( weaponIndex + Mathf.RoundToInt(Input.mouseScrollDelta.y), 0, _weaponList.Count - 1);
+		WeaponIndex = Mathf.Clamp( WeaponIndex + Mathf.RoundToInt(Input.mouseScrollDelta.y), 0, WeaponList.Count - 1);
 
-		for (int i = 0; i < _weaponList.Count; i++)
+		for (int i = 0; i < WeaponList.Count; i++)
 		{
-			if(i != weaponIndex)
+			if(i != WeaponIndex)
 			{
-				_weaponList[i].gameObject.SetActive(false);
+				WeaponList[i].gameObject.SetActive(false);
 			}
 			else
 			{
-				_weaponList[i].gameObject.SetActive(true);
+				WeaponList[i].gameObject.SetActive(true);
 			}
 		}
 		
-		CurrentWeapon = _weaponList[weaponIndex];
+		CurrentWeapon = WeaponList[WeaponIndex];
 		_weaponAnimator = CurrentWeapon.GetComponent<Animator>();
 	}
 

@@ -5,6 +5,7 @@ public class Weapon : MonoBehaviour
 	[Header("Weapon Properties")]
 	[SerializeField] protected WeaponHUD _weaponHUD;
 	public string Name;
+	public Sprite WeaponIcon;
 	[SerializeField] private bool _isSingleFire;
 	[SerializeField] private float _fireRate;
 

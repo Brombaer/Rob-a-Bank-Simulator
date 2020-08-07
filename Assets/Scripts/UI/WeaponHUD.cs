@@ -10,14 +10,7 @@ public class WeaponHUD : MonoBehaviour
 	[SerializeField] private Text _maxAmmo;
 	[SerializeField] private Image _weaponIcon;
 
-	private int _maxAmount;
 
-
-	private void Start()
-	{
-		_maxAmmo.text = _playerRef.CurrentWeapon.MagazineSize.ToString();
-
-	}
 
 	private void Update()
 	{
@@ -26,8 +19,12 @@ public class WeaponHUD : MonoBehaviour
 
 	private void UpdateWeaponInfo()
 	{
+		_maxAmmo.text = _playerRef.CurrentWeapon.MagazineSize.ToString();
+
 		_weaponName.text = _playerRef.CurrentWeapon.Name;
 
 		_currentAmmo.text = _playerRef.CurrentWeapon.CurrentAmmo.ToString();
+
+		_weaponIcon.sprite = _playerRef.CurrentWeapon.WeaponIcon;
 	}
 }
