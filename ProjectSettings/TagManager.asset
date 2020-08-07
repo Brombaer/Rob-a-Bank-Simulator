@@ -7,9 +7,8 @@ TagManager:
   - Terrain
   - Metal
   - Target
-  - ExplosiveBarrel
   - With Collider
-  - CollectableItem
+  - Waypoint
   layers:
   - Default
   - TransparentFX
