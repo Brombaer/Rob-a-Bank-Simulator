@@ -187,6 +187,7 @@ MonoBehaviour:
   destroyOnImpact: 1
   minDestroyTime: 0.01
   maxDestroyTime: 0.05
+  _damage: 10
   metalImpactPrefabs:
   - {fileID: 4458509032938956, guid: 79927c6543a058b4383885fac101fe2e, type: 3}
 --- !u!1 &1231345400216816

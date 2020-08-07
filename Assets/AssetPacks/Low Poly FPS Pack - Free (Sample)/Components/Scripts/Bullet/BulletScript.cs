@@ -6,13 +6,15 @@ public class BulletScript : MonoBehaviour {
 
 	[Range(5, 100)]
 	[Tooltip("After how long time should the bullet prefab be destroyed?")]
-	public float destroyAfter;
+	[SerializeField] float destroyAfter;
 	[Tooltip("If enabled the bullet destroys on impact")]
-	public bool destroyOnImpact = false;
+	[SerializeField] bool destroyOnImpact = false;
 	[Tooltip("Minimum time after impact that the bullet is destroyed")]
-	public float minDestroyTime;
+	[SerializeField] float minDestroyTime;
 	[Tooltip("Maximum time after impact that the bullet is destroyed")]
-	public float maxDestroyTime;
+	[SerializeField] float maxDestroyTime;
+
+	[SerializeField] float _damage;
 
 	[Header("Impact Effect Prefabs")]
 	public Transform [] metalImpactPrefabs;
@@ -29,7 +31,7 @@ public class BulletScript : MonoBehaviour {
 	{
 		Instantiate(metalImpactPrefabs [Random.Range(0, metalImpactPrefabs.Length)], transform.position, Quaternion.LookRotation (collision.contacts [0].normal), collision.transform);
 		Destroy(gameObject);
-		
+
 		
 		if (!destroyOnImpact) 
 		{
@@ -39,9 +41,12 @@ public class BulletScript : MonoBehaviour {
 		{
 			Destroy(gameObject);
 		}
+
+		var damageable = collision.collider.GetComponent<IDamageable>();
+
+		if (damageable != null)
+			damageable.Damage(_damage);
 	}
-
-
 
 	private IEnumerator DestroyTimer () 
 	{

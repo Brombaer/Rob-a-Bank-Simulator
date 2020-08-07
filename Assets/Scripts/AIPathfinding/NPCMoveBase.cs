@@ -17,6 +17,8 @@ namespace Assets.Scripts.AIPathfinding
 
 		[SerializeField] protected Transform _playerTransform;
 
+		[SerializeField] private Weapon _weapon;
+
 		protected float _distanceToPlayer;
 		protected bool isShooting = false;
 		protected bool isRunning = false;
@@ -34,6 +36,25 @@ namespace Assets.Scripts.AIPathfinding
 			if(isAlert)
 			{
 				transform.LookAt(_playerTransform);
+				TemporaryShooting();
+			}
+			else
+			{
+				_weapon.StopFire();
+			}
+		}
+
+		private void TemporaryShooting()
+		{
+			if (_weapon.CurrentAmmo > 0)
+			{
+				Debug.Log("Has Shot");
+				_weapon.BeginFire();
+			}
+			else
+			{
+				Debug.Log("Is reloading!");
+				_weapon.Reload();
 			}
 		}
 

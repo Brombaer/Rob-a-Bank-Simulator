@@ -12,12 +12,4 @@ public class Bullet : MonoBehaviour
 	{
 		Destroy(gameObject, _destroyAfter);
 	}
-
-	private void OnCollisionEnter(Collision collision)
-	{
-		var damageable = collision.collider.GetComponent<IDamageable>();
-
-		if (damageable != null)
-			damageable.Damage(_damage);
-	}
 }
