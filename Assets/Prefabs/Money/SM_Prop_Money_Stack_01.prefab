@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2398314}
   - component: {fileID: 1179861002788150278}
   - component: {fileID: -8590461641562474717}
+  - component: {fileID: -1703749648930493687}
   m_Layer: 0
   m_Name: SM_Prop_Money_Stack_01
   m_TagString: CollectableItem
@@ -108,3 +109,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.3976593, y: 0.13864303, z: 0.5821762}
   m_Center: {x: 0, y: 0.06932151, z: 0}
+--- !u!114 &-1703749648930493687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 176150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4341d27d0af8a414c9f95b8738ebc87f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxOutlineWidth: 2
+  _outlineColor: {r: 1, g: 0.5442527, b: 0, a: 1}

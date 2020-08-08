@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: PologonHeist_OutlineMaterial_01_A
   m_Shader: {fileID: 4800000, guid: 8bdba1659cd134a6fb29d3ace7c7b09c, type: 3}
-  m_ShaderKeywords: 
+  m_ShaderKeywords: _METALLICGLOSSMAP
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -68,7 +68,7 @@ Material:
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
-    - _Outline: 2
+    - _Outline: 0.002
     - _Parallax: 0.02
     - _Pulsate: 0
     - _SmoothnessTextureChannel: 0
@@ -81,4 +81,4 @@ Material:
     - _Color2: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 0.3882353}
     - _EmissionColorUI: {r: 1, g: 1, b: 1, a: 1}
-    - _OutlineColor: {r: 1, g: 0, b: 0.5686898, a: 1}
+    - _OutlineColor: {r: 0.9811321, g: 0.9765041, b: 0.9791357, a: 1}

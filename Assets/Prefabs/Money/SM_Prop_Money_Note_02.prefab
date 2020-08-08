@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2378604}
   - component: {fileID: -8363859070746139929}
   - component: {fileID: 648444920417579372}
+  - component: {fileID: 1421032544746038909}
   m_Layer: 0
   m_Name: SM_Prop_Money_Note_02
   m_TagString: CollectableItem
@@ -108,3 +109,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.2735181, y: 0.003694185, z: 0.11140227}
   m_Center: {x: 0.00000023841858, y: 0, z: 0}
+--- !u!114 &1421032544746038909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 112498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4341d27d0af8a414c9f95b8738ebc87f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxOutlineWidth: 2
+  _outlineColor: {r: 1, g: 0.5442527, b: 0, a: 1}
