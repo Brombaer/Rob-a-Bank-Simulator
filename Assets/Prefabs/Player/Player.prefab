@@ -1015,6 +1015,7 @@ GameObject:
   - component: {fileID: 8377300944993637091}
   - component: {fileID: 263930226}
   - component: {fileID: 263930222}
+  - component: {fileID: 8443023948146761264}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -1134,6 +1135,18 @@ MonoBehaviour:
   _interactionCenter: {fileID: 7197636217873353905}
   PlayerWallet: 0
   SafedMoney: 0
+--- !u!114 &8443023948146761264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7199676116352204593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e38eed84be5c9684c9c54f0c435e8b4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7199751500677796741
 GameObject:
   m_ObjectHideFlags: 0
@@ -1426,12 +1439,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e91f53c5697b6b44860b4addb13de1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerPrefab: {fileID: 0}
-  _walletAmount: {fileID: 0}
-  _weaponName: {fileID: 0}
-  _currentAmmo: {fileID: 0}
-  _maxAmmo: {fileID: 0}
-  _weaponIcon: {fileID: 0}
+  _playerPrefab: {fileID: 7199676116352204593}
+  _walletAmount: {fileID: 3341666804619229646}
+  _weaponName: {fileID: 3485909746499950537}
+  _currentAmmo: {fileID: 6564902084024788761}
+  _maxAmmo: {fileID: 5820843946295791794}
+  _weaponIcon: {fileID: 995967831211678576}
 --- !u!1 &7909146995445552415
 GameObject:
   m_ObjectHideFlags: 0

@@ -48,12 +48,10 @@ namespace Assets.Scripts.AIPathfinding
 		{
 			if (_weapon.CurrentAmmo > 0)
 			{
-				Debug.Log("Has Shot");
 				_weapon.BeginFire();
 			}
 			else
 			{
-				Debug.Log("Is reloading!");
 				_weapon.Reload();
 			}
 		}

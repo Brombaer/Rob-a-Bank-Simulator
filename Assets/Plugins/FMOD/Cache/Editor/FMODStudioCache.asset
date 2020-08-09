@@ -43,7 +43,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 4935629296364041253}
+  - {fileID: 921679790858419383}
   MinDistance: 0
   MaxDistance: 0
   Length: 28825
@@ -84,7 +84,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: C:/Users/eagee/OneDrive/Documents/FMOD Studio/GPR4300_RobABank/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637324021631676642
+  lastModified: 637325792296623313
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -135,7 +135,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 2427
+  Length: 2900
 --- !u!114 &-3727286259582714620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -266,8 +266,25 @@ MonoBehaviour:
   - {fileID: 4076964856943043706}
   StringsBanks:
   - {fileID: -7207463027648309563}
-  stringsBankWriteTime: 637324021631676642
+  stringsBankWriteTime: 637325792296623313
   cacheVersion: 3
+--- !u!114 &921679790858419383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Bank/State
+  m_EditorClassIdentifier: 
+  Name: State
+  Min: 0
+  Max: 5
+  Default: 0
+  Exists: 1
 --- !u!114 &1665120007058751124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -351,11 +368,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: C:/Users/eagee/OneDrive/Documents/FMOD Studio/GPR4300_RobABank/Build/Desktop/Master.bank
   SubDir: 
-  lastModified: 637324021631626780
+  lastModified: 637325792296572516
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 9645504
+    Value: 9647776
   Exists: 1
 --- !u!114 &4320356301260855842
 MonoBehaviour:
@@ -413,7 +430,7 @@ MonoBehaviour:
   Min: 0
   Max: 5
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &5442460317815329758
 MonoBehaviour:
   m_ObjectHideFlags: 0

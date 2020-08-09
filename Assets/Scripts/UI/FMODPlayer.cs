@@ -28,4 +28,9 @@ public class FMODPlayer : MonoBehaviour
 			FMODUnity.RuntimeManager.PlayOneShot(_soundEvent, gameObject.transform.position);
 		}
 	}
+
+	public void PlayTriggerSound()
+	{
+		FMODUnity.RuntimeManager.PlayOneShot(_soundEvent, gameObject.transform.position);
+	}
 }
