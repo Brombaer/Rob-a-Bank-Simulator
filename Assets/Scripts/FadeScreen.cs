@@ -6,18 +6,19 @@ public class FadeScreen : MonoBehaviour
 	[SerializeField] private bool _fadeIn;
 	[SerializeField] private float _fadeDuration = 2;
 
-	private Animator _animator;
+
+	public Animator FadeAnimator { get; set; } 
 
 	private void Awake()
 	{
 		gameObject.SetActive(true);
 
 
-		_animator = GetComponent<Animator>();
+		FadeAnimator = GetComponent<Animator>();
 
-		if (_animator != null)
+		if (FadeAnimator != null)
 		{
-			_animator.SetBool("In", _fadeIn);
+			FadeAnimator.SetBool("In", _fadeIn);
 			StartCoroutine(DestroyAfterSeconds(_fadeDuration));
 		}
 	}
