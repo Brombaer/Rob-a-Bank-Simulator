@@ -50,11 +50,11 @@ public class PlayerInteractController : MonoBehaviour
                         interactable.Interact();
                     }
 
-                    if (raycastHit.collider.gameObject.CompareTag("CollectableItem") && raycastHit.collider != null)
+                    if (raycastHit.collider.gameObject.CompareTag("InteractableObject") && raycastHit.collider != null)
                     {
                         // string itemType = raycastHit.transform.gameObject.GetComponent<CollectableItem>().ItemType;
                         float itemValue = raycastHit.transform.gameObject.GetComponent<CollectableItem>().ItemValue;
-
+                        
                         PlayerWallet += itemValue;
 
                         Destroy(raycastHit.transform.gameObject);
@@ -70,7 +70,7 @@ public class PlayerInteractController : MonoBehaviour
 
         if (Physics.Raycast(Camera.position, Camera.forward, out raycastHit, _maxOutlineDistance))
         {
-            if (raycastHit.collider.CompareTag("CollectableItem") && raycastHit.collider != null)
+            if (raycastHit.collider.CompareTag("InteractableObject") && raycastHit.collider != null)
             {
                 _currentController = raycastHit.collider.GetComponent<OutlineController>();
 

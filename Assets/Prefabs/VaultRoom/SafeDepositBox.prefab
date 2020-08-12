@@ -151,7 +151,7 @@ GameObject:
   - component: {fileID: 2349305080913778417}
   m_Layer: 0
   m_Name: SafeDepositBox
-  m_TagString: Untagged
+  m_TagString: InteractableObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7984,6 +7984,10 @@ PrefabInstance:
     - target: {fileID: 152796, guid: 190662527a2846341945a43e2664a726, type: 3}
       propertyPath: m_Name
       value: SM_Prop_SafeDepositBoxes_Empty_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 152796, guid: 190662527a2846341945a43e2664a726, type: 3}
+      propertyPath: m_TagString
+      value: InteractableObject
       objectReference: {fileID: 0}
     - target: {fileID: 456302, guid: 190662527a2846341945a43e2664a726, type: 3}
       propertyPath: m_LocalPosition.x

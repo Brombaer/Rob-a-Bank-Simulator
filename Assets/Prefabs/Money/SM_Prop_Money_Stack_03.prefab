@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -792892127133133306}
   m_Layer: 0
   m_Name: SM_Prop_Money_Stack_03
-  m_TagString: CollectableItem
+  m_TagString: InteractableObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

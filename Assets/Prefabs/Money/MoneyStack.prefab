@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 557037274861328491}
   m_Layer: 0
-  m_Name: Moneystack
-  m_TagString: Untagged
+  m_Name: MoneyStack
+  m_TagString: InteractableObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

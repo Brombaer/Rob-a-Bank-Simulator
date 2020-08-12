@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4679846544731980809}
   m_Layer: 0
   m_Name: SM_Prop_Money_Roll_02
-  m_TagString: CollectableItem
+  m_TagString: InteractableObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

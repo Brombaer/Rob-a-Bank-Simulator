@@ -9,7 +9,7 @@ TagManager:
   - Target
   - With Collider
   - Waypoint
-  - CollectableItem
+  - InteractableObject
   layers:
   - Default
   - TransparentFX
