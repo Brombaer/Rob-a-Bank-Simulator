@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -5728795201451832120}
   - component: {fileID: -5555259118911223429}
   - component: {fileID: -1213139774625493039}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SM_Prop_SafeDepositBox_Cover_01
   m_TagString: InteractableObject
   m_Icon: {fileID: 0}

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -2401412668601246566}
   - component: {fileID: -8070728413106999161}
   - component: {fileID: 4679846544731980809}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SM_Prop_Money_Roll_02
   m_TagString: InteractableObject
   m_Icon: {fileID: 0}

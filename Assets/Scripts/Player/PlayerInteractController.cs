@@ -1,10 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class PlayerInteractController : MonoBehaviour
 {
-    public Transform Camera;
+    public GameObject Camera;
+
+    [SerializeField]
+    private LayerMask _layerMask;
 
     [SerializeField]
     private float _maxInteractDistance = 2;
@@ -13,7 +17,6 @@ public class PlayerInteractController : MonoBehaviour
     [SerializeField]
     private Transform _interactionCenter;
 
-    // public List<string> CollectableItems;
 
     [SerializeField]
     private float PlayerWallet;
@@ -39,8 +42,14 @@ public class PlayerInteractController : MonoBehaviour
         {
             RaycastHit raycastHit;
 
-            if (Physics.Raycast(Camera.position, Camera.forward, out raycastHit))
+            RaycastHit[] raycastAll = Physics.RaycastAll(Camera.transform.position, Camera.transform.forward, _maxInteractDistance);
+            raycastAll = raycastAll.OrderBy(x => x.distance).ToArray();
+
+            Debug.DrawRay(Camera.transform.position, Camera.transform.forward, Color.blue, 3);
+
+            if (raycastAll.Length > 0)
             {
+                raycastHit = raycastAll[0];
                 if ((raycastHit.point - _interactionCenter.position).magnitude < _maxInteractDistance)
                 {
                     var interactable = raycastHit.transform.GetComponent<Interactable>();
@@ -68,8 +77,10 @@ public class PlayerInteractController : MonoBehaviour
     {
         RaycastHit raycastHit;
 
-        if (Physics.Raycast(Camera.position, Camera.forward, out raycastHit, _maxOutlineDistance))
+        if (Physics.Raycast(Camera.transform.position, Camera.transform.forward, out raycastHit, _maxOutlineDistance))
         {
+            Debug.DrawRay(Camera.transform.TransformPoint(Camera.transform.localPosition), Camera.transform.forward, Color.red, 3);
+
             if (raycastHit.collider.CompareTag("InteractableObject") && raycastHit.collider != null)
             {
                 _currentController = raycastHit.collider.GetComponent<OutlineController>();
