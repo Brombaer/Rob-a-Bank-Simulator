@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1179861002788150278}
   - component: {fileID: -8590461641562474717}
   - component: {fileID: -1703749648930493687}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SM_Prop_Money_Stack_01
   m_TagString: InteractableObject
   m_Icon: {fileID: 0}

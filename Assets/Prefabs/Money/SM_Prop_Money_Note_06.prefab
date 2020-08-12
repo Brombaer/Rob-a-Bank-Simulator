@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3265983484129734333}
   - component: {fileID: -5508180749871722018}
   - component: {fileID: -583816098894120140}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SM_Prop_Money_Note_06
   m_TagString: InteractableObject
   m_Icon: {fileID: 0}
