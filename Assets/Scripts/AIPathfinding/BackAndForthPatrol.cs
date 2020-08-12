@@ -14,7 +14,7 @@ namespace Assets.Scripts.AIPathfinding
 		private float _currentWaitTime = 4.0f;
 		[SerializeField] private float _waitTime = 4.0f;
 
-		protected override void PlayerDistance()
+		protected override float PlayerDistance(Transform target)
 		{
 			throw new NotImplementedException();
 		}

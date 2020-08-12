@@ -10,6 +10,8 @@ namespace Assets.Scripts.AIPathfinding
 	public class LoopPatrol : NPCMoveBase
 	{
 		[SerializeField] private List<Waypoint> _waypoints;
+		[SerializeField] private List<Waypoint> _coverPoints;
+		[SerializeField] private Waypoint _closestCover;
 
 		int _waypointCounter = 0;
 
@@ -22,19 +24,29 @@ namespace Assets.Scripts.AIPathfinding
 
 		protected override void SetDestination()
 		{
-			if (_distanceToPlayer <= _detectDistance)
+			if (_distanceToPlayer <= _detectDistance || isAlert)
 			{
 				isAlert = true;
-				if (_distanceToPlayer > _shootDistance)
-				{
+				//if (_distanceToPlayer > _shootDistance)
+				//{
 					isRunning = true;
-					_navMeshAgent.destination = _playerTransform.position;
-				}
-				else
-				{
-					_navMeshAgent.destination = transform.position;
-					isShooting = true;
-				}
+
+					_closestCover = _coverPoints[0];
+
+					for(int i = 1; i < _waypoints.Count; i++)
+					{
+						if(PlayerDistance(_coverPoints[i].transform) < PlayerDistance(_coverPoints[i - 1].transform))
+						{
+							_closestCover = _coverPoints[i];
+						}
+					}
+					_navMeshAgent.destination = _closestCover.transform.position;
+				//}
+				//else
+				//{
+					//_navMeshAgent.destination = transform.position;
+					//isShooting = true;
+				//}
 			}
 			else
 			{
@@ -56,7 +68,7 @@ namespace Assets.Scripts.AIPathfinding
 				if (_currentWaitTime >= _waitTime)
 				{
 					isRunning = true;
-					_navMeshAgent.SetDestination(_destination.position);
+					_navMeshAgent.destination = _destination.position;
 				}
 				else
 				{
@@ -66,9 +78,11 @@ namespace Assets.Scripts.AIPathfinding
 			}
 		}
 
-		protected override void PlayerDistance()
+		protected override float PlayerDistance(Transform target)
 		{
-			_distanceToPlayer = Vector3.Distance(_playerTransform.position, transform.position);
+			float distance = Vector3.Distance(_playerTransform.position, target.position);
+
+			return distance;
 		}
 	}
 }

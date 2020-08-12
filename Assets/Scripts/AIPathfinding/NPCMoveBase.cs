@@ -31,7 +31,7 @@ namespace Assets.Scripts.AIPathfinding
 
 		private void Update()
 		{
-			PlayerDistance();
+			_distanceToPlayer = PlayerDistance(transform);
 			SetDestination();
 			if(isAlert)
 			{
@@ -58,6 +58,6 @@ namespace Assets.Scripts.AIPathfinding
 
 		protected abstract void SetDestination();
 
-		protected abstract void PlayerDistance();
+		protected abstract float PlayerDistance(Transform target);
 	}
 }
