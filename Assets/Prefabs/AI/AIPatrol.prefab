@@ -1997,7 +1997,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5310303407030940936
 Transform:
   m_ObjectHideFlags: 0
@@ -2075,7 +2075,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5310303407030942876
 Transform:
   m_ObjectHideFlags: 0
@@ -2839,7 +2839,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5310303407030983204
 Transform:
   m_ObjectHideFlags: 0
@@ -3515,6 +3515,7 @@ GameObject:
   - component: {fileID: 7890150029603566397}
   - component: {fileID: 5060709179072396821}
   - component: {fileID: 6211361205875488474}
+  - component: {fileID: 4049249847087836294}
   m_Layer: 0
   m_Name: AIPatrol
   m_TagString: Untagged
@@ -3642,10 +3643,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1
+  m_Radius: 0.3
+  m_Height: 2.3766456
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.6883228, z: 0}
 --- !u!114 &7890150029603566397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3687,6 +3688,36 @@ MonoBehaviour:
   _navMeshAgent: {fileID: 8720560482842843716}
   _weapon: {fileID: 2038672687399894137}
   _animator: {fileID: 5310303407023940784}
+--- !u!114 &4049249847087836294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5310303407031380956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79d589f2690d31c4ebc2877fa2fa8cf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _models:
+  - {fileID: 5310303407031355620}
+  - {fileID: 5310303407031304038}
+  _leftItems:
+  - {fileID: 5310303407031287388}
+  - {fileID: 5310303407031303610}
+  - {fileID: 5310303407031357320}
+  - {fileID: 5310303407031295042}
+  _rightItems:
+  - {fileID: 5310303407031212332}
+  - {fileID: 5310303407031369858}
+  - {fileID: 5310303407031360452}
+  - {fileID: 5310303407031318474}
+  - {fileID: 5310303407031297724}
+  _duffelBag: {fileID: 5310303407031211456}
+  _leftChance: 0.5
+  _rightChance: 0.5
+  _bagChance: 0.3
 --- !u!1 &5310303407031383552
 GameObject:
   m_ObjectHideFlags: 0
