@@ -6,6 +6,8 @@ using UnityEngine.AI;
 
 namespace Assets.Scripts.AIPathfinding
 {
+
+	
 	public abstract class NPCMoveBase : MonoBehaviour
 	{
 		[SerializeField] protected Transform _destination;
