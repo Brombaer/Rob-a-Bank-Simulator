@@ -3601,7 +3601,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxSightConeAngle: 70
-  _ragdoll: {fileID: 1136527046661478, guid: dd07db3675001704890aaeab9ee93c75, type: 3}
+  _ragdoll: {fileID: 8698034363660854717, guid: 0eda43882e8b81740881c001b6b757f1,
+    type: 3}
   _navMeshAgent: {fileID: 8720560482842843716}
   _detectDistance: 20
   _shootDistance: 10
