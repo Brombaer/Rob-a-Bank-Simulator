@@ -45,7 +45,6 @@ namespace Assets.Scripts.AIPathfinding
 					else
 					{
 						_currentWaitTime += 1 * Time.deltaTime;
-						Debug.Log(_currentWaitTime);
 					}
 				}
 			}
