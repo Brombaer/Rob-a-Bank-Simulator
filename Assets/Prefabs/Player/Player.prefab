@@ -1192,7 +1192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e35c7152fbb0414facd790803838e12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Camera: {fileID: 7197636217873353905}
+  Camera: {fileID: 3022757654980074539}
   _layerMask:
     serializedVersion: 2
     m_Bits: 0
@@ -1274,7 +1274,7 @@ Camera:
     height: 1
   near clip plane: 0.01
   far clip plane: 5
-  field of view: 90
+  field of view: 40
   orthographic: 0
   orthographic size: 5
   m_Depth: 1
