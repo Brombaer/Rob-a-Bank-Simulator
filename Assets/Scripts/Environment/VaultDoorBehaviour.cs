@@ -2,23 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VaultDoorBehaviour : MonoBehaviour
+public class VaultDoorBehaviour : DoorBehaviour
 {
     [SerializeField]
     private GameObject _vaultDrill;
-
-    [SerializeField]
-    private bool _isOpen;
-    [SerializeField]
-    private float _openAngle;
-    [SerializeField]
-    private float _closeAngle;
-    [SerializeField]
-    private float _rotationSpeed;
-
-    private float _targetAngle;
-    private float _currentAngle;
-
     [SerializeField]
     private float _timeLeft;
     
@@ -61,10 +48,10 @@ public class VaultDoorBehaviour : MonoBehaviour
         }
     }
 
-    public void SwitchDoorState()
-    {
-        _isOpen = !_isOpen;
-
-        _targetAngle = _isOpen ? _openAngle : _closeAngle;
-    }
+    //public void SwitchDoorState()
+    //{
+    //    _isOpen = !_isOpen;
+    //
+    //    _targetAngle = _isOpen ? _openAngle : _closeAngle;
+    //}
 }

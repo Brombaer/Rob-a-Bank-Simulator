@@ -4,18 +4,14 @@ using UnityEngine;
 
 public class DoorBehaviour : MonoBehaviour
 {
-    [SerializeField]
-    private bool _isOpen;
-
-    [SerializeField]
-    private float _openAngle;
-    [SerializeField]
-    private float _closeAngle;
-    [SerializeField]
-    private float _rotationSpeed = 10;
-
-    private float _targetAngle;
-    private float _currentAngle;
+    [Header("Door Settings")]
+    public bool _isOpen;
+    public float _openAngle;
+    public float _closeAngle;
+    [Tooltip("How fast the door opens")]
+    public float _rotationSpeed = 10;
+    public float _targetAngle;
+    public float _currentAngle;
 
     private void Awake()
     {

@@ -6,26 +6,20 @@ using UnityEngine;
 public class PlayerInteractController : MonoBehaviour
 {
     public GameObject Camera;
-
-    [SerializeField]
-    private LayerMask _layerMask;
-
-    [SerializeField]
-    private float _maxInteractDistance = 2;
-    [SerializeField]
-    private float _maxOutlineDistance = 5;
-    [SerializeField]
-    private Transform _interactionCenter;
-
-
-    [SerializeField]
-    private float PlayerWallet;
-    [SerializeField]
+    [Space]
+    [Header("Money information")]
+    public float PlayerWallet;
     public float SafedMoney;
-
     public float WalletAmount { get => PlayerWallet; }
 
-
+    [Space]
+    [Tooltip("The maximum distance in which the player can interact with objects. ")]
+    [SerializeField]
+    private float _maxInteractDistance = 2;
+    [Tooltip("The maximum distance in which objects get highlighted for the player.")]
+    [SerializeField]
+    private float _maxOutlineDistance = 5;
+    
     private OutlineController _prevController;
     private OutlineController _currentController;
 
@@ -50,7 +44,7 @@ public class PlayerInteractController : MonoBehaviour
             if (raycastAll.Length > 0)
             {
                 raycastHit = raycastAll[0];
-                if ((raycastHit.point - _interactionCenter.position).magnitude < _maxInteractDistance)
+                if ((raycastHit.point - Camera.transform.position).magnitude < _maxInteractDistance)
                 {
                     var interactable = raycastHit.transform.GetComponent<Interactable>();
 
@@ -79,7 +73,7 @@ public class PlayerInteractController : MonoBehaviour
 
         if (Physics.Raycast(Camera.transform.position, Camera.transform.forward, out raycastHit, _maxOutlineDistance))
         {
-            Debug.DrawRay(Camera.transform.TransformPoint(Camera.transform.localPosition), Camera.transform.forward, Color.red, 3);
+            Debug.DrawRay(Camera.transform.TransformPoint(Camera.transform.localPosition), Camera.transform.forward, Color.red, 0.5f);
 
             if (raycastHit.collider.CompareTag("InteractableObject") && raycastHit.collider != null)
             {

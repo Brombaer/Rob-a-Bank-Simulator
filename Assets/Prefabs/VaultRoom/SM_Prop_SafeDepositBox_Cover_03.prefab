@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -1131813467759654683}
   - component: {fileID: 4376956984005913423}
   - component: {fileID: 1395879613508848002}
+  - component: {fileID: -3400314232504240354}
   m_Layer: 9
   m_Name: SM_Prop_SafeDepositBox_Cover_03
   m_TagString: InteractableObject
@@ -61,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 60d108c1758e69f4b9a274acaffda3f2, type: 2}
+  - {fileID: 2100000, guid: 7ab3cf208b54c41759801f310dfdc76a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -137,3 +138,17 @@ MonoBehaviour:
   _openAngle: -90
   _closeAngle: 0
   _rotationSpeed: 20
+--- !u!114 &-3400314232504240354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 162776926990082285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4341d27d0af8a414c9f95b8738ebc87f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxOutlineWidth: 2
+  _outlineColor: {r: 0.89019614, g: 0.5803922, b: 0.28627452, a: 1}
