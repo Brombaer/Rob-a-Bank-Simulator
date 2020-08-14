@@ -6,8 +6,8 @@ using UnityEngine.Events;
 public class Interactable : MonoBehaviour
 {
     public UnityEvent OnInteracted;
-
-    public void Interact()
+    
+    public virtual void Interact(PlayerInteractController interactor)
     {
         Debug.Log("Hit!");
         OnInteracted?.Invoke();
