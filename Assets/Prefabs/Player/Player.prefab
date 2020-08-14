@@ -582,7 +582,6 @@ GameObject:
   - component: {fileID: 7944143496035418819}
   - component: {fileID: 6254893266991522293}
   - component: {fileID: 330845220}
-  - component: {fileID: 1016384543}
   m_Layer: 8
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -728,27 +727,6 @@ MonoBehaviour:
   - assemblyQualifiedName: PostProcessOutline, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_AfterStackBundles: []
---- !u!114 &1016384543
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3022757654980074539}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef0ca046b05216f488f2e5d4b31e5e3f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _debugMode: 0
-  _shakeAmount: 0
-  _shakeDuration: 0
-  _shakePercentage: 0
-  _startAmount: 0
-  _startDuration: 0
-  _isRunning: 0
-  smooth: 0
-  smoothAmount: 5
 --- !u!1 &3095583829332098502
 GameObject:
   m_ObjectHideFlags: 0
@@ -1136,7 +1114,7 @@ Rigidbody:
   m_Mass: 5
   m_Drag: 1
   m_AngularDrag: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -1215,14 +1193,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Camera: {fileID: 3022757654980074539}
-  _layerMask:
-    serializedVersion: 2
-    m_Bits: 0
+  _playerWallet: 0
+  _safedMoney: 0
+  _onHitMoneyLossPercent: 0.1
+  _Van: {fileID: 0}
+  _healthRef: {fileID: 263930226}
   _maxInteractDistance: 2
   _maxOutlineDistance: 5
-  _interactionCenter: {fileID: 7197636217873353905}
-  PlayerWallet: 0
-  SafedMoney: 0
 --- !u!114 &430744573
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1239,7 +1216,6 @@ MonoBehaviour:
   _gunCamera: {fileID: 7182006011840252613}
   _deathCam: {fileID: 0}
   _deathCamPos: {fileID: 3075490619755640836}
-  _playerChar: {fileID: 0}
   _arms: {fileID: 7201153987352800791}
   _character: {fileID: 1136527046661478, guid: dd07db3675001704890aaeab9ee93c75, type: 3}
   _canvas: {fileID: 7327578921471479536}
@@ -2030,7 +2006,8 @@ PrefabInstance:
         type: 3}
       propertyPath: _cameraShake
       value: 
-      objectReference: {fileID: 1016384543}
+      objectReference: {fileID: 1016384543, guid: 1432f0a791d8c96458f56fdfe3a3ab50,
+        type: 3}
     - target: {fileID: 1761323629728902296, guid: 76fd6f3b01cb38d47adaa4330372d7f1,
         type: 3}
       propertyPath: m_NavMeshLayer
@@ -2663,7 +2640,8 @@ PrefabInstance:
         type: 3}
       propertyPath: _cameraShake
       value: 
-      objectReference: {fileID: 1016384543}
+      objectReference: {fileID: 1016384543, guid: 1432f0a791d8c96458f56fdfe3a3ab50,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9da690435616d8b4bb8513c14cc29f13, type: 3}
 --- !u!4 &110950222963392316 stripped

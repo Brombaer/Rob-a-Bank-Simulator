@@ -10,7 +10,7 @@ public class CollectableItem : Interactable
     public override void Interact(PlayerInteractController interactor)
     {
         base.Interact(interactor);
-        interactor.PlayerWallet += ItemValue;
+        interactor.WalletAmount += ItemValue;
         Destroy(gameObject);
     }
 }

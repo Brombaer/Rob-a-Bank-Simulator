@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -8,11 +9,18 @@ public class PlayerInteractController : MonoBehaviour
     public GameObject Camera;
     [Space]
     [Header("Money information")]
-    public float PlayerWallet;
-    public float SafedMoney;
-    public float WalletAmount { get => PlayerWallet; }
+    [SerializeField]
+    private float _playerWallet;
+    [SerializeField]
+    private float _safedMoney;
+    [SerializeField]
+    private float _onHitMoneyLossPercent;
+    public float WalletAmount { get => _playerWallet; set => _playerWallet = value; }
+
     [SerializeField]
     private GameObject _Van;
+    [SerializeField]
+    private HealthComponent _healthRef;
 
     [Space]
     [Tooltip("The maximum distance in which the player can interact with objects. ")]
@@ -26,6 +34,15 @@ public class PlayerInteractController : MonoBehaviour
     private OutlineController _currentController;
     private RaycastHit? _raycastHit;
 
+    private void Start()
+    {
+        _healthRef.HealthChanged += OnHealthChanged;
+    }
+
+    private void OnHealthChanged(float arg1, bool arg2)
+    {
+        _playerWallet *= 1- _onHitMoneyLossPercent;
+    }
 
     private void Update()
     {
@@ -104,8 +121,8 @@ public class PlayerInteractController : MonoBehaviour
     {
         if (other.gameObject == _Van)
         {
-            SafedMoney = PlayerWallet;
-            PlayerWallet = 0;
+            _safedMoney = _playerWallet;
+            _playerWallet = 0;
         }
     }
 
