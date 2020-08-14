@@ -20,8 +20,6 @@ public class HealthComponent : MonoBehaviour, IDamageable
 	private void Awake()
 	{
 		_currentHealth = _maxHealth;
-
-
 	}
 
 	void Start()

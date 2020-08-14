@@ -15,8 +15,14 @@ public class PlayerInteractController : MonoBehaviour
     private float _safedMoney;
     [SerializeField]
     private float _onHitMoneyLossPercent;
-    public float WalletAmount { get => _playerWallet; set => _playerWallet = value; }
+    [Space]
+    [Space]
+    [SerializeField]
+    private float _playerMaxLoadCapacity;
 
+    public float WalletAmount { get => _playerWallet; set => _playerWallet = value; }
+    [Space]
+    [Space]
     [SerializeField]
     private GameObject _Van;
     [SerializeField]
@@ -102,6 +108,7 @@ public class PlayerInteractController : MonoBehaviour
         if (_raycastHit.HasValue)
         {
             RaycastHit raycastHit = _raycastHit.Value;
+
             if (Input.GetKeyDown(KeyCode.Q))
             {
                 if ((raycastHit.point - Camera.transform.position).magnitude < _maxInteractDistance)

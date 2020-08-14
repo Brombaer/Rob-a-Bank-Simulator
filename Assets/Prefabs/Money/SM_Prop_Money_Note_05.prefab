@@ -94,8 +94,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1ef11c7b3b104c00af9d47ddf0c4fd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnInteracted:
+    m_PersistentCalls:
+      m_Calls: []
   ItemType: Money note 5
   ItemValue: 4900
+  ItemWeight: 1000
 --- !u!65 &627902706075048541
 BoxCollider:
   m_ObjectHideFlags: 0

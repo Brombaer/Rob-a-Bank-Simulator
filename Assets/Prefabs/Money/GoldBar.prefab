@@ -107,8 +107,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1ef11c7b3b104c00af9d47ddf0c4fd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnInteracted:
+    m_PersistentCalls:
+      m_Calls: []
   ItemType: Gold bar
   ItemValue: 8000
+  ItemWeight: 10000
 --- !u!114 &293046130945438839
 MonoBehaviour:
   m_ObjectHideFlags: 0
