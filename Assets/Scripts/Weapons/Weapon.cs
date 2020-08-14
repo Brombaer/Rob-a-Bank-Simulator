@@ -3,7 +3,6 @@
 public class Weapon : MonoBehaviour
 {
 	[Header("Weapon Properties")]
-	[SerializeField] protected WeaponHUD _weaponHUD;
 	public string Name;
 	public Sprite WeaponIcon;
 	[SerializeField] private bool _isSingleFire;
@@ -43,6 +42,7 @@ public class Weapon : MonoBehaviour
 	[FMODUnity.EventRef]
 	[SerializeField] private string _chargeFEvent;
 
+	[SerializeField] private CameraShake _cameraShake;
 
 	public event System.Action Fired;
 	public int CurrentAmmo { get; private set; }
@@ -109,6 +109,8 @@ public class Weapon : MonoBehaviour
 			GameObject bullet = Instantiate(_bulletPrefab, _bulletSpawnPoint.position, _bulletSpawnPoint.rotation);
 			bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * _bulletForce;
 
+			if (_cameraShake != null)
+				_cameraShake.ShakeCamera(0.08f, 0.0015f);
 
 			_muzzleParticle.Emit(1);
 			StartCoroutine(MuzzleFlash());

@@ -7,68 +7,76 @@ using UnityEngine.AI;
 
 namespace Assets.Scripts.AIPathfinding
 {
-	public class LoopPatrol : NPCMoveBase
+	public class LoopPatrol : NPCBase
 	{
 		[SerializeField] private List<Waypoint> _waypoints;
+		[SerializeField] private List<Waypoint> _coverPoints;
+		[SerializeField] private Waypoint _closestCover;
 
 		int _waypointCounter = 0;
-
-		//private RaycastHit _hit;
 	
 		private float _currentWaitTime = 4.0f;
 		[SerializeField] private float _waitTime = 4.0f;
 
 		
 
-		protected override void SetDestination()
+		protected override void Update()
 		{
-			if (_distanceToPlayer <= _detectDistance)
+			base.Update();
+
+			if (CanSeePlayer() || _currentState == NPCStates.Aggro)
 			{
-				isAlert = true;
-				if (_distanceToPlayer > _shootDistance)
-				{
-					isRunning = true;
-					_navMeshAgent.destination = _playerTransform.position;
-				}
-				else
-				{
-					_navMeshAgent.destination = transform.position;
-					isShooting = true;
-				}
+				_currentState = NPCStates.Aggro;
+
+				FindBestCover();
 			}
 			else
 			{
-				isAlert = false;
-				if (((_destination == null) || (_destination.position == transform.position)))
-				{
-					//resets timer 
-					_currentWaitTime = 0;
+				_currentState = NPCStates.Alert;
 
-					//finds the next destination
-					_destination = _waypoints[_waypointCounter].transform;
-					_destination.position = _waypoints[_waypointCounter].transform.position;
-
-					//increments counter with overflow exception
-					_waypointCounter = (_waypointCounter + 1) % _waypoints.Count;
-				}
 
 				//decides whether or not its time to move
-				if (_currentWaitTime >= _waitTime)
+				if (TargetReached())
 				{
-					isRunning = true;
-					_navMeshAgent.SetDestination(_destination.position);
-				}
-				else
-				{
-					isRunning = false;
-					_currentWaitTime += 1 * Time.deltaTime;
+					if (_currentWaitTime >= _waitTime)
+					{
+						FindNextWaypoint();
+					}
+					else
+					{
+						_currentWaitTime += 1 * Time.deltaTime;
+					}
 				}
 			}
 		}
 
-		protected override void PlayerDistance()
+		private void FindNextWaypoint()
 		{
-			_distanceToPlayer = Vector3.Distance(_playerTransform.position, transform.position);
+			if (TargetReached())
+			{
+				//resets timer 
+				_currentWaitTime = 0;
+
+				//finds the next destination
+				_targetPosition = _waypoints[_waypointCounter].transform.position;
+
+				//increments counter with overflow exception
+				_waypointCounter = (_waypointCounter + 1) % _waypoints.Count;
+			}
+		}
+
+		private void FindBestCover()
+		{
+			_closestCover = _coverPoints[0];
+
+			for (int i = 1; i < _waypoints.Count; i++)
+			{
+				if (PlayerDistanceTo(_coverPoints[i].transform) < PlayerDistanceTo(_coverPoints[i - 1].transform))
+				{
+					_closestCover = _coverPoints[i];
+				}
+			}
+			_navMeshAgent.destination = _closestCover.transform.position;
 		}
 	}
 }
