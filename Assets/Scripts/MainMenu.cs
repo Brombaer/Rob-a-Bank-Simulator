@@ -14,12 +14,17 @@ public class MainMenu : MonoBehaviour
 
 
 
+	private void Start()
+	{
+		Cursor.lockState = CursorLockMode.None;
+	}
 
 	public void StartButton()
 	{
 		FMODUnity.RuntimeManager.PlayOneShot(_startButtonSound, gameObject.transform.position);
 
 		StartCoroutine(DelayLoadLevel(_buttonDelay));
+		Time.timeScale = 1;
 	}
 
 	public void SettingsButton()

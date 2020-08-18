@@ -47,6 +47,8 @@ public class PlayerDeath : MonoBehaviour
 
 			_deathCam.targetDisplay = 0;
 
+			Time.timeScale = 0.5f;
+
 			Instantiate(_wastedPrefab, gameObject.transform);
 			Instantiate(_character, gameObject.transform.position, gameObject.transform.rotation);
 			_doOnce = false;

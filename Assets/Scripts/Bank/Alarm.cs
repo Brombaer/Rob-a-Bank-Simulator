@@ -6,7 +6,6 @@ using UnityEngine;
 public class Alarm : MonoBehaviour
 {
 	[SerializeField] private PlayerCharacter _playerChar;
-	[SerializeField] private float _duration;
 	[Space]
 	[Header("Spawn Prefab List")]
 	[SerializeField] private List<GameObject> _vehicleList = new List<GameObject>();
@@ -16,6 +15,9 @@ public class Alarm : MonoBehaviour
 	[SerializeField] private List<Transform> _vehicleLocationList = new List<Transform>();
 	[SerializeField] private List<Transform> _enemyLocationList = new List<Transform>();
 	[Space]
+	[Header("Spawn UI")]
+	[SerializeField] private GameObject _detectedUIPrefab;
+	[Space]
 	[Header("FMOD Sounds")]
 	[FMODUnity.EventRef]
 	[SerializeField] private string _bell;
@@ -23,9 +25,14 @@ public class Alarm : MonoBehaviour
 
 	public event Action<int> UpdateState;
 
+	private CountDown _countDown;
 	private bool _doOnce = true;
 	private bool _inBank;
 
+	private void Awake()
+	{
+		_countDown = _detectedUIPrefab.GetComponentInChildren<CountDown>();
+	}
 
 	private void Update()
 	{
@@ -54,6 +61,7 @@ public class Alarm : MonoBehaviour
 		{
 			UpdateState?.Invoke(1);
 			FMODUnity.RuntimeManager.PlayOneShotAttached(_bell, _bellLocation.gameObject);
+			_detectedUIPrefab.SetActive(true);
 
 			StartCoroutine(AlarmTriggered());
 			_doOnce = false;
@@ -62,7 +70,7 @@ public class Alarm : MonoBehaviour
 
 	IEnumerator AlarmTriggered()
 	{
-		yield return new WaitForSeconds(_duration);
+		yield return new WaitForSeconds(_countDown.AlarmTimer);
 
 		for (int i = 0; i < _vehicleLocationList.Count; i++)
 		{
@@ -77,5 +85,9 @@ public class Alarm : MonoBehaviour
 
 			Instantiate(_enemyList[chooseRandomEnemy], _enemyLocationList[i].position, _enemyLocationList[i].rotation);
 		}
+
+		yield return new WaitForSeconds(2);
+
+		_detectedUIPrefab.SetActive(false);
 	}
 }
