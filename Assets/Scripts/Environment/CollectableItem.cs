@@ -10,9 +10,16 @@ public class CollectableItem : Interactable
 
     public override void Interact(PlayerInteractController interactor)
     {
-        base.Interact(interactor);
-
-        interactor.WalletAmount += ItemValue;
-        Destroy(gameObject);
+        if (interactor.PlayerCurrentLoad < interactor.PlayerMaxLoadCapacity)
+        {
+            base.Interact(interactor);
+            interactor.WalletAmount += ItemValue;
+            interactor.PlayerCurrentLoad += ItemWeight;
+            Destroy(gameObject);
+        }
+        else
+        {
+            Debug.Log("Maximum load capacity is reached");
+        }
     }
 }

@@ -17,8 +17,10 @@ public class PlayerInteractController : MonoBehaviour
     private float _onHitMoneyLossPercent;
     [Space]
     [Space]
-    [SerializeField]
-    private float _playerMaxLoadCapacity;
+    
+    public float PlayerCurrentLoad;
+    
+    public float PlayerMaxLoadCapacity = 35000;
 
     public float WalletAmount { get => _playerWallet; set => _playerWallet = value; }
     [Space]
@@ -122,6 +124,7 @@ public class PlayerInteractController : MonoBehaviour
                 }
             }
         }
+        
     }
 
     private void OnTriggerEnter(Collider other)
@@ -130,6 +133,8 @@ public class PlayerInteractController : MonoBehaviour
         {
             _safedMoney = _playerWallet;
             _playerWallet = 0;
+
+            PlayerCurrentLoad = 0;
         }
     }
 
