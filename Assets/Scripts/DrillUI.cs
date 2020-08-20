@@ -4,7 +4,9 @@ using TMPro;
 public class DrillUI : MonoBehaviour
 {
 	[SerializeField] private VaultDoorBehaviour _doorTimer;
-	
+	[SerializeField] private PlayerDeath _playerDeath;
+
+
 	private TextMeshProUGUI _text;
 
 
@@ -15,13 +17,20 @@ public class DrillUI : MonoBehaviour
 
 	private void Update()
 	{
-		if (_doorTimer.CurrentTimer > 0)
+		if (!_playerDeath.IsDead)
 		{
-			_text.text = $"{Mathf.RoundToInt(_doorTimer.CurrentTimer)}s left";
+			if (_doorTimer.CurrentTimer > 0)
+			{
+				_text.text = $"{Mathf.RoundToInt(_doorTimer.CurrentTimer)}s left";
+			}
+			else
+			{
+				_text.text = $"Bank Opened!";
+			}
 		}
 		else
 		{
-			_text.text = $"Bank Opened!";
+			gameObject.SetActive(false);
 		}
 	}
 }

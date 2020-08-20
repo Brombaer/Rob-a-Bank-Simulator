@@ -13,6 +13,8 @@ public class PlayerDeath : MonoBehaviour
 	[SerializeField] private GameObject _canvas;
 	[SerializeField] private GameObject _wastedPrefab;
 
+	public bool IsDead { get; private set; }
+
 	private PlayerCharacter _playerChar;
 	private bool _doOnce = true;
 
@@ -33,6 +35,8 @@ public class PlayerDeath : MonoBehaviour
 	{
 		if(_doOnce)
 		{
+			IsDead = true;
+
 			_playerChar.enabled = false;
 
 			_mainCamera.enabled = false;

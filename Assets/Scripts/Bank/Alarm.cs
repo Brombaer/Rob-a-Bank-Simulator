@@ -6,6 +6,8 @@ using UnityEngine;
 public class Alarm : MonoBehaviour
 {
 	[SerializeField] private PlayerCharacter _playerChar;
+	[SerializeField] private float _spawnDelay;
+	[SerializeField] private float _secondWaveDelay = 30;
 	[Space]
 	[Header("Spawn Prefab List")]
 	[SerializeField] private List<GameObject> _vehicleList = new List<GameObject>();
@@ -24,15 +26,13 @@ public class Alarm : MonoBehaviour
 	[SerializeField] private Transform _bellLocation;
 
 	public event Action<int> UpdateState;
+	public float SpawnDelay { get => _spawnDelay; }
 
-	private CountDown _countDown;
 	private bool _doOnce = true;
 	private bool _inBank;
 
-	private void Awake()
-	{
-		_countDown = _detectedUIPrefab.GetComponentInChildren<CountDown>();
-	}
+
+
 
 	private void Update()
 	{
@@ -57,20 +57,24 @@ public class Alarm : MonoBehaviour
 
 	private void CheckIfHolstered()
 	{
-		if (_doOnce && _inBank && !_playerChar.IsHolstered)
+		if ( _inBank && !_playerChar.IsHolstered)
 		{
-			UpdateState?.Invoke(1);
-			FMODUnity.RuntimeManager.PlayOneShotAttached(_bell, _bellLocation.gameObject);
-			_detectedUIPrefab.SetActive(true);
+			if(_doOnce)
+			{
+				UpdateState?.Invoke(1);
+				FMODUnity.RuntimeManager.PlayOneShotAttached(_bell, _bellLocation.gameObject);
+				_detectedUIPrefab.SetActive(true);
 
-			StartCoroutine(AlarmTriggered());
-			_doOnce = false;
+				StartCoroutine(AlarmTriggered());
+				_doOnce = false;
+			}
+			_spawnDelay -= Time.deltaTime;
 		}
 	}
 
 	IEnumerator AlarmTriggered()
 	{
-		yield return new WaitForSeconds(_countDown.AlarmTimer);
+		yield return new WaitForSeconds(_spawnDelay);
 
 		for (int i = 0; i < _vehicleLocationList.Count; i++)
 		{
@@ -86,8 +90,20 @@ public class Alarm : MonoBehaviour
 			Instantiate(_enemyList[chooseRandomEnemy], _enemyLocationList[i].position, _enemyLocationList[i].rotation);
 		}
 
+
 		yield return new WaitForSeconds(2);
 
 		_detectedUIPrefab.SetActive(false);
+
+		yield return new WaitForSeconds(_secondWaveDelay);
+
+
+
+		for (int i = 0; i < _enemyLocationList.Count; i++)
+		{
+			int chooseRandomEnemy = UnityEngine.Random.Range(0, _enemyList.Count);
+
+			Instantiate(_enemyList[chooseRandomEnemy], _enemyLocationList[i].position, _enemyLocationList[i].rotation);
+		}
 	}
 }

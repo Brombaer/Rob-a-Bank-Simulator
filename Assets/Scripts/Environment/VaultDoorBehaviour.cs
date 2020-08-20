@@ -11,10 +11,15 @@ public class VaultDoorBehaviour : DoorBehaviour
 	[SerializeField]
 	private GameObject _drillUIPrefab;
 
+	[FMODUnity.EventRef]
+	[SerializeField]
+	private string _openDoor;
+
 	private DrillUI _drillUI;
 	private bool _doOnce = true;
+	private bool _doOnce2 = true;
 
-	
+
 	public float CurrentTimer { get => _timeLeft; }
 
 
@@ -46,6 +51,12 @@ public class VaultDoorBehaviour : DoorBehaviour
 
 			if (_timeLeft <= 0)
 			{
+				if(_doOnce2)
+				{
+					FMODUnity.RuntimeManager.PlayOneShot(_openDoor, gameObject.transform.position);
+					_doOnce2 = false;
+				}
+
 				_drillUIPrefab.SetActive(false);
 				float rotationAmount = Mathf.Min(_rotationSpeed * Time.deltaTime, Mathf.Abs(_targetAngle - _currentAngle));
 				_currentAngle += Mathf.Sign(_targetAngle - _currentAngle) * rotationAmount;

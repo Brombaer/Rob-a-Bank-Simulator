@@ -4,11 +4,7 @@ using TMPro;
 
 public class CountDown : MonoBehaviour
 {
-	[SerializeField] private float _counter;
-
-	public float AlarmTimer { get => _counter; }
-	
-	private float _timer;
+	[SerializeField] private Alarm _alarm;
 	private TextMeshProUGUI _text;
 
 
@@ -17,23 +13,16 @@ public class CountDown : MonoBehaviour
 		_text = GetComponent<TextMeshProUGUI>();
 	}
 
-	private void Start()
-	{
-		_timer = _counter;
-	}
-
 	private void Update()
 	{
-		if(_timer > 0)
+		if(_alarm.SpawnDelay > 0)
 		{
-			int newTime = Mathf.RoundToInt(_timer);
+			int newTime = Mathf.RoundToInt(_alarm.SpawnDelay);
 			_text.text = $"{newTime}s left";
 		}
 		else
 		{
 			_text.text = $"Police force has arrived!";
 		}
-
-		_timer -= Time.deltaTime;
 	}
 }
