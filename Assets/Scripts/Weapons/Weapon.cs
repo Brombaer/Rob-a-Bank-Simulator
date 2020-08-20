@@ -26,6 +26,7 @@ public class Weapon : MonoBehaviour
 	[SerializeField] private float _bulletForce;
 	[SerializeField] private float _raycastDistance = 50;
 	[SerializeField] private float _damage = 10;
+	[SerializeField] private GameObject _fleshParticlePrefab;
 	
 	[Space][Space]
 	[Header("Weapon Sway Settings")]
@@ -43,6 +44,8 @@ public class Weapon : MonoBehaviour
 	[SerializeField] private string _reloadFEvent;
 	[FMODUnity.EventRef]
 	[SerializeField] private string _chargeFEvent;
+	[FMODUnity.EventRef]
+	[SerializeField] private string _playerDamageFEvent;
 
 	[SerializeField] private CameraShake _cameraShake;
 
@@ -111,10 +114,16 @@ public class Weapon : MonoBehaviour
 			GameObject bullet = Instantiate(_bulletPrefab, _bulletSpawnPoint.position, _bulletSpawnPoint.rotation);
 			bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * _bulletForce;
 
-			Debug.DrawLine(_bulletSpawnPoint.position, _bulletSpawnPoint.position + _bulletSpawnPoint.forward * _raycastDistance, Color.red);
+		
 			
 			if(Physics.Raycast(_bulletSpawnPoint.position, _bulletSpawnPoint.forward, out RaycastHit hit, _raycastDistance))
 			{
+				if(hit.collider.CompareTag("Player"))
+					FMODUnity.RuntimeManager.PlayOneShotAttached(_playerDamageFEvent, gameObject);
+
+				if (hit.collider.CompareTag("Enemy"))
+					Instantiate(_fleshParticlePrefab, hit.collider.transform);
+
 				var damageable = hit.collider.GetComponent<IDamageable>();
 
 				if (damageable != null)

@@ -23,6 +23,8 @@ public class Alarm : MonoBehaviour
 	[Header("FMOD Sounds")]
 	[FMODUnity.EventRef]
 	[SerializeField] private string _bell;
+	[FMODUnity.EventRef]
+	[SerializeField] private string _progressUI;
 	[SerializeField] private Transform _bellLocation;
 
 	public event Action<int> UpdateState;
@@ -63,6 +65,8 @@ public class Alarm : MonoBehaviour
 			{
 				UpdateState?.Invoke(1);
 				FMODUnity.RuntimeManager.PlayOneShotAttached(_bell, _bellLocation.gameObject);
+				FMODUnity.RuntimeManager.PlayOneShotAttached(_progressUI, gameObject);
+
 				_detectedUIPrefab.SetActive(true);
 
 				StartCoroutine(AlarmTriggered());
