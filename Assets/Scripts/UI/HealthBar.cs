@@ -28,7 +28,8 @@ public class HealthBar : MonoBehaviour
 
 		_targetHealth = amount;
 
-		_updateHealthCoroutine = StartCoroutine(UpdateHealth());
+		if(gameObject.activeInHierarchy)
+			_updateHealthCoroutine = StartCoroutine(UpdateHealth());
 	}
 
 	void SetMaxHealth(float maxHealth)

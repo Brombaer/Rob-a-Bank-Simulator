@@ -12,6 +12,8 @@ public class PlayerDeath : MonoBehaviour
 	[SerializeField] private GameObject _character;
 	[SerializeField] private GameObject _canvas;
 	[SerializeField] private GameObject _wastedPrefab;
+	[FMODUnity.EventRef]
+	[SerializeField] private string _deathSound;
 
 	public bool IsDead { get; private set; }
 
@@ -35,6 +37,7 @@ public class PlayerDeath : MonoBehaviour
 	{
 		if(_doOnce)
 		{
+			FMODUnity.RuntimeManager.PlayOneShot(_deathSound, gameObject.transform.position);
 			IsDead = true;
 
 			_playerChar.enabled = false;

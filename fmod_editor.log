@@ -7,7 +7,7 @@
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Priority: 2, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Priority: 3, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 000001F5FEE15948 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 0000027EC7289BA8 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Priority: 0, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -18,6 +18,320 @@
 [LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
 [LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
 [LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] SystemI::createSound                     : filename = C:\Users\eagee\OneDrive\Documents\FMOD Studio\GPR4300_RobABank\Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] Thread::initThread                       : Init FMOD nonblocking thread (0). Priority: 1, Stack Size: 114688, Semaphore: Yes, Sleep Time: 0, Looping: Yes.
+[LOG] SystemI::createSound                     : setdata soundi = 0000027E3AC478F8 : node = 0000027E9B0DE820
+[LOG] SystemI::createSound                     : add node to async list : head = 0000027E5D6802A8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000027E3AC478F8
+[LOG] SystemI::createSoundInternal             :     Create name='C:\Users\eagee\OneDrive\Documents\FMOD Studio\GPR4300_RobABank\Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 10448928
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 87296
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000027E9B0DE930
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 8500
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SF-CK Servo Medium Metal 02', format=2, channels=2, frequency=48000, lengthbytes=867008, lengthpcm=3439616, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.566371.
+[LOG] Thread::initThread                       :     Init FMOD file thread. Priority: 1, Stack Size: 49152, Semaphore: No, Sleep Time: 10, Looping: Yes.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000027E3AC478F8
+[LOG] SoundI::getSubSound                      : sound 0000027E3AC478F8.  Subsound index 0 / 1
+[LOG] SystemI::createSound                     : filename = C:\Users\eagee\OneDrive\Documents\FMOD Studio\GPR4300_RobABank\Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000027E3AC47748 : node = 0000027E9B0DE960
+[LOG] SystemI::createSound                     : add node to async list : head = 0000027E5D6802A8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000027E3AC47748
+[LOG] SystemI::createSoundInternal             :     Create name='C:\Users\eagee\OneDrive\Documents\FMOD Studio\GPR4300_RobABank\Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 10448928
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 87296
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000027E9B0DEA70
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 10000
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SF-CK Servo Medium Metal 02', format=2, channels=2, frequency=48000, lengthbytes=867008, lengthpcm=3439616, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.566371.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000027E3AC47748
+[LOG] SoundI::getSubSound                      : sound 0000027E3AC47748.  Subsound index 0 / 1
+[LOG] SoundI::release                          : SF-CK Servo Medium Metal 02 (0000027E3AC478F8)
+[LOG] SoundI::release                          :     SF-CK Servo Medium Metal 02 (0000027E5D6802F8)
+[LOG] SoundI::release                          :     SF-CK Servo Medium Metal 02 (0000027DD655F978)
+[LOG] SystemI::createSound                     : filename = C:\Users\eagee\OneDrive\Documents\FMOD Studio\GPR4300_RobABank\Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000027E3AC478F8 : node = 0000027E9B0DE320
+[LOG] SystemI::createSound                     : add node to async list : head = 0000027E5D6802A8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000027E3AC478F8
+[LOG] SystemI::createSoundInternal             :     Create name='C:\Users\eagee\OneDrive\Documents\FMOD Studio\GPR4300_RobABank\Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 10448928
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 87296
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000027E9B0DE430
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 14500
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SF-CK Servo Medium Metal 02', format=2, channels=2, frequency=48000, lengthbytes=867008, lengthpcm=3439616, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.566371.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000027E3AC478F8
+[LOG] SoundI::getSubSound                      : sound 0000027E3AC478F8.  Subsound index 0 / 1
+[LOG] SoundI::release                          : SF-CK Servo Medium Metal 02 (0000027E3AC47748)
+[LOG] SoundI::release                          :     SF-CK Servo Medium Metal 02 (0000027E5D680FF8)
+[LOG] SoundI::release                          :     SF-CK Servo Medium Metal 02 (0000027E83BE08F8)
+[LOG] SoundI::release                          : SF-CK Servo Medium Metal 02 (0000027E3AC478F8)
+[LOG] SoundI::release                          :     SF-CK Servo Medium Metal 02 (0000027E5D6802F8)
+[LOG] SoundI::release                          :     SF-CK Servo Medium Metal 02 (0000027E89ED7DB8)
+[LOG] SoundI::release                          :  (0000027E811BBB58)
+[LOG] SoundI::release                          :     Complete1 (0000027EA26530C8)
+[LOG] SoundI::release                          :  (0000027EC7120BE8)
+[LOG] SoundI::release                          :     Complete2 (0000027EA26569A8)
+[LOG] SoundI::release                          :  (0000027EC7120628)
+[LOG] SoundI::release                          :     Complete3 (0000027EA2653748)
+[LOG] SoundI::release                          :  (0000027F1C09EC08)
+[LOG] SoundI::release                          :     Complete4 (0000027EA265C4A8)
+[LOG] SoundI::release                          :  (0000027E8E9A5CF8)
+[LOG] SoundI::release                          :     Complete5 (0000027E5D68D2F8)
+[LOG] SoundI::release                          :  (0000027E8C897AB8)
+[LOG] SoundI::release                          :     Complete6 (0000027EA2658D68)
+[LOG] SoundI::release                          :  (0000027F1C09ED78)
+[LOG] SoundI::release                          :     3DS01 0001 Urban Downtown Busy Spacious 2.0 (0000027EA2653F68)
+[LOG] SoundI::release                          :  (0000027EF4D0AAD8)
+[LOG] SoundI::release                          :     impact-1 (0000027E5D689538)
+[LOG] SoundI::release                          :  (0000027E8E9A48D8)
+[LOG] SoundI::release                          :     impact-2 (0000027E5D67F798)
+[LOG] SoundI::release                          :  (0000027E8C8970A8)
+[LOG] SoundI::release                          :     impact-3 (0000027EA265A5C8)
+[LOG] SoundI::release                          :  (0000027EF4D0A0C8)
+[LOG] SoundI::release                          :     impact-4 (0000027EA264A9E8)
+[LOG] SoundI::release                          :  (0000027E8E95CFB8)
+[LOG] SoundI::release                          :     m4-rifle-foley-bolt-charge-3 (0000027EA265CE68)
+[LOG] SoundI::release                          :  (0000027E8E9A4E98)
+[LOG] SoundI::release                          :     mp5-submachinegun-foley-magazine-replace-5 (0000027E5D680978)
+[LOG] SoundI::release                          :  (0000027E811BB148)
+[LOG] SoundI::release                          :     mp5-submachinegun-foley-magazine-replace-6 (0000027EA2656328)
+[LOG] SoundI::release                          :  (0000027EF4A98C98)
+[LOG] SoundI::release                          :     mp5-submachinegun-foley-magazine-replace-7 (0000027EA2657368)
+[LOG] SoundI::release                          :  (0000027E8E9A5178)
+[LOG] SoundI::release                          :     Deny1 (0000027E5D687178)
+[LOG] SoundI::release                          :  (0000027EF4D0A968)
+[LOG] SoundI::release                          :     Deny2 (0000027E5D68C5F8)
+[LOG] SoundI::release                          :  (0000027E8E9A4A48)
+[LOG] SoundI::release                          :     Deny3 (0000027E5D681818)
+[LOG] SoundI::release                          :  (0000027E8E9A55C8)
+[LOG] SoundI::release                          :     Deny4 (0000027E5D6862D8)
+[LOG] SoundI::release                          :  (0000027F1C09E928)
+[LOG] SoundI::release                          :     Error1 (0000027EA2657508)
+[LOG] SoundI::release                          :  (0000027E8E9A5008)
+[LOG] SoundI::release                          :     Error2 (0000027E5D6896D8)
+[LOG] SoundI::release                          :  (0000027E8E95C888)
+[LOG] SoundI::release                          :     Error3 (0000027EA265CCC8)
+[LOG] SoundI::release                          :  (0000027EC7120A78)
+[LOG] SoundI::release                          :     Error4 (0000027EA26509C8)
+[LOG] SoundI::release                          :  (0000027EF4D09268)
+[LOG] SoundI::release                          :     Error5 (0000027EA2658208)
+[LOG] SoundI::release                          :  (0000027E8C8977D8)
+[LOG] SoundI::release                          :     Error6 (0000027EA265C7E8)
+[LOG] SoundI::release                          :  (0000027F1BFE17B8)
+[LOG] SoundI::release                          :     MUI TEXT High Clicks (0000027EA2651388)
+[LOG] SoundI::release                          :  (0000027EF4A989B8)
+[LOG] SoundI::release                          :     AK47_tail_01 (0000027EA265AC48)
+[LOG] SoundI::release                          :  (0000027E8C8974F8)
+[LOG] SoundI::release                          :     AK47_tail_02 (0000027EA265C648)
+[LOG] SoundI::release                          :  (0000027E8E95CB68)
+[LOG] SoundI::release                          :     AK47_tail_03 (0000027EA265D008)
+[LOG] SoundI::release                          :  (0000027E811BB9E8)
+[LOG] SoundI::release                          :     AK47_tail_04 (0000027EA26557C8)
+[LOG] SoundI::release                          :  (0000027E8E9A5E68)
+[LOG] SoundI::release                          :     AK47_tail_05 (0000027E5D68D7D8)
+[LOG] SoundI::release                          :  (0000027EF4D0A688)
+[LOG] SoundI::release                          :     AK47_tail_06 (0000027EA265C308)
+[LOG] SoundI::release                          :  (0000027F1C09E1F8)
+[LOG] SoundI::release                          :     AWCK ADD Metal Sweetener Medium 03 (0000027EA2655148)
+[LOG] SoundI::release                          :  (0000027EC71201D8)
+[LOG] SoundI::release                          :     pistol_end_01 (0000027EA2656CE8)
+[LOG] SoundI::release                          :  (0000027EF4A986D8)
+[LOG] SoundI::release                          :     pistol_end_02 (0000027EA26579E8)
+[LOG] SoundI::release                          :  (0000027EF4D09828)
+[LOG] SoundI::release                          :     pistol_end_03 (0000027EA2658A28)
+[LOG] SoundI::release                          :  (0000027E8E4633B8)
+[LOG] SoundI::release                          :     pistol_end_04 (0000027EA2659588)
+[LOG] SoundI::release                          :  (0000027EF4D09F58)
+[LOG] SoundI::release                          :     pistol_end_05 (0000027EA2658068)
+[LOG] SoundI::release                          :  (0000027EF4A98288)
+[LOG] SoundI::release                          :     pistol_end_06 (0000027EA265BE28)
+[LOG] SoundI::release                          :  (0000027EF4D0AC48)
+[LOG] SoundI::release                          :     pistol_low_01 (0000027EA2659A68)
+[LOG] SoundI::release                          :  (0000027E811BB428)
+[LOG] SoundI::release                          :     pistol_low_02 (0000027EA2652F28)
+[LOG] SoundI::release                          :  (0000027E811BB598)
+[LOG] SoundI::release                          :     pistol_low_03 (0000027EA2656188)
+[LOG] SoundI::release                          :  (0000027E8E463698)
+[LOG] SoundI::release                          :     pistol_low_04 (0000027EA2657EC8)
+[LOG] SoundI::release                          :  (0000027E8E95D128)
+[LOG] SoundI::release                          :     pistol_low_05 (0000027EA2659728)
+[LOG] SoundI::release                          :  (0000027EF4D096B8)
+[LOG] SoundI::release                          :     pistol_low_06 (0000027EA26598C8)
+[LOG] SoundI::release                          :  (0000027E8E4630D8)
+[LOG] SoundI::release                          :     pistol_low_07 (0000027EA265ADE8)
+[LOG] SoundI::release                          :  (0000027F1C09E648)
+[LOG] SoundI::release                          :     pistol_main_01 (0000027EA265C988)
+[LOG] SoundI::release                          :  (0000027F1BFE1648)
+[LOG] SoundI::release                          :     pistol_main_02 (0000027EA2655968)
+[LOG] SoundI::release                          :  (0000027EF4D09C78)
+[LOG] SoundI::release                          :     pistol_main_03 (0000027EA2659DA8)
+[LOG] SoundI::release                          :  (0000027F1BFE1A98)
+[LOG] SoundI::release                          :     pistol_main_04 (0000027EA2653DC8)
+[LOG] SoundI::release                          :  (0000027E811BBCC8)
+[LOG] SoundI::release                          :     pistol_main_05 (0000027EA2653C28)
+[LOG] SoundI::release                          :  (0000027EF4D0A238)
+[LOG] SoundI::release                          :     pistol_main_06 (0000027EA2658548)
+[LOG] SoundI::release                          :  (0000027E8EDD73A8)
+[LOG] SoundI::release                          :     pistol_main_07 (0000027E5D684C18)
+[LOG] SoundI::release                          :  (0000027E8E9A58A8)
+[LOG] SoundI::release                          :     glock-pistol-foley-plastic-holser-draw-1 (0000027E5D685F98)
+[LOG] SoundI::release                          :  (0000027EF4D0A7F8)
+[LOG] SoundI::release                          :     glock-pistol-foley-plastic-holser-draw-2 (0000027E5D68A238)
+[LOG] SoundI::release                          :  (0000027E811BBE38)
+[LOG] SoundI::release                          :     glock-pistol-foley-plastic-holser-draw-3 (0000027EA2652708)
+[LOG] SoundI::release                          :  (0000027E8E463248)
+[LOG] SoundI::release                          :     glock-pistol-foley-plastic-holser-draw-4 (0000027EA265B128)
+[LOG] SoundI::release                          :  (0000027E8C897388)
+[LOG] SoundI::release                          :     glock-pistol-foley-plastic-holser-put-in-1 (0000027EA2658F08)
+[LOG] SoundI::release                          :  (0000027EF4D0AF28)
+[LOG] SoundI::release                          :     glock-pistol-foley-plastic-holser-put-in-2 (0000027EA2657B88)
+[LOG] SoundI::release                          :  (0000027E8E9A6598)
+[LOG] SoundI::release                          :     glock-pistol-foley-plastic-holser-put-in-3 (0000027E5D686FD8)
+[LOG] SoundI::release                          :  (0000027E8E95C718)
+[LOG] SoundI::release                          :     glock-pistol-foley-plastic-holser-put-in-4 (0000027EA265A908)
+[LOG] SoundI::release                          :  (0000027F1C09E4D8)
+[LOG] SoundI::release                          :     glock-pistol-foley-plastic-holser-put-in-6 (0000027EA2655628)
+[LOG] SoundI::release                          :  (0000027E8E463808)
+[LOG] SoundI::release                          :     m4-rifle-foley-magazine-remove-1 (0000027EA26593E8)
+[LOG] SoundI::release                          :  (0000027E8EDD59C8)
+[LOG] SoundI::release                          :     m4-rifle-foley-magazine-remove-2 (0000027E5D6829F8)
+[LOG] SoundI::release                          :  (0000027E8E463978)
+[LOG] SoundI::release                          :     m4-rifle-foley-magazine-remove-3 (0000027EA265D4E8)
+[LOG] SoundI::release                          :  (0000027F1BFE1C08)
+[LOG] SoundI::release                          :     m4-rifle-foley-magazine-remove-4 (0000027EA2656B48)
+[LOG] SoundI::release                          :  (0000027E8E9A6148)
+[LOG] SoundI::release                          :     m4-rifle-foley-magazine-replace-1 (0000027E5D683F18)
+[LOG] SoundI::release                          :  (0000027E8C897D98)
+[LOG] SoundI::release                          :     m4-rifle-foley-magazine-replace-2 (0000027EA265B468)
+[LOG] SoundI::release                          :  (0000027F1C09E368)
+[LOG] SoundI::release                          :     m4-rifle-foley-magazine-replace-3 (0000027EA26552E8)
+[LOG] SoundI::release                          :  (0000027E8C897668)
+[LOG] SoundI::release                          :     m4-rifle-foley-short-rattle-1 (0000027EA26571C8)
+[LOG] SoundI::release                          :  (0000027EF4D09548)
+[LOG] SoundI::release                          :     m4-rifle-foley-short-rattle-2 (0000027EA265AF88)
+[LOG] SoundI::release                          :  (0000027E811BB708)
+[LOG] SoundI::release                          :     m4-rifle-foley-short-rattle-3 (0000027EA2654788)
+[LOG] SoundI::release                          :  (0000027EF4D09DE8)
+[LOG] SoundI::release                          :     m4-rifle-foley-short-rattle-4 (0000027EA2659F48)
+[LOG] SoundI::release                          :  (0000027EF4A98E08)
+[LOG] SoundI::release                          :     AK47_end_01 (0000027EA265A768)
+[LOG] SoundI::release                          :  (0000027E8E9A4D28)
+[LOG] SoundI::release                          :     AK47_end_02 (0000027E5D682518)
+[LOG] SoundI::release                          :  (0000027EC71204B8)
+[LOG] SoundI::release                          :     AK47_end_03 (0000027EA2652D88)
+[LOG] SoundI::release                          :  (0000027EF4D0A3A8)
+[LOG] SoundI::release                          :     AK47_end_04 (0000027EA264AB88)
+[LOG] SoundI::release                          :  (0000027EC7120908)
+[LOG] SoundI::release                          :     AK47_end_05 (0000027EA2650688)
+[LOG] SoundI::release                          :  (0000027E8E9A5FD8)
+[LOG] SoundI::release                          :     AK47_01 (0000027E5D68A3D8)
+[LOG] SoundI::release                          :  (0000027E8E463C58)
+[LOG] SoundI::release                          :     AK47_02 (0000027EA265B7A8)
+[LOG] SoundI::release                          :  (0000027E8C897948)
+[LOG] SoundI::release                          :     AK47_03 (0000027EA2657028)
+[LOG] SoundI::release                          :  (0000027EF4A98848)
+[LOG] SoundI::release                          :     AK47_04 (0000027EA26576A8)
+[LOG] SoundI::release                          :  (0000027EC7120798)
+[LOG] SoundI::release                          :     AWCK AR AK 47 Krinkov Single Distant 01 (0000027EA2653408)
+[LOG] SoundI::release                          :  (0000027EF4D0ADB8)
+[LOG] SoundI::release                          :     weapons_bullet_casing_01 (0000027EA2659C08)
+[LOG] SoundI::release                          :  (0000027EF4A98118)
+[LOG] SoundI::release                          :     weapons_bullet_casing_02 (0000027EA265C168)
+[LOG] SoundI::release                          :  (0000027E8E463528)
+[LOG] SoundI::release                          :     weapons_bullet_casing_03 (0000027EA2657848)
+[LOG] SoundI::release                          :  (0000027E8E9A62B8)
+[LOG] SoundI::release                          :     weapons_bullet_casing_04 (0000027E5D68CFB8)
+[LOG] SoundI::release                          :  (0000027E8E9A52E8)
+[LOG] SoundI::release                          :     AWCK AR AK 47 Close 01 (0000027E5D68DE58)
+[LOG] SoundI::release                          :  (0000027F1C09E088)
+[LOG] SoundI::release                          :     AWCK AR AK 47 Close 02 (0000027EA26564C8)
+[LOG] SoundI::release                          :  (0000027E8E95C9F8)
+[LOG] SoundI::release                          :     AWCK AR AK 47 Close 03 (0000027EA26586E8)
+[LOG] SoundI::release                          :  (0000027EC7120068)
+[LOG] SoundI::release                          :     AWCK AR AK 47 Close 04 (0000027EA26538E8)
+[LOG] SoundI::release                          :  (0000027E8E95CCD8)
+[LOG] SoundI::release                          :     glock-pistol-foley-dry-fire-1 (0000027EA2658888)
+[LOG] SoundI::release                          :  (0000027E8E9A5458)
+[LOG] SoundI::release                          :     glock-pistol-foley-dry-fire-2 (0000027E5D68D978)
+[LOG] SoundI::release                          :  (0000027E8E9A6428)
+[LOG] SoundI::release                          :     glock-pistol-foley-dry-fire-3 (0000027E5D685DF8)
+[LOG] SoundI::release                          :  (0000027E8E9A5738)
+[LOG] SoundI::release                          :     glock-pistol-foley-dry-fire-4 (0000027E5D6840B8)
+[LOG] SoundI::release                          :  (0000027E811BB2B8)
+[LOG] SoundI::release                          :     Hihat01 (0000027EA26528A8)
+[LOG] SoundI::release                          :  (0000027EC7120348)
+[LOG] SoundI::release                          :     snare (0000027EA2652BE8)
+[LOG] SoundI::release                          :  (0000027EC7120D58)
+[LOG] SoundI::release                          :     Kick (0000027EA2653A88)
+[LOG] SoundI::release                          :  (0000027EF4D0A518)
+[LOG] SoundI::release                          :     Hihat02 (0000027EA264AD28)
+[LOG] SoundI::release                          :  (0000027E8C897218)
+[LOG] SoundI::release                          :     Synth (0000027EA265CB28)
+[LOG] SoundI::release                          :  (0000027E8E9A6708)
+[LOG] SoundI::release                          :     Drone (0000027E5D6855D8)
+[LOG] SoundI::release                          :  (0000027E8E9A4BB8)
+[LOG] SoundI::release                          :     MECK SNAP Calculating Machine Fazit (0000027E5D68CC78)
+[LOG] SoundI::release                          :  (0000027E8E463DC8)
+[LOG] SoundI::release                          :     SF-DS Energy Beam 01 (0000027EA2656E88)
+[LOG] SoundI::release                          :  (0000027F1C09E7B8)
+[LOG] SoundI::release                          :     SF-DS Machine Airlock Open 01 (0000027EA2650B68)
+[LOG] SoundI::release                          :  (0000027F1BFE1D78)
+[LOG] SoundI::release                          :     emergency-alarm-bell-ringing (0000027EA26542A8)
+[LOG] SoundI::release                          :  (0000027EF4D0B098)
+[LOG] SoundI::release                          :     mp5-submachinegun-foley-dry-fire-1 (0000027EA265BAE8)
+[LOG] SoundI::release                          :  (0000027E8E9A5B88)
+[LOG] SoundI::release                          :     mp5-submachinegun-foley-dry-fire-2 (0000027E5D68F038)
+[LOG] SoundI::release                          :  (0000027E8E9A5A18)
+[LOG] SoundI::release                          :     mp5-submachinegun-foley-dry-fire-3 (0000027E5D68C798)
+[LOG] SoundI::release                          :  (0000027EF4A983F8)
+[LOG] SoundI::release                          :     mp5-submachinegun-foley-dry-fire-4 (0000027EA265D1A8)
+[LOG] SoundI::release                          :  (0000027EF4D09998)
+[LOG] SoundI::release                          :     SF-DS Computer Beep High 02 (0000027EA265BFC8)
+[LOG] SoundI::release                          :  (0000027F1C09EA98)
+[LOG] SoundI::release                          :     kck_rvb (0000027EA265B948)
+[LOG] SoundI::release                          :  (0000027E8E95D408)
+[LOG] SoundI::release                          :     Accept3 (0000027EA265B608)
+[LOG] SoundI::release                          :  (0000027F1BFE1368)
+[LOG] SoundI::release                          :     Accept4 (0000027EA2651048)
+[LOG] SoundI::release                          :  (0000027E811BB878)
+[LOG] SoundI::release                          :     Accept5 (0000027EA2652568)
+[LOG] SoundI::release                          :  (0000027EF4A98568)
+[LOG] SoundI::release                          :     Accept6 (0000027EA265A0E8)
+[LOG] SoundI::release                          :  (0000027EF4D09B08)
+[LOG] SoundI::release                          :     Accept1 (0000027EA2657D28)
+[LOG] SoundI::release                          :  (0000027F1BFE1928)
+[LOG] SoundI::release                          :     Accept2 (0000027EA26523C8)
+[LOG] SoundI::release                          :  (0000027E8C897C28)
+[LOG] SoundI::release                          :     SyntheticBrassShort (0000027EA265D348)
+[LOG] SoundI::release                          :  (0000027E8EDD6998)
+[LOG] SoundI::release                          :     Click1 (0000027E5D681CF8)
+[LOG] SoundI::release                          :  (0000027EF4D093D8)
+[LOG] SoundI::release                          :     Click2 (0000027EA26583A8)
+[LOG] SoundI::release                          :  (0000027E8E463AE8)
+[LOG] SoundI::release                          :     Click3 (0000027EA265A288)
+[LOG] SoundI::release                          :  (0000027E8E95D298)
+[LOG] SoundI::release                          :     Click4 (0000027EA265A428)
+[LOG] SoundI::release                          :  (0000027E8E95CE48)
+[LOG] SoundI::release                          :     Click5 (0000027EA26590A8)
+[LOG] SoundI::release                          :  (0000027EF4A98B28)
+[LOG] SoundI::release                          :     Click6 (0000027EA265AAA8)
+[LOG] Thread::callback                         : FMOD Studio update thread finished.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Thread::callback                         : FMOD Studio sample load thread finished.
 [LOG] LiveUpdate::release                      : 

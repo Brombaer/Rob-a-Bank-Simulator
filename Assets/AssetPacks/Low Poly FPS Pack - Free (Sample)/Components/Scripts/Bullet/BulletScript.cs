@@ -29,7 +29,10 @@ public class BulletScript : MonoBehaviour {
 
 	private void OnCollisionEnter(Collision collision) 
 	{
-		Instantiate(metalImpactPrefabs [Random.Range(0, metalImpactPrefabs.Length)], transform.position, Quaternion.LookRotation (collision.contacts [0].normal), collision.transform);
+		if(!collision.collider.CompareTag("Player"))
+			Instantiate(metalImpactPrefabs [Random.Range(0, metalImpactPrefabs.Length)], transform.position, Quaternion.LookRotation (collision.contacts [0].normal), collision.transform);
+
+		
 		Destroy(gameObject);
 
 		
@@ -41,11 +44,6 @@ public class BulletScript : MonoBehaviour {
 		{
 			Destroy(gameObject);
 		}
-
-		var damageable = collision.collider.GetComponent<IDamageable>();
-
-		if (damageable != null)
-			damageable.Damage(_damage);
 	}
 
 	private IEnumerator DestroyTimer () 

@@ -12,6 +12,7 @@ namespace Assets.Scripts.AIPathfinding
 		[SerializeField] private List<Waypoint> _waypoints;
 		[SerializeField] private List<Waypoint> _coverPoints;
 		[SerializeField] private Waypoint _closestCover;
+		[SerializeField] private Transform _spine;
 
 		int _waypointCounter = 0;
 	
@@ -47,6 +48,21 @@ namespace Assets.Scripts.AIPathfinding
 						_currentWaitTime += 1 * Time.deltaTime;
 					}
 				}
+			}
+		}
+
+		private void LateUpdate()
+		{
+			if (_currentState == NPCStates.Aggro)
+			{
+				float dir = Vector3.Angle(transform.forward, _playerTransform.position - _spine.position);
+
+				if(transform.position.y < _playerTransform.position.y)
+				{
+					dir = -dir;
+				}
+				
+				_spine.localEulerAngles = new Vector3(_spine.localEulerAngles.x + 180, 0, 25 + dir);
 			}
 		}
 

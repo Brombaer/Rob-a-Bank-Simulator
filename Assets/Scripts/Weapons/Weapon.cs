@@ -24,6 +24,8 @@ public class Weapon : MonoBehaviour
 	[SerializeField] private GameObject _bulletPrefab;
 	[SerializeField] private Transform _bulletSpawnPoint;
 	[SerializeField] private float _bulletForce;
+	[SerializeField] private float _raycastDistance = 50;
+	[SerializeField] private float _damage = 10;
 	
 	[Space][Space]
 	[Header("Weapon Sway Settings")]
@@ -108,6 +110,16 @@ public class Weapon : MonoBehaviour
 			// Spawn Bullet
 			GameObject bullet = Instantiate(_bulletPrefab, _bulletSpawnPoint.position, _bulletSpawnPoint.rotation);
 			bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * _bulletForce;
+
+			Debug.DrawLine(_bulletSpawnPoint.position, _bulletSpawnPoint.position + _bulletSpawnPoint.forward * _raycastDistance, Color.red);
+			
+			if(Physics.Raycast(_bulletSpawnPoint.position, _bulletSpawnPoint.forward, out RaycastHit hit, _raycastDistance))
+			{
+				var damageable = hit.collider.GetComponent<IDamageable>();
+
+				if (damageable != null)
+					damageable.Damage(_damage);
+			}
 
 			if (_cameraShake != null)
 				_cameraShake.ShakeCamera(0.08f, 0.0015f);
