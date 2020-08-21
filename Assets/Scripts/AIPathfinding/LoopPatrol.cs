@@ -11,6 +11,7 @@ namespace Assets.Scripts.AIPathfinding
 	{
 		[SerializeField] private List<Waypoint> _waypoints;
 		[SerializeField] private Waypoint _closestCover;
+		[SerializeField] private Waypoint _coverOverride;
 		[SerializeField] private Transform _spine;
 
 		int _waypointCounter = 0;
@@ -26,7 +27,12 @@ namespace Assets.Scripts.AIPathfinding
 
 			if (CanSeePlayer() || _currentState == NPCStates.Aggro)
 			{
-				_currentState = NPCStates.Aggro;
+				if (_currentState != NPCStates.Aggro)
+				{
+					AIHandler.Instance.AggroAll();
+					_currentState = NPCStates.Aggro;
+				}
+				
 
 				if (!AtBestWaypoint())
 				{
@@ -94,15 +100,22 @@ namespace Assets.Scripts.AIPathfinding
 			for (int i = 0; i < GetWaypoints().Count; i++)
 			{
 				Waypoint current = GetWaypoints()[i];
-				if (_closestCover == null)
+				if (_coverOverride == null)
 				{
-					if(!current.IsUsed)
+					if (_closestCover == null)
+					{
+						if (!current.IsUsed)
+							_closestCover = current;
+					}
+					else if (PlayerDistanceTo(current.transform) < PlayerDistanceTo(_closestCover.transform) && !current.IsUsed)
+					{
 						_closestCover = current;
-				}
-				else if (PlayerDistanceTo(current.transform) < PlayerDistanceTo(_closestCover.transform) && !current.IsUsed)
-				{
-					_closestCover = current;
 
+					}
+				}
+				else
+				{
+					_closestCover = _coverOverride;
 				}
 
 			}

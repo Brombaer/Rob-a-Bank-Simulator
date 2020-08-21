@@ -43,6 +43,18 @@ namespace Assets.Scripts.AIPathfinding
 				Destroy(this);
 			else
 				_health.Death += OnDeath;
+
+			
+		}
+
+		private void Start()
+		{
+			AIHandler.Instance.Aggro += OnAggro;
+		}
+
+		private void OnAggro()
+		{
+			_currentState = NPCStates.Aggro;
 		}
 
 		private void UpdateStates()

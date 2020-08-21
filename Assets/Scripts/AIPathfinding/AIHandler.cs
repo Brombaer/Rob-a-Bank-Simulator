@@ -12,6 +12,8 @@ namespace Assets.Scripts.AIPathfinding
 		private List<Waypoint> _coverPoints;
 		private static AIHandler _instance;
 
+		public event Action Aggro;
+
 		public static AIHandler Instance
 		{
 			get => _instance;
@@ -49,6 +51,11 @@ namespace Assets.Scripts.AIPathfinding
 			{
 				_instance = null;
 			}
+		}
+
+		public void AggroAll()
+		{
+			Aggro?.Invoke();
 		}
 
 		public void AddCover(Waypoint newWaypoint)
