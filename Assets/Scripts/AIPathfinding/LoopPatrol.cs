@@ -14,6 +14,8 @@ namespace Assets.Scripts.AIPathfinding
 		[SerializeField] private Waypoint _coverOverride;
 		[SerializeField] private Transform _spine;
 
+		private PlayerCharacter _player = AIHandler.Instance.GetComponent<PlayerCharacter>();
+
 		int _waypointCounter = 0;
 	
 		private float _currentWaitTime = 4.0f;
@@ -25,7 +27,7 @@ namespace Assets.Scripts.AIPathfinding
 		{
 			base.Update();
 
-			if (CanSeePlayer() || _currentState == NPCStates.Aggro)
+			if ((CanSeePlayer() || _currentState == NPCStates.Aggro) && !_player.IsHolstered)
 			{
 				if (_currentState != NPCStates.Aggro)
 				{

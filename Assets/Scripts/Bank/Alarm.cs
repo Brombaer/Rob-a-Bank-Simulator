@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.Scripts.AIPathfinding;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -78,6 +79,8 @@ public class Alarm : MonoBehaviour
 
 	IEnumerator AlarmTriggered()
 	{
+		AIHandler.Instance.AggroAll();
+
 		yield return new WaitForSeconds(_spawnDelay);
 
 		for (int i = 0; i < _vehicleLocationList.Count; i++)
