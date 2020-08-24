@@ -582,6 +582,7 @@ GameObject:
   - component: {fileID: 7944143496035418819}
   - component: {fileID: 6254893266991522293}
   - component: {fileID: 330845220}
+  - component: {fileID: 1457788893}
   m_Layer: 8
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -727,6 +728,27 @@ MonoBehaviour:
   - assemblyQualifiedName: PostProcessOutline, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_AfterStackBundles: []
+--- !u!114 &1457788893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3022757654980074539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef0ca046b05216f488f2e5d4b31e5e3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _debugMode: 0
+  _shakeAmount: 0
+  _shakeDuration: 0
+  _shakePercentage: 0
+  _startAmount: 0
+  _startDuration: 0
+  _isRunning: 0
+  smooth: 0
+  smoothAmount: 5
 --- !u!1 &3095583829332098502
 GameObject:
   m_ObjectHideFlags: 0
@@ -1154,7 +1176,7 @@ MonoBehaviour:
   _mouseSensitivity: 1
   _jumpSpeed: 5
   _gravity: 13
-  _walkSpeed: 2
+  _walkSpeed: 4
   _sprintSpeed: 8
   _crouchSpeed: 0.6
   _camAnimator:
@@ -1312,7 +1334,7 @@ Animator:
   m_GameObject: {fileID: 7199751500677796741}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d17e4752e172e594489f3a74e5aa1a96, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1975,8 +1997,17 @@ PrefabInstance:
         type: 3}
       propertyPath: _cameraShake
       value: 
-      objectReference: {fileID: 1016384543, guid: 1432f0a791d8c96458f56fdfe3a3ab50,
+      objectReference: {fileID: 1457788893}
+    - target: {fileID: 958996287757162902, guid: 76fd6f3b01cb38d47adaa4330372d7f1,
         type: 3}
+      propertyPath: _raycastDistance
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 958996287757162902, guid: 76fd6f3b01cb38d47adaa4330372d7f1,
+        type: 3}
+      propertyPath: _playerDamageFEvent
+      value: event:/UI/Damaged
+      objectReference: {fileID: 0}
     - target: {fileID: 1761323629728902296, guid: 76fd6f3b01cb38d47adaa4330372d7f1,
         type: 3}
       propertyPath: m_NavMeshLayer
@@ -2276,6 +2307,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7361330989382889125, guid: 76fd6f3b01cb38d47adaa4330372d7f1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.297
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76fd6f3b01cb38d47adaa4330372d7f1, type: 3}
@@ -2609,8 +2645,12 @@ PrefabInstance:
         type: 3}
       propertyPath: _cameraShake
       value: 
-      objectReference: {fileID: 1016384543, guid: 1432f0a791d8c96458f56fdfe3a3ab50,
+      objectReference: {fileID: 1457788893}
+    - target: {fileID: 7528827870471116396, guid: 9da690435616d8b4bb8513c14cc29f13,
         type: 3}
+      propertyPath: _raycastDistance
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9da690435616d8b4bb8513c14cc29f13, type: 3}
 --- !u!4 &110950222963392316 stripped
