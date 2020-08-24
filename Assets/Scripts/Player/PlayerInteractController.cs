@@ -39,6 +39,11 @@ public class PlayerInteractController : MonoBehaviour
 	[Tooltip("The maximum distance in which objects get highlighted for the player.")]
 	[SerializeField]
 	private float _maxOutlineDistance = 5;
+	[SerializeField]
+	private GameObject _interactUI;
+	[SerializeField]
+	private GameObject _itemHeavyUI;
+
 
 	private OutlineController _prevController;
 	private OutlineController _currentController;
@@ -47,6 +52,9 @@ public class PlayerInteractController : MonoBehaviour
 
 	private void Start()
 	{
+		_interactUI.SetActive(false);
+		_itemHeavyUI.SetActive(false);
+
 		_healthRef.HealthChanged += OnHealthChanged;
 	}
 
@@ -114,7 +122,7 @@ public class PlayerInteractController : MonoBehaviour
 		{
 			RaycastHit raycastHit = _raycastHit.Value;
 
-			if (Input.GetKeyDown(KeyCode.Q))
+			if (Input.GetKeyDown(KeyCode.E))
 			{
 				if ((raycastHit.point - Camera.transform.position).magnitude < _maxInteractDistance)
 				{
@@ -147,6 +155,8 @@ public class PlayerInteractController : MonoBehaviour
 		{
 			_currentController.ShowOutline();
 		}
+
+		_interactUI.SetActive(true);
 	}
 
 	private void HideOutline()
@@ -155,6 +165,8 @@ public class PlayerInteractController : MonoBehaviour
 		{
 			_prevController.HideOutline();
 			_prevController = null;
+
+			_interactUI.SetActive(false);
 		}
 	}
 }

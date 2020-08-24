@@ -12,6 +12,7 @@ public class UIWaypoint : MonoBehaviour
 	[SerializeField] private Vector3 _offset;
 	[SerializeField] private GameObject _imagePrefab;
 	[SerializeField] private PlayerDeath _playerDeath;
+	[SerializeField] private float _distance = 30;
 
 	public Sprite CompassIcon { get => _compassIcon; }
 	private Image _img;
@@ -39,6 +40,11 @@ public class UIWaypoint : MonoBehaviour
 			}
 
 			_img.transform.position = pos;
+
+			float dif = Vector3.Distance(_target.position, transform.position);
+			Color color = new Color(_img.color.r, _img.color.g, _img.color.b, dif / _distance);
+			_img.color = color;
+
 
 			//_meter.text = Mathf.RoundToInt(Vector3.Distance(transform.position, _target.position)).ToString();
 		}
