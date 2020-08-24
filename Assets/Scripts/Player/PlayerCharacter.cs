@@ -86,7 +86,7 @@ public class PlayerCharacter : MonoBehaviour
 		RotateCamera();
 
 
-		if (Input.GetKeyDown(KeyCode.E))
+		if (Input.GetKeyDown(KeyCode.Q))
 			HolsterWeapon();
 
 

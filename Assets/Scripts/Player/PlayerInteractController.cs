@@ -111,7 +111,7 @@ public class PlayerInteractController : MonoBehaviour
         {
             RaycastHit raycastHit = _raycastHit.Value;
 
-            if (Input.GetKeyDown(KeyCode.Q))
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 if ((raycastHit.point - Camera.transform.position).magnitude < _maxInteractDistance)
                 {
