@@ -49,23 +49,23 @@ public class Weapon : MonoBehaviour
 
 	[SerializeField] private CameraShake _cameraShake;
 
-	public event System.Action Fired;
-	public int CurrentAmmo { get; private set; }
-	public int MagazineSize { get => _magazineSize; }
-
+	private int _currentAmmo = 0;
 	private Vector3 initialSwayPosition;
 	private float _lastBulletTime;
 	private float _lastReloadTime;
 	private bool _isFiring;
 	private float _timer = 1;
 
+	public event System.Action Fired;
+	public int CurrentAmmo { get => _currentAmmo; }
+	public int MagazineSize { get => _magazineSize; }
 
 
 	private void Start()
 	{
 		initialSwayPosition = transform.localPosition;
 
-		CurrentAmmo = MagazineSize;
+		_currentAmmo = MagazineSize;
 
 		_muzzleLight.enabled = false;
 
@@ -100,9 +100,9 @@ public class Weapon : MonoBehaviour
 
 	protected void Fire()
 	{
-		if (CurrentAmmo > 0)
+		if (_currentAmmo > 0)
 		{
-			CurrentAmmo -= 1;
+			_currentAmmo -= 1;
 
 			FMODUnity.RuntimeManager.PlayOneShotAttached(_shotFEvent, gameObject);
 
@@ -171,7 +171,7 @@ public class Weapon : MonoBehaviour
 
 	public void Reload()
 	{
-		CurrentAmmo = MagazineSize;
+		_currentAmmo = MagazineSize;
 		FMODUnity.RuntimeManager.PlayOneShotAttached(_reloadFEvent, gameObject);
 
 		_lastReloadTime = Time.time;

@@ -21,6 +21,9 @@ public class GameManager : MonoBehaviour
 	[Header("Spawn UI")]
 	[SerializeField] private GameObject _detectedUIPrefab;
 	[Space]
+	[Header("Debug Settings")]
+	[SerializeField] bool _noDetection;
+	[Space]
 	[Header("FMOD Sounds")]
 	[FMODUnity.EventRef]
 	[SerializeField] private string _bell;
@@ -68,7 +71,7 @@ public class GameManager : MonoBehaviour
 
 	public void HasBeenDetected()
 	{
-		if (_doOnce)
+		if (_doOnce && !_noDetection)
 		{
 			UpdateState?.Invoke(1);
 			FMODUnity.RuntimeManager.PlayOneShotAttached(_bell, _bellLocation.gameObject);
@@ -78,7 +81,6 @@ public class GameManager : MonoBehaviour
 
 			StartCoroutine(AlarmTriggered());
 			_doOnce = false;
-
 		}
 		_spawnDelay -= Time.deltaTime;
 	}

@@ -6,152 +6,155 @@ using UnityEngine;
 
 public class PlayerInteractController : MonoBehaviour
 {
-    public GameObject Camera;
-    [Space]
-    [Header("Money information")]
-    [SerializeField]
-    private float _playerWallet;
-    [SerializeField]
-    private float _safedMoney;
-    [SerializeField]
-    private float _onHitMoneyLossPercent;
-    [Space]
-    [Space]
-    
-    public float PlayerCurrentLoad;
-    
-    public float PlayerMaxLoadCapacity = 35000;
+	public GameObject Camera;
+	[Space]
+	[Header("Money information")]
+	[SerializeField]
+	private float _playerWallet;
+	[SerializeField]
+	private float _safedMoney;
+	[SerializeField]
+	private float _onHitMoneyLossPercent;
+	[Space]
+	[Space]
 
-    public float WalletAmount { get => _playerWallet; set => _playerWallet = value; }
-    [Space]
-    [Space]
-    [SerializeField]
-    private GameObject _Van;
-    [SerializeField]
-    private HealthComponent _healthRef;
+	public float PlayerCurrentLoad;
 
-    [Space]
-    [Tooltip("The maximum distance in which the player can interact with objects. ")]
-    [SerializeField]
-    private float _maxInteractDistance = 2;
-    [Tooltip("The maximum distance in which objects get highlighted for the player.")]
-    [SerializeField]
-    private float _maxOutlineDistance = 5;
+	public float PlayerMaxLoadCapacity = 35000;
 
-    private OutlineController _prevController;
-    private OutlineController _currentController;
-    private RaycastHit? _raycastHit;
+	public float WalletAmount { get => _playerWallet; set => _playerWallet = value; }
+	public float SafedAmount { get => _safedMoney; set => _safedMoney = value; }
 
-    private void Start()
-    {
-        _healthRef.HealthChanged += OnHealthChanged;
-    }
+	[Space]
+	[Space]
+	[SerializeField]
+	private GameObject _Van;
+	[SerializeField]
+	private HealthComponent _healthRef;
 
-    private void OnHealthChanged(float arg1, bool arg2)
-    {
-        _playerWallet *= 1- _onHitMoneyLossPercent;
-    }
+	[Space]
+	[Tooltip("The maximum distance in which the player can interact with objects. ")]
+	[SerializeField]
+	private float _maxInteractDistance = 2;
+	[Tooltip("The maximum distance in which objects get highlighted for the player.")]
+	[SerializeField]
+	private float _maxOutlineDistance = 5;
 
-    private void Update()
-    {
-        Raycast();
-        OutlineInteractableObject();
-        InteractWithObject();
-    }
+	private OutlineController _prevController;
+	private OutlineController _currentController;
+	private RaycastHit? _raycastHit;
 
-    private void Raycast()
-    {
-        RaycastHit[] raycastAll = Physics.RaycastAll(Camera.transform.position, Camera.transform.forward, _maxInteractDistance);
-        raycastAll = raycastAll.OrderBy(x => x.distance).ToArray();
 
-        Debug.DrawRay(Camera.transform.position, Camera.transform.forward, Color.blue, 3);
+	private void Start()
+	{
+		_healthRef.HealthChanged += OnHealthChanged;
+	}
 
-        if (raycastAll.Length > 0)
-        {
-            _raycastHit = raycastAll[0];
-        }
-        else
-        {
-            if (_raycastHit.HasValue)
-            {
-                HideOutline();
-                _raycastHit = null;
-            }
-        }
-    }
+	private void OnHealthChanged(float arg1, bool arg2)
+	{
+		_playerWallet *= 1 - _onHitMoneyLossPercent;
+	}
 
-    private void OutlineInteractableObject()
-    {
-        if (_raycastHit.HasValue)
-        {
-            RaycastHit raycastHit = _raycastHit.Value;
+	private void Update()
+	{
+		Raycast();
+		OutlineInteractableObject();
+		InteractWithObject();
+	}
 
-            if (raycastHit.collider.CompareTag("InteractableObject") && raycastHit.collider != null)
-            {
-                _currentController = raycastHit.collider.GetComponent<OutlineController>();
+	private void Raycast()
+	{
+		RaycastHit[] raycastAll = Physics.RaycastAll(Camera.transform.position, Camera.transform.forward, _maxInteractDistance);
+		raycastAll = raycastAll.OrderBy(x => x.distance).ToArray();
 
-                if (_prevController != _currentController)
-                {
-                    HideOutline();
-                    ShowOutline();
-                }
+		Debug.DrawRay(Camera.transform.position, Camera.transform.forward, Color.blue, 3);
 
-                _prevController = _currentController;
-            }
-            else
-            {
-                HideOutline();
-            }
-        }
-    }
+		if (raycastAll.Length > 0)
+		{
+			_raycastHit = raycastAll[0];
+		}
+		else
+		{
+			if (_raycastHit.HasValue)
+			{
+				HideOutline();
+				_raycastHit = null;
+			}
+		}
+	}
 
-    private void InteractWithObject()
-    {
-        if (_raycastHit.HasValue)
-        {
-            RaycastHit raycastHit = _raycastHit.Value;
+	private void OutlineInteractableObject()
+	{
+		if (_raycastHit.HasValue)
+		{
+			RaycastHit raycastHit = _raycastHit.Value;
 
-            if (Input.GetKeyDown(KeyCode.Q))
-            {
-                if ((raycastHit.point - Camera.transform.position).magnitude < _maxInteractDistance)
-                {
-                    var interactable = raycastHit.transform.GetComponent<Interactable>();
+			if (raycastHit.collider.CompareTag("InteractableObject") && raycastHit.collider != null)
+			{
+				_currentController = raycastHit.collider.GetComponent<OutlineController>();
 
-                    if (interactable != null)
-                    {
-                        interactable.Interact(this);
-                    }
-                }
-            }
-        }
-        
-    }
+				if (_prevController != _currentController)
+				{
+					HideOutline();
+					ShowOutline();
+				}
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject == _Van)
-        {
-            _safedMoney = _playerWallet;
-            _playerWallet = 0;
+				_prevController = _currentController;
+			}
+			else
+			{
+				HideOutline();
+			}
+		}
+	}
 
-            PlayerCurrentLoad = 0;
-        }
-    }
+	private void InteractWithObject()
+	{
+		if (_raycastHit.HasValue)
+		{
+			RaycastHit raycastHit = _raycastHit.Value;
 
-    private void ShowOutline()
-    {
-        if (_currentController != null)
-        {
-            _currentController.ShowOutline();
-        }
-    }
+			if (Input.GetKeyDown(KeyCode.Q))
+			{
+				if ((raycastHit.point - Camera.transform.position).magnitude < _maxInteractDistance)
+				{
+					var interactable = raycastHit.transform.GetComponent<Interactable>();
 
-    private void HideOutline()
-    {
-        if (_prevController != null)
-        {
-            _prevController.HideOutline();
-            _prevController = null;
-        }
-    }
+					if (interactable != null)
+					{
+						interactable.Interact(this);
+					}
+				}
+			}
+		}
+
+	}
+
+	private void OnTriggerEnter(Collider other)
+	{
+		if (other.gameObject == _Van)
+		{
+			_safedMoney += _playerWallet;
+			_playerWallet = 0;
+
+			PlayerCurrentLoad = 0;
+		}
+	}
+
+	private void ShowOutline()
+	{
+		if (_currentController != null)
+		{
+			_currentController.ShowOutline();
+		}
+	}
+
+	private void HideOutline()
+	{
+		if (_prevController != null)
+		{
+			_prevController.HideOutline();
+			_prevController = null;
+		}
+	}
 }
