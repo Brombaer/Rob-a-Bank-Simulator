@@ -7,7 +7,7 @@ namespace Assets.Scripts.AIPathfinding
 {
 	public class AIHandler : MonoBehaviour
 	{
-		[SerializeField] private Transform _playerTransform;
+		[SerializeField] private GameObject _playerTransform;
 
 		private List<Waypoint> _coverPoints;
 		private static AIHandler _instance;
@@ -19,7 +19,7 @@ namespace Assets.Scripts.AIPathfinding
 			get => _instance;
 		}
 
-		public Transform PlayerTransform
+		public GameObject PlayerTransform
 		{
 			get => _playerTransform;
 		}

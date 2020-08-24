@@ -14,7 +14,7 @@ namespace Assets.Scripts.AIPathfinding
 		[SerializeField] private Waypoint _coverOverride;
 		[SerializeField] private Transform _spine;
 
-		private PlayerCharacter _player = AIHandler.Instance.GetComponent<PlayerCharacter>();
+		private PlayerCharacter _player = AIHandler.Instance.PlayerTransform.GetComponent<PlayerCharacter>();
 
 		int _waypointCounter = 0;
 	
@@ -27,12 +27,12 @@ namespace Assets.Scripts.AIPathfinding
 		{
 			base.Update();
 
-			if ((CanSeePlayer() || _currentState == NPCStates.Aggro) && !_player.IsHolstered)
+			if ((CanSeePlayer() || _currentState == NPCStates.Aggro) && !_player.IsHolstered && _currentState != NPCStates.Commando)
 			{
 				if (_currentState != NPCStates.Aggro)
 				{
 					AIHandler.Instance.AggroAll();
-					_currentState = NPCStates.Aggro;
+					OnAggro();
 				}
 				
 
@@ -98,12 +98,12 @@ namespace Assets.Scripts.AIPathfinding
 		private void FindBestCover()
 		{
 			_closestCover = null;
-
-			for (int i = 0; i < GetWaypoints().Count; i++)
+			if (_coverOverride == null)
 			{
-				Waypoint current = GetWaypoints()[i];
-				if (_coverOverride == null)
+				for (int i = 0; i < GetWaypoints().Count; i++)
 				{
+				Waypoint current = GetWaypoints()[i];
+				
 					if (_closestCover == null)
 					{
 						if (!current.IsUsed)
@@ -114,14 +114,16 @@ namespace Assets.Scripts.AIPathfinding
 						_closestCover = current;
 
 					}
-				}
-				else
-				{
-					_closestCover = _coverOverride;
-				}
+				
 
+				}
 			}
-			if(_closestCover != null)
+			else
+			{
+				_closestCover = _coverOverride;
+			}
+
+			if (_closestCover != null)
 			{
 				_targetPosition = _closestCover.transform.position;
 				_closestCover.UseWaypoint(transform);
