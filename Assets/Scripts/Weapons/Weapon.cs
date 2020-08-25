@@ -65,7 +65,7 @@ public class Weapon : MonoBehaviour
 	{
 		initialSwayPosition = transform.localPosition;
 
-		_currentAmmo = MagazineSize;
+		_currentAmmo = _magazineSize;
 
 		_muzzleLight.enabled = false;
 
@@ -171,10 +171,13 @@ public class Weapon : MonoBehaviour
 
 	public void Reload()
 	{
-		_currentAmmo = MagazineSize;
-		FMODUnity.RuntimeManager.PlayOneShotAttached(_reloadFEvent, gameObject);
+		if(_currentAmmo != _magazineSize)
+		{
+			_currentAmmo = _magazineSize;
+			FMODUnity.RuntimeManager.PlayOneShotAttached(_reloadFEvent, gameObject);
 
-		_lastReloadTime = Time.time;
+			_lastReloadTime = Time.time;
+		}
 	}
 
 	public bool isReloading()
