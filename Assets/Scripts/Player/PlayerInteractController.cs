@@ -43,11 +43,16 @@ public class PlayerInteractController : MonoBehaviour
 	private GameObject _interactUI;
 	[SerializeField]
 	private GameObject _itemHeavyUI;
+	[SerializeField]
+	private CompleteGameUI _gameCompleteUI;
 
 
 	private OutlineController _prevController;
 	private OutlineController _currentController;
 	private RaycastHit? _raycastHit;
+	private float _seconds;
+	private float _minutes;
+	private int _hours;
 
 
 	private void Start()
@@ -68,6 +73,26 @@ public class PlayerInteractController : MonoBehaviour
 		Raycast();
 		OutlineInteractableObject();
 		InteractWithObject();
+		TotalTime();
+
+		Debug.Log($"{_hours}:{_minutes}:{Mathf.RoundToInt(_seconds)}");
+	}
+
+	private void TotalTime()
+	{
+		_seconds += Time.deltaTime;
+
+		if(_seconds >= 60)
+		{
+			_minutes++;
+			_seconds = 0;
+		}
+
+		if(_minutes >= 60)
+		{
+			_hours++;
+			_minutes = 0;
+		}
 	}
 
 	private void Raycast()
@@ -144,6 +169,8 @@ public class PlayerInteractController : MonoBehaviour
 		{
 			_safedMoney += _playerWallet;
 			_playerWallet = 0;
+
+			_gameCompleteUI.UpdateUI(Mathf.RoundToInt(SafedAmount), _hours, Mathf.RoundToInt(_seconds));
 
 			PlayerCurrentLoad = 0;
 		}
