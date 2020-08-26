@@ -11,12 +11,29 @@ namespace Assets.Scripts.AIPathfinding
 
 		[SerializeField] private NavMeshAgent _navMeshAgent;
 		[SerializeField] private Weapon _weapon;
+		[SerializeField] private bool _isHandgun;
+		[SerializeField] private GameObject _riflePrefab;
+		[SerializeField] private GameObject _handgunPrefab;
 
 		[SerializeField] private Animator _animator;
+
+
+		private void Awake()
+		{
+			_handgunPrefab.SetActive(false);
+			_riflePrefab.SetActive(false);
+		}
+
 		private void Start()
 		{
 			_weapon.Fired += OnFired;
-			
+
+			_animator.SetBool("isHandgun", _isHandgun);
+
+			if (_isHandgun)
+				_handgunPrefab.SetActive(true);
+			else
+				_riflePrefab.SetActive(true);
 		}
 
 		private void OnFired()

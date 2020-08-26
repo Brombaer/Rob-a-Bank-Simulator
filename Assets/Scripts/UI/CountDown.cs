@@ -4,7 +4,7 @@ using TMPro;
 
 public class CountDown : MonoBehaviour
 {
-	[SerializeField] private Alarm _alarm;
+	[SerializeField] private GameManager _gameManager;
 	private TextMeshProUGUI _text;
 
 
@@ -15,9 +15,9 @@ public class CountDown : MonoBehaviour
 
 	private void Update()
 	{
-		if(_alarm.SpawnDelay > 0)
+		if(_gameManager.SpawnDelay > 0)
 		{
-			int newTime = Mathf.RoundToInt(_alarm.SpawnDelay);
+			int newTime = Mathf.RoundToInt(_gameManager.SpawnDelay);
 			_text.text = $"{newTime}s left";
 		}
 		else

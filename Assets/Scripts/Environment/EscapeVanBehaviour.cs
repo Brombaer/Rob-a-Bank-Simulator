@@ -34,8 +34,8 @@ public class EscapeVanBehaviour : MonoBehaviour
             _leftVanDoorScript.SwitchDoorState();
             _rightVanDoorScript.SwitchDoorState();
             
-            _playerScript.SafedMoney += _playerScript.PlayerWallet;
-            _playerScript.PlayerWallet = 0;
+            _playerScript.SafedAmount += _playerScript.WalletAmount;
+            _playerScript.WalletAmount = 0;
 
             _playerScript.PlayerCurrentLoad = 0;
 

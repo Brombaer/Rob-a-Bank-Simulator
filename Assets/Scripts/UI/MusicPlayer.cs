@@ -5,7 +5,7 @@ public class MusicPlayer : MonoBehaviour
 {
 	[FMODUnity.EventRef]
 	[SerializeField] private string _music;
-	[SerializeField] private Alarm _alarm;
+	[SerializeField] private GameManager _alarm;
 	[SerializeField] private VaultDoorBehaviour _vault;
 	[SerializeField] private HealthComponent _healthComp;
 

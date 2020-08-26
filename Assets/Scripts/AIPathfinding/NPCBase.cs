@@ -12,7 +12,10 @@ namespace Assets.Scripts.AIPathfinding
 
 		Alert,
 
-		Aggro
+		Aggro,
+
+		Commando
+
 	}
 	public class NPCBase : MonoBehaviour
 	{
@@ -30,6 +33,8 @@ namespace Assets.Scripts.AIPathfinding
 		[SerializeField] private Weapon _weapon;
 
 		protected bool isCovered = false;
+
+		[SerializeField] private bool _instantCommando = false;
 
 		protected NPCStates _currentState;
 
@@ -52,9 +57,12 @@ namespace Assets.Scripts.AIPathfinding
 			AIHandler.Instance.Aggro += OnAggro;
 		}
 
-		private void OnAggro()
+		protected void OnAggro()
 		{
-			_currentState = NPCStates.Aggro;
+			if (_instantCommando)
+				_currentState = NPCStates.Commando;
+			else
+				_currentState = NPCStates.Aggro;
 		}
 
 		private void UpdateStates()
@@ -68,6 +76,16 @@ namespace Assets.Scripts.AIPathfinding
 				TemporaryShooting();
 			}
 
+			if(_currentState == NPCStates.Commando)
+			{
+				Vector3 target = GetPlayerTransform().position;
+				target.y = transform.position.y;
+
+				transform.LookAt(target);
+				TemporaryShooting();
+
+				_targetPosition = GetPlayerTransform().position;
+			}
 		}
 
 		protected virtual void Update()
@@ -165,7 +183,7 @@ namespace Assets.Scripts.AIPathfinding
 
 		protected Transform GetPlayerTransform()
 		{
-			return AIHandler.Instance.PlayerTransform;
+			return AIHandler.Instance.PlayerTransform.transform;
 		}
 	}
 

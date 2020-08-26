@@ -104,11 +104,14 @@ MonoBehaviour:
   _muzzleLocation: {fileID: 4356901760936928}
   _reloadTime: 2.7
   _magazineSize: 31
-  _bulletPrefab: {fileID: 1086664671600574, guid: 5953171a59c27394e9ad5cbb564affa8,
+  _bulletPrefab: {fileID: 1086664671600574, guid: d791bf904d354e6438a3ad32a4a60bce,
     type: 3}
   _bulletSpawnPoint: {fileID: 4865098306718012}
   _bulletForce: 400
-  weaponSway: 1
+  _raycastDistance: 50
+  _damage: 3
+  _fleshParticlePrefab: {fileID: 0}
+  weaponSway: 0
   swayAmount: 0.02
   maxSwayAmount: 0.05
   swaySmoothValue: 2
@@ -116,6 +119,7 @@ MonoBehaviour:
   _noAmmoFEvent: event:/Weapons/AK47/AK47_NoAmmo
   _reloadFEvent: event:/Weapons/AK47/AK47_Reload
   _chargeFEvent: event:/Weapons/AK47/AK47_Charge
+  _playerDamageFEvent: 
   _cameraShake: {fileID: 0}
 --- !u!1 &1246054412923670
 GameObject:

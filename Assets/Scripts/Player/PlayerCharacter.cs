@@ -19,9 +19,6 @@ public class PlayerCharacter : MonoBehaviour
 	[SerializeField] private float _walkSpeed = 4;
 	[SerializeField] private float _sprintSpeed = 2;
 	[SerializeField] private float _crouchSpeed = 1;
-
-
-
 	[Space]
 	[Space]
 	[Header("Animation References")]
@@ -252,7 +249,6 @@ public class PlayerCharacter : MonoBehaviour
 		{
 			_weaponAnimator.Play("Reload Out Of Ammo");
 		}
-			
 	}
 
 	private void HolsterWeapon()

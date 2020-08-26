@@ -9,10 +9,10 @@ public class PlayerInteractController : MonoBehaviour
     public GameObject Camera;
     [Space]
     [Header("Money information")]
-    //[SerializeField]
-    public float PlayerWallet;
-    //[SerializeField]
-    public float SafedMoney;
+    [SerializeField]
+    private float _playerWallet;
+    [SerializeField]
+    private float _safedMoney;
     [SerializeField]
     private float _onHitMoneyLossPercent;
     [Space]
@@ -22,8 +22,10 @@ public class PlayerInteractController : MonoBehaviour
     
     public float PlayerMaxLoadCapacity = 35000;
 
-    public float WalletAmount { get => PlayerWallet; set => PlayerWallet = value; }
-    [Space]
+    public float WalletAmount { get => _playerWallet; set => _playerWallet = value; }
+	public float SafedAmount { get => _safedMoney; set => _safedMoney = value; }
+
+	[Space]
     [Space]
     [SerializeField]
     private GameObject _van;
@@ -37,8 +39,12 @@ public class PlayerInteractController : MonoBehaviour
     [Tooltip("The maximum distance in which objects get highlighted for the player.")]
     [SerializeField]
     private float _maxOutlineDistance = 5;
+	[SerializeField]
+	private GameObject _interactUI;
+	[SerializeField]
+	private GameObject _itemHeavyUI;
 
-    private OutlineController _prevController;
+	private OutlineController _prevController;
     private OutlineController _currentController;
     private RaycastHit? _raycastHit;
 
@@ -49,7 +55,7 @@ public class PlayerInteractController : MonoBehaviour
 
     private void OnHealthChanged(float arg1, bool arg2)
     {
-        PlayerWallet *= 1- _onHitMoneyLossPercent;
+        _playerWallet *= 1- _onHitMoneyLossPercent;
     }
 
     private void Update()
@@ -144,7 +150,9 @@ public class PlayerInteractController : MonoBehaviour
         {
             _currentController.ShowOutline();
         }
-    }
+
+		_interactUI.SetActive(true);
+	}
 
     private void HideOutline()
     {
@@ -152,6 +160,8 @@ public class PlayerInteractController : MonoBehaviour
         {
             _prevController.HideOutline();
             _prevController = null;
-        }
+
+			_interactUI.SetActive(false);
+		}
     }
 }
