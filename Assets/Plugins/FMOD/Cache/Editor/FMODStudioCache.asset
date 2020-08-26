@@ -23,6 +23,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1326
+--- !u!114 &-9054552230077672646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Weapons/ChargeWeapon
+  m_EditorClassIdentifier: 
+  Path: event:/Weapons/ChargeWeapon
+  guid: af2d4e669e88694ea57a5e128a08728a
+  Banks:
+  - {fileID: 3270513414203661162}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 200
 --- !u!114 &-8952468304598242454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,6 +87,29 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-8675812235680283267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambiance/CityAmb
+  m_EditorClassIdentifier: 
+  Path: event:/Ambiance/CityAmb
+  guid: c32cd81815f70049b2245c683410a7c5
+  Banks:
+  - {fileID: 3270513414203661162}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 14000
 --- !u!114 &-8521260516683382375
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98,6 +144,52 @@ MonoBehaviour:
   Max: 2
   Default: 0
   Exists: 0
+--- !u!114 &-8286228593826210623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/Death
+  m_EditorClassIdentifier: 
+  Path: event:/UI/Death
+  guid: abb4f35fbe8b59409ad9eb9757966215
+  Banks:
+  - {fileID: 3270513414203661162}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2486
+--- !u!114 &-7993122843064914473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/Menu/OnClicked
+  m_EditorClassIdentifier: 
+  Path: event:/UI/Menu/OnClicked
+  guid: 382fd3e044b106499438de72ac02c596
+  Banks:
+  - {fileID: 3270513414203661162}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1326
 --- !u!114 &-7949503040447221006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -314,6 +406,52 @@ MonoBehaviour:
   Max: 2
   Default: 0
   Exists: 0
+--- !u!114 &-6647566076016951856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambiance/BankBell
+  m_EditorClassIdentifier: 
+  Path: event:/Ambiance/BankBell
+  guid: 1d835be2905f2b40807697ee2b21ad13
+  Banks:
+  - {fileID: 3270513414203661162}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 30563
+--- !u!114 &-6600308367705507278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Weapons/Glock48/Glock48_Fire
+  m_EditorClassIdentifier: 
+  Path: event:/Weapons/Glock48/Glock48_Fire
+  guid: f27642acbea511438a7ad514f79568fe
+  Banks:
+  - {fileID: 3270513414203661162}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 2.2
+  MaxDistance: 80
+  Length: 5543
 --- !u!114 &-6294926889761425683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -371,6 +509,23 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 515
+--- !u!114 &-5995949514748648644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Drill/DrillState
+  m_EditorClassIdentifier: 
+  Name: DrillState
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
 --- !u!114 &-5883569613711106299
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -394,6 +549,53 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 395
+--- !u!114 &-5748723934140541408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Door/Drill
+  m_EditorClassIdentifier: 
+  Path: event:/Door/Drill
+  guid: 902a78039c02864fa20ea2f6ae8ddec5
+  Banks:
+  - {fileID: 3270513414203661162}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -5995949514748648644}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 12069
+--- !u!114 &-5384792820950991571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Weapons/AK47/AK47_NoAmmo
+  m_EditorClassIdentifier: 
+  Path: event:/Weapons/AK47/AK47_NoAmmo
+  guid: daa6a5e5873d9f4d9a79b81d1110adf7
+  Banks:
+  - {fileID: 3270513414203661162}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 6.2000003
+  Length: 516
 --- !u!114 &-5229801369039342473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -686,6 +888,29 @@ MonoBehaviour:
   Max: 2
   Default: 0
   Exists: 0
+--- !u!114 &-3815516028617716087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/Menu/OnHover
+  m_EditorClassIdentifier: 
+  Path: event:/UI/Menu/OnHover
+  guid: 881bec44ddc789468aa772a11922b6bf
+  Banks:
+  - {fileID: 3270513414203661162}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 34
 --- !u!114 &-3786402546520037718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -703,6 +928,29 @@ MonoBehaviour:
   Max: 3
   Default: 0
   Exists: 0
+--- !u!114 &-3778893679851927820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/Menu/StartGame
+  m_EditorClassIdentifier: 
+  Path: event:/UI/Menu/StartGame
+  guid: 44c41d72264f704d9a6ab6d1393e3382
+  Banks:
+  - {fileID: 3270513414203661162}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2427
 --- !u!114 &-3727286259582714620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -848,6 +1096,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 192477
+--- !u!114 &-3170136135708531376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Weapons/WeaponImpact
+  m_EditorClassIdentifier: 
+  Path: event:/Weapons/WeaponImpact
+  guid: 70df2b82c1f8d945919ed832a584af2c
+  Banks:
+  - {fileID: 3270513414203661162}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 395
 --- !u!114 &-2948873945614467664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -871,6 +1142,46 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2688
+--- !u!114 &-2892601088234583233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Bank/State
+  m_EditorClassIdentifier: 
+  Name: State
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 1
+--- !u!114 &-2888216028774285091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/Detected
+  m_EditorClassIdentifier: 
+  Path: event:/UI/Detected
+  guid: 8469f08336920f4f879e8f1e0a8351d3
+  Banks:
+  - {fileID: 3270513414203661162}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 4500
 --- !u!114 &-2677262551728929169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -906,6 +1217,26 @@ MonoBehaviour:
   Max: 5
   Default: 0
   Exists: 0
+--- !u!114 &-2551693780085685036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD_Project/RAB/Build/Desktop/Master.strings.bank
+  SubDir: 
+  lastModified: 637340550590157383
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1798
+  Exists: 1
 --- !u!114 &-2317518273563542418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -975,6 +1306,29 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 7
   Length: 395
+--- !u!114 &-1280819505607598985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Weapons/Glock48/Glock48_NoAmmo
+  m_EditorClassIdentifier: 
+  Path: event:/Weapons/Glock48/Glock48_NoAmmo
+  guid: f8f4a23086e3e749846352b765263253
+  Banks:
+  - {fileID: 3270513414203661162}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 5
+  Length: 508
 --- !u!114 &-1243233984139612330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1178,35 +1532,35 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 3966048377809355904}
-  - {fileID: -605693180888486286}
+  - {fileID: -2551693780085685036}
+  - {fileID: 3270513414203661162}
   EditorEvents:
-  - {fileID: 2685058120064302361}
-  - {fileID: -2948873945614467664}
-  - {fileID: -4920920147502085609}
-  - {fileID: -513439321597636508}
-  - {fileID: -9157046118784474450}
-  - {fileID: -1580287662151687267}
-  - {fileID: -7696292632894420220}
-  - {fileID: -7540872815720738999}
-  - {fileID: -5883569613711106299}
-  - {fileID: 3505530440663251542}
-  - {fileID: -4103415509386882278}
-  - {fileID: 7834889246739940936}
-  - {fileID: 5565963612250140305}
-  - {fileID: -6213078984807988333}
-  - {fileID: -3255957800706237602}
-  - {fileID: 3987266490257174105}
-  - {fileID: -3357509372315784692}
-  - {fileID: 8473465336029545045}
-  - {fileID: -1243233984139612330}
-  - {fileID: -4423315427012832054}
+  - {fileID: 4935816230707507502}
+  - {fileID: 8335774066494432386}
+  - {fileID: 6325781228172362465}
+  - {fileID: -6647566076016951856}
+  - {fileID: -7993122843064914473}
+  - {fileID: 1596704391801909423}
+  - {fileID: -3778893679851927820}
+  - {fileID: 8161060392806647825}
+  - {fileID: -3170136135708531376}
+  - {fileID: -2888216028774285091}
+  - {fileID: -3815516028617716087}
+  - {fileID: -5748723934140541408}
+  - {fileID: -8286228593826210623}
+  - {fileID: -9054552230077672646}
+  - {fileID: -8675812235680283267}
+  - {fileID: -5384792820950991571}
+  - {fileID: 1537802988742437521}
+  - {fileID: -6600308367705507278}
+  - {fileID: -1280819505607598985}
+  - {fileID: 8364815152848835551}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -605693180888486286}
+  - {fileID: 3270513414203661162}
   StringsBanks:
-  - {fileID: 3966048377809355904}
-  stringsBankWriteTime: 637339866333044645
+  - {fileID: -2551693780085685036}
+  stringsBankWriteTime: 637340550590157383
   cacheVersion: 3
 --- !u!114 &44616312257872162
 MonoBehaviour:
@@ -1362,6 +1716,53 @@ MonoBehaviour:
   Max: 3
   Default: 0
   Exists: 0
+--- !u!114 &1537802988742437521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Bank
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Bank
+  guid: e8cab0decb3afe4f95f12112197842ad
+  Banks:
+  - {fileID: 3270513414203661162}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -2892601088234583233}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 28812
+--- !u!114 &1596704391801909423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Weapons/AK47/AK47_Fire
+  m_EditorClassIdentifier: 
+  Path: event:/Weapons/AK47/AK47_Fire
+  guid: 3a75f9f3f4b1404cb5e38c1ddab251d6
+  Banks:
+  - {fileID: 3270513414203661162}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 3.4
+  MaxDistance: 80
+  Length: 45356
 --- !u!114 &1625585799084537506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1648,6 +2049,24 @@ MonoBehaviour:
   Max: 3
   Default: 0
   Exists: 1
+--- !u!114 &3270513414203661162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD_Project/RAB/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637340550590117511
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &3505530440663251542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1927,6 +2346,29 @@ MonoBehaviour:
   Max: 5
   Default: 0
   Exists: 0
+--- !u!114 &4935816230707507502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/GameCompleted
+  m_EditorClassIdentifier: 
+  Path: event:/UI/GameCompleted
+  guid: 0ca23e10fbbc8f429ce9fafea9555cbc
+  Banks:
+  - {fileID: 3270513414203661162}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 7855
 --- !u!114 &5015530385898385441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2132,6 +2574,29 @@ MonoBehaviour:
   Max: 2
   Default: 0
   Exists: 0
+--- !u!114 &6325781228172362465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/Damaged
+  m_EditorClassIdentifier: 
+  Path: event:/UI/Damaged
+  guid: 109ab36668e1bc489064ffe971b001b7
+  Banks:
+  - {fileID: 3270513414203661162}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1596
 --- !u!114 &6365952748467361148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2301,6 +2766,75 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 9.2
   Length: 12069
+--- !u!114 &8161060392806647825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Door/DoorOpen
+  m_EditorClassIdentifier: 
+  Path: event:/Door/DoorOpen
+  guid: 625662fc0787084899a6eb1d6c662679
+  Banks:
+  - {fileID: 3270513414203661162}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 10200
+--- !u!114 &8335774066494432386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Weapons/AK47/AK47_Reload
+  m_EditorClassIdentifier: 
+  Path: event:/Weapons/AK47/AK47_Reload
+  guid: 0e964065e490a940b1d71d9bae839626
+  Banks:
+  - {fileID: 3270513414203661162}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2688
+--- !u!114 &8364815152848835551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Weapons/Glock48/Glock48_Reload
+  m_EditorClassIdentifier: 
+  Path: event:/Weapons/Glock48/Glock48_Reload
+  guid: fb5d8e395e2f80498c307edd369e4f2f
+  Banks:
+  - {fileID: 3270513414203661162}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 7
+  Length: 0
 --- !u!114 &8367623165289754600
 MonoBehaviour:
   m_ObjectHideFlags: 0

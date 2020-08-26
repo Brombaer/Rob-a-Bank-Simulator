@@ -15,8 +15,8 @@ MonoBehaviour:
   SwitchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: RobABankSim/RAB/RAB.fspro
-  sourceBankPath: RobABankSim\RAB\Build
+  sourceProjectPath: FMOD_Project/RAB/RAB.fspro
+  sourceBankPath: FMOD_Project\RAB\Build
   SourceBankPathUnformatted: 
   AutomaticEventLoading: 0
   BankLoadType: 0
@@ -76,7 +76,8 @@ MonoBehaviour:
   - Platform: 20
     Value: 32
   Plugins: []
-  MasterBanks: []
+  MasterBanks:
+  - Master
   Banks: []
   BanksToLoad: []
   LiveUpdatePort: 9264
