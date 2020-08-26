@@ -36,6 +36,8 @@ public class DoorBehaviour : MonoBehaviour
 			_currentAngle += Mathf.Sign(_targetAngle - _currentAngle) * rotationAmount;
 
 			transform.localRotation = Quaternion.Euler(0, _currentAngle, 0);
+
+			if (_isOpen) _closeAngle = _currentAngle;
 		}
 	}
 

@@ -6,6 +6,8 @@ public class VaultDoorBehaviour : DoorBehaviour
 	[SerializeField]
 	private GameObject _vaultDrill;
 	[SerializeField]
+	private GameObject _vaultDoorHandle;
+	[SerializeField]
 	private float _timeLeft;
 	[SerializeField]
 	private GameObject _drillUIPrefab;
@@ -33,8 +35,8 @@ public class VaultDoorBehaviour : DoorBehaviour
 
 	private void Awake()
 	{
-		_drillUI = _drillUIPrefab.GetComponent<DrillUI>();
-		_eventInst = FMODUnity.RuntimeManager.CreateInstance(_drillSound);
+		//_drillUI = _drillUIPrefab.GetComponent<DrillUI>();
+		//_eventInst = FMODUnity.RuntimeManager.CreateInstance(_drillSound);
 
 		_drillUIPrefab.SetActive(false);
 		_vaultDrill.SetActive(false);
@@ -68,6 +70,9 @@ public class VaultDoorBehaviour : DoorBehaviour
 				}
 
 				_drillUIPrefab.SetActive(false);
+
+				_vaultDoorHandle.transform.Rotate(Vector3.forward, Time.deltaTime * 140f);
+
 				float rotationAmount = Mathf.Min(_rotationSpeed * Time.deltaTime, Mathf.Abs(_targetAngle - _currentAngle));
 				_currentAngle += Mathf.Sign(_targetAngle - _currentAngle) * rotationAmount;
 
