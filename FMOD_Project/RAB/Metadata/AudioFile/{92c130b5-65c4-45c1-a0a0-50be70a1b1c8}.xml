@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.00.00">
 	<object class="AudioFile" id="{92c130b5-65c4-45c1-a0a0-50be70a1b1c8}">
 		<property name="assetPath">
-			<value>Assets/UI/Deny3.wav</value>
+			<value>UI/Deny3.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>

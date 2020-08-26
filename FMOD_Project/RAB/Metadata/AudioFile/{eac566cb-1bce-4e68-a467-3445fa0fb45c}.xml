@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.00.00">
 	<object class="AudioFile" id="{eac566cb-1bce-4e68-a467-3445fa0fb45c}">
 		<property name="assetPath">
-			<value>Assets/UI/MUI TEXT High Clicks.wav</value>
+			<value>UI/MUI TEXT High Clicks.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>96</value>

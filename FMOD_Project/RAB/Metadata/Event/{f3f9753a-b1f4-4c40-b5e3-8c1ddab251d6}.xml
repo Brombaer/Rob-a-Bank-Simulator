@@ -272,7 +272,7 @@
 	</object>
 	<object class="MultiSound" id="{f4129739-8125-469a-950a-9675c4669622}">
 		<property name="length">
-			<value>45.356666666666669</value>
+			<value>3.5</value>
 		</property>
 		<relationship name="sounds">
 			<destination>{6727ebd0-8f81-49f5-addf-2d4e11e10f52}</destination>
