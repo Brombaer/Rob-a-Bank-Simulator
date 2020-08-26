@@ -48,6 +48,9 @@ public class PlayerInteractController : MonoBehaviour
     private OutlineController _currentController;
     private RaycastHit? _raycastHit;
 
+    [SerializeField]
+    private DoorBehaviour _doorBehaviourScript;
+
     private void Start()
     {
         _healthRef.HealthChanged += OnHealthChanged;
@@ -123,7 +126,7 @@ public class PlayerInteractController : MonoBehaviour
                 {
                     var interactable = raycastHit.transform.GetComponent<Interactable>();
 
-                    if (interactable != null)
+                    if (interactable != null && interactable != _doorBehaviourScript._isOpen)
                     {
                         interactable.Interact(this);
                     }

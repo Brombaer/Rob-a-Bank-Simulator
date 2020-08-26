@@ -5,7 +5,8 @@ using UnityEngine;
 public class DoorBehaviour : MonoBehaviour
 {
 	[Header("Door Settings")]
-	[SerializeField] protected bool _isOpen;
+	//[SerializeField] protected
+	public bool _isOpen;
 	[SerializeField] protected float _openAngle;
 	[SerializeField] protected float _closeAngle;
 	[Tooltip("How fast the door opens")]
