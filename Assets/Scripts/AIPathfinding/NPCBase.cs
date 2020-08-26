@@ -189,7 +189,14 @@ namespace Assets.Scripts.AIPathfinding
 		private void OnDeath()
 		{
 			Destroy(gameObject);
+
 			GameObject ragdoll = Instantiate(_ragdoll, transform.position, transform.rotation);
+
+			Dictionary<string, Transform> childrenDictionary = new Dictionary<string, Transform>();
+
+			RecursiveAddName(childrenDictionary, transform);
+
+			MatchSourceSkeleton(childrenDictionary, _ragdoll.transform.Find("Root"));
 
 			SkinnedMeshRenderer ragdollRenderer = ragdoll.GetComponentInChildren<SkinnedMeshRenderer>();
 
@@ -197,6 +204,35 @@ namespace Assets.Scripts.AIPathfinding
 
 			ragdollRenderer.sharedMaterial = renderer.sharedMaterial;
 			ragdollRenderer.sharedMesh = renderer.sharedMesh;
+		}
+
+		private void RecursiveAddName(Dictionary<string, Transform> dictionary, Transform t)
+		{
+			dictionary[t.name] = t;
+
+			for (int i = 0; i < t.childCount; i++)
+			{
+				RecursiveAddName(dictionary, t.GetChild(i));
+			}
+		}
+
+		private void MatchSourceSkeleton(Dictionary<string, Transform> dictionary, Transform localBone)
+		{
+			Transform t = dictionary[localBone.name];
+			
+			if (t == null)
+			{
+				Debug.LogError("Cant Find " + localBone.name);
+				return;
+			}
+
+			localBone.localPosition = t.localPosition;
+			localBone.localRotation = t.localRotation;
+
+			for (int i = 0; i < localBone.childCount; i++)
+			{
+				MatchSourceSkeleton(dictionary, localBone.GetChild(i));
+			}
 		}
 
 		protected Transform GetPlayerTransform()

@@ -122,7 +122,7 @@ public class Weapon : MonoBehaviour
 					FMODUnity.RuntimeManager.PlayOneShotAttached(_playerDamageFEvent, gameObject);
 
 				if (hit.collider.CompareTag("Enemy"))
-					Instantiate(_fleshParticlePrefab, hit.collider.transform);
+					Instantiate(_fleshParticlePrefab, hit.point, Quaternion.identity, hit.collider.transform);
 
 				var damageable = hit.collider.GetComponent<IDamageable>();
 
