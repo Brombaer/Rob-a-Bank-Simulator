@@ -37,7 +37,7 @@ namespace Assets.Scripts.AIPathfinding
 
 		private void OnDestroy()
 		{
-			if(isCover)
+			if(isCover && AIHandler.Instance != null)
 				AIHandler.Instance.RemoveCover(this);
 		}
 

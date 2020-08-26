@@ -104,7 +104,7 @@ MonoBehaviour:
   _muzzleLocation: {fileID: 4356901760936928}
   _reloadTime: 2.7
   _magazineSize: 31
-  _bulletPrefab: {fileID: 1086664671600574, guid: d791bf904d354e6438a3ad32a4a60bce,
+  _bulletPrefab: {fileID: 1086664671600574, guid: 5953171a59c27394e9ad5cbb564affa8,
     type: 3}
   _bulletSpawnPoint: {fileID: 4865098306718012}
   _bulletForce: 400

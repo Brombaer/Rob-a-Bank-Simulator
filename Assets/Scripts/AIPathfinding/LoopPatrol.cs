@@ -14,14 +14,21 @@ namespace Assets.Scripts.AIPathfinding
 		[SerializeField] private Waypoint _coverOverride;
 		[SerializeField] private Transform _spine;
 
-		private PlayerCharacter _player = AIHandler.Instance.PlayerTransform.GetComponent<PlayerCharacter>();
+		private PlayerCharacter _player;
 
 		int _waypointCounter = 0;
 	
 		private float _currentWaitTime = 4.0f;
 		[SerializeField] private float _waitTime = 4.0f;
 
-		
+
+		protected override void Start()
+		{
+			base.Start();
+
+			_player = AIHandler.Instance.PlayerTransform.GetComponent<PlayerCharacter>();
+		}
+
 
 		protected override void Update()
 		{
@@ -32,7 +39,6 @@ namespace Assets.Scripts.AIPathfinding
 				if (_currentState != NPCStates.Aggro)
 				{
 					AIHandler.Instance.AggroAll();
-					OnAggro();
 				}
 				
 
