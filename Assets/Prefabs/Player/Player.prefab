@@ -1196,6 +1196,8 @@ MonoBehaviour:
   _playerWallet: 0
   _safedMoney: 0
   _onHitMoneyLossPercent: 0.1
+  PlayerCurrentLoad: 0
+  PlayerMaxLoadCapacity: 35000
   _Van: {fileID: 0}
   _healthRef: {fileID: 263930226}
   _maxInteractDistance: 2
@@ -1221,6 +1223,7 @@ MonoBehaviour:
   _canvas: {fileID: 7327578921471479536}
   _wastedPrefab: {fileID: 339446544641105381, guid: 7c465d543f4b49b4585447da708b29bf,
     type: 3}
+  _deathSound: event:/UI/Death
 --- !u!1 &7199751500677796741
 GameObject:
   m_ObjectHideFlags: 0
@@ -1231,8 +1234,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7197636217873353905}
   - component: {fileID: 7182006011840252613}
-  - component: {fileID: 7119735014241204839}
-  - component: {fileID: 7043250998054872783}
   - component: {fileID: 1874643576}
   - component: {fileID: 8887605162498628101}
   - component: {fileID: 330845221}
@@ -1301,38 +1302,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &7119735014241204839
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7199751500677796741}
-  m_Enabled: 0
---- !u!167 &7043250998054872783
-AudioReverbZone:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7199751500677796741}
-  m_Enabled: 1
-  m_MinDistance: 10
-  m_MaxDistance: 15
-  m_ReverbPreset: 20
-  m_Room: -1000
-  m_RoomHF: -2000
-  m_DecayTime: 1.49
-  m_DecayHFRatio: 0.5
-  m_Reflections: -2466
-  m_ReflectionsDelay: 0.179
-  m_Reverb: -1926
-  m_ReverbDelay: 0.1
-  m_HFReference: 5000
-  m_Diffusion: 21
-  m_Density: 100
-  m_LFReference: 250
-  m_RoomLF: 0
 --- !u!95 &1874643576
 Animator:
   serializedVersion: 3

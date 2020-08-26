@@ -10,6 +10,7 @@ TagManager:
   - With Collider
   - Waypoint
   - InteractableObject
+  - Enemy
   layers:
   - Default
   - TransparentFX

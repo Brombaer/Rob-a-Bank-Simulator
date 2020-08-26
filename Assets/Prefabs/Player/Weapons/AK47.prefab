@@ -5924,18 +5924,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c55a0d010df63714eb0ffbdadffd059b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _weaponHUD: {fileID: 0}
   Name: AK47
+  WeaponIcon: {fileID: 0}
   _isSingleFire: 0
   _fireRate: 500
   _muzzleParticle: {fileID: 672831600136487400}
   _muzzleLight: {fileID: 726866179371169668}
   _muzzleLocation: {fileID: 835512181305062726}
   _reloadTime: 2.7
+  _magazineSize: 31
   _bulletPrefab: {fileID: 1086664671600574, guid: 5953171a59c27394e9ad5cbb564affa8,
     type: 3}
   _bulletSpawnPoint: {fileID: 830465209216112538}
   _bulletForce: 400
+  _raycastDistance: 50
+  _damage: 10
+  _fleshParticlePrefab: {fileID: 1862702955490848, guid: ec8d3f2d1e540084399da023f13f87d7,
+    type: 3}
   weaponSway: 1
   swayAmount: 0.02
   maxSwayAmount: 0.05
@@ -5944,6 +5949,8 @@ MonoBehaviour:
   _noAmmoFEvent: event:/Weapons/AK47/AK47_NoAmmo
   _reloadFEvent: event:/Weapons/AK47/AK47_Reload
   _chargeFEvent: event:/Weapons/AK47/AK47_Charge
+  _playerDamageFEvent: event:/UI/Damaged
+  _cameraShake: {fileID: 0}
 --- !u!1 &834078113760660092
 GameObject:
   m_ObjectHideFlags: 0

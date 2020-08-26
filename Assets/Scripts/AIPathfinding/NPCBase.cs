@@ -25,8 +25,6 @@ namespace Assets.Scripts.AIPathfinding
 		[SerializeField] protected float _detectDistance;
 		[SerializeField] protected float _shootDistance;
 
-		[SerializeField] protected Transform _playerTransform;
-
 		protected Vector3? _targetPosition;
 
 		[SerializeField] private Weapon _weapon;
@@ -45,13 +43,25 @@ namespace Assets.Scripts.AIPathfinding
 				Destroy(this);
 			else
 				_health.Death += OnDeath;
+
+			
+		}
+
+		private void Start()
+		{
+			AIHandler.Instance.Aggro += OnAggro;
+		}
+
+		private void OnAggro()
+		{
+			_currentState = NPCStates.Aggro;
 		}
 
 		private void UpdateStates()
 		{
 			if (_currentState == NPCStates.Aggro)
 			{
-				Vector3 target = _playerTransform.position;
+				Vector3 target = GetPlayerTransform().position;
 				target.y = transform.position.y;
 
 				transform.LookAt(target);
@@ -90,19 +100,22 @@ namespace Assets.Scripts.AIPathfinding
 		{
 			if (PlayerDistanceTo(transform) <= _detectDistance)
 			{
-				Vector3 direction = Vector3.Normalize(_playerTransform.position - transform.position);
+				Vector3 lineStart = transform.position + new Vector3(0, 1.6f, 0);
+
+				Vector3 direction = Vector3.Normalize(GetPlayerTransform().position - lineStart);
 				float angle = Mathf.Acos(Vector3.Dot(transform.forward, direction)) * Mathf.Rad2Deg;
 
 				if (angle < _maxSightConeAngle)
 				{
-					if (Physics.Raycast(transform.position, direction, out RaycastHit hitInfo, PlayerDistanceTo(transform)))
+					Debug.DrawLine(lineStart, lineStart + direction * _detectDistance);
+					if (Physics.Raycast(lineStart, direction, out RaycastHit hitInfo, PlayerDistanceTo(transform)))
 					{
-						if (hitInfo.transform == _playerTransform)
+						if (hitInfo.transform == GetPlayerTransform())
 							return true;
 						return false;
 					}
 					else
-						return true;
+						return false;
 				}
 				else
 				{
@@ -119,7 +132,10 @@ namespace Assets.Scripts.AIPathfinding
 		{
 			if (_weapon.CurrentAmmo > 0)
 			{
-				_weapon.BeginFire();
+				if (CanSeePlayer())
+					_weapon.BeginFire();
+				else
+					_weapon.StopFire();
 			}
 			else
 			{
@@ -129,7 +145,7 @@ namespace Assets.Scripts.AIPathfinding
 
 		protected float PlayerDistanceTo(Transform target)
 		{
-			return Vector3.Distance(_playerTransform.position, target.position);
+			return Vector3.Distance(GetPlayerTransform().position, target.position);
 		}
 
 		
@@ -145,6 +161,11 @@ namespace Assets.Scripts.AIPathfinding
 
 			ragdollRenderer.sharedMaterial = renderer.sharedMaterial;
 			ragdollRenderer.sharedMesh = renderer.sharedMesh;
+		}
+
+		protected Transform GetPlayerTransform()
+		{
+			return AIHandler.Instance.PlayerTransform;
 		}
 	}
 

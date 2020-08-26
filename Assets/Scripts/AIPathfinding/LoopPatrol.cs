@@ -10,8 +10,11 @@ namespace Assets.Scripts.AIPathfinding
 	public class LoopPatrol : NPCBase
 	{
 		[SerializeField] private List<Waypoint> _waypoints;
-		[SerializeField] private List<Waypoint> _coverPoints;
 		[SerializeField] private Waypoint _closestCover;
+		[SerializeField] private Waypoint _coverOverride;
+		[SerializeField] private Transform _spine;
+
+		private PlayerCharacter _player = AIHandler.Instance.GetComponent<PlayerCharacter>();
 
 		int _waypointCounter = 0;
 	
@@ -24,11 +27,23 @@ namespace Assets.Scripts.AIPathfinding
 		{
 			base.Update();
 
-			if (CanSeePlayer() || _currentState == NPCStates.Aggro)
+			if ((CanSeePlayer() || _currentState == NPCStates.Aggro) && !_player.IsHolstered)
 			{
-				_currentState = NPCStates.Aggro;
+				if (_currentState != NPCStates.Aggro)
+				{
+					AIHandler.Instance.AggroAll();
+					_currentState = NPCStates.Aggro;
+				}
+				
 
-				FindBestCover();
+				if (!AtBestWaypoint())
+				{
+					if (_closestCover != null)
+					{
+						_closestCover.LeaveWaypoint(transform);
+					}
+					FindBestCover();
+				}
 			}
 			else
 			{
@@ -50,6 +65,21 @@ namespace Assets.Scripts.AIPathfinding
 			}
 		}
 
+		private void LateUpdate()
+		{
+			if (_currentState == NPCStates.Aggro)
+			{
+				float dir = Vector3.Angle(transform.forward, GetPlayerTransform().position - _spine.position);
+
+				if(transform.position.y < GetPlayerTransform().position.y)
+				{
+					dir = -dir;
+				}
+				
+				_spine.localEulerAngles = new Vector3(_spine.localEulerAngles.x + 180, 0, 25 + dir);
+			}
+		}
+
 		private void FindNextWaypoint()
 		{
 			if (TargetReached())
@@ -67,16 +97,77 @@ namespace Assets.Scripts.AIPathfinding
 
 		private void FindBestCover()
 		{
-			_closestCover = _coverPoints[0];
+			_closestCover = null;
 
-			for (int i = 1; i < _waypoints.Count; i++)
+			for (int i = 0; i < GetWaypoints().Count; i++)
 			{
-				if (PlayerDistanceTo(_coverPoints[i].transform) < PlayerDistanceTo(_coverPoints[i - 1].transform))
+				Waypoint current = GetWaypoints()[i];
+				if (_coverOverride == null)
 				{
-					_closestCover = _coverPoints[i];
+					if (_closestCover == null)
+					{
+						if (!current.IsUsed)
+							_closestCover = current;
+					}
+					else if (PlayerDistanceTo(current.transform) < PlayerDistanceTo(_closestCover.transform) && !current.IsUsed)
+					{
+						_closestCover = current;
+
+					}
+				}
+				else
+				{
+					_closestCover = _coverOverride;
+				}
+
+			}
+			if(_closestCover != null)
+			{
+				_targetPosition = _closestCover.transform.position;
+				_closestCover.UseWaypoint(transform);
+			}
+			else
+			{
+				Debug.Log("Can't find cover.");
+			}
+			
+		}
+
+		private bool AtBestWaypoint()
+		{
+			Waypoint closestCover;
+			closestCover = GetWaypoints()[0];
+
+			bool isBest = false;
+
+			for (int i = 1; i < GetWaypoints().Count; i++)
+			{
+				Waypoint current = GetWaypoints()[i];
+				if (PlayerDistanceTo(current.transform) < PlayerDistanceTo(closestCover.transform))
+				{
+					if(current.IsUser(transform))
+					{
+						closestCover = current;
+						isBest = true;
+					}
+					else
+					{
+						if (current.IsUsed)
+						{
+							closestCover = GetWaypoints()[i];
+							isBest = false;
+						}
+					}
+					
 				}
 			}
-			_navMeshAgent.destination = _closestCover.transform.position;
+
+			return isBest;
+		}
+
+		private List<Waypoint> GetWaypoints()
+		{
+			return AIHandler.Instance.CoverPoints;
 		}
 	}
 }

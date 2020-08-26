@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
 
 public class VaultDoorBehaviour : DoorBehaviour
@@ -15,17 +14,27 @@ public class VaultDoorBehaviour : DoorBehaviour
 	[SerializeField]
 	private string _openDoor;
 
+	[FMODUnity.EventRef]
+	[SerializeField]
+	private string _drillSound;
+
+
+	private FMOD.Studio.EventInstance _eventInst;
 	private DrillUI _drillUI;
 	private bool _doOnce = true;
 	private bool _doOnce2 = true;
 
-
 	public float CurrentTimer { get => _timeLeft; }
+	public event Action<int> VaultDoorState;
+
+
+
 
 
 	private void Awake()
 	{
 		_drillUI = _drillUIPrefab.GetComponent<DrillUI>();
+		_eventInst = FMODUnity.RuntimeManager.CreateInstance(_drillSound);
 
 		_drillUIPrefab.SetActive(false);
 		_vaultDrill.SetActive(false);
@@ -42,18 +51,19 @@ public class VaultDoorBehaviour : DoorBehaviour
 		_currentAngle = transform.localEulerAngles.y;
 	}
 
+
 	// Update is called once per frame
 	private void Update()
 	{
 		if (_targetAngle != _currentAngle)
 		{
-			_vaultDrill.SetActive(true);
-
 			if (_timeLeft <= 0)
 			{
 				if(_doOnce2)
 				{
-					FMODUnity.RuntimeManager.PlayOneShot(_openDoor, gameObject.transform.position);
+					FMODUnity.RuntimeManager.PlayOneShotAttached(_openDoor, gameObject);
+					_eventInst.setParameterByName("DrillState", 1);
+					VaultDoorState?.Invoke(2);
 					_doOnce2 = false;
 				}
 
@@ -67,6 +77,10 @@ public class VaultDoorBehaviour : DoorBehaviour
 			{
 				if (_doOnce)
 				{
+					_vaultDrill.SetActive(true);
+					FMODUnity.RuntimeManager.AttachInstanceToGameObject(_eventInst, _vaultDrill.transform, (Rigidbody)null);
+					_eventInst.start();
+
 					_drillUIPrefab.SetActive(true);
 					_doOnce = false;
 				}
