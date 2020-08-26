@@ -4,8 +4,9 @@
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: M_Blood_Spurt_04
   m_Shader: {fileID: 4800000, guid: 28eccfbe919a6b945bd87550768e9dcf, type: 3}
   m_ShaderKeywords: SPECULAR_REFLECTION_ON
@@ -113,8 +114,8 @@ Material:
     m_Floats:
     - _AlphaClipMin: 1.53
     - _AlphaClipSoft: 0.37
-    - _AlphaMin: 0.1
-    - _AlphaSoft: 0.022
+    - _AlphaMin: 0.042
+    - _AlphaSoft: 0.246
     - _BumpScale: 1
     - _Columns: 1
     - _Cutoff: 0.5
