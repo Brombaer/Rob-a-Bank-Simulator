@@ -118,8 +118,8 @@ MonoBehaviour:
   _shotFEvent: event:/Weapons/AK47/AK47_Fire
   _noAmmoFEvent: event:/Weapons/AK47/AK47_NoAmmo
   _reloadFEvent: event:/Weapons/AK47/AK47_Reload
-  _chargeFEvent: event:/Weapons/AK47/AK47_Charge
-  _playerDamageFEvent: 
+  _chargeFEvent: event:/Weapons/ChargeWeapon
+  _playerDamageFEvent: event:/UI/Damaged
   _cameraShake: {fileID: 0}
 --- !u!1 &1246054412923670
 GameObject:

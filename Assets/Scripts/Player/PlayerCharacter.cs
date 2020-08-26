@@ -236,18 +236,20 @@ public class PlayerCharacter : MonoBehaviour
 
 	private void Reload()
 	{
-		if (CurrentWeapon.isReloading())
-			return;
-
-		CurrentWeapon.Reload();
-		
-		if (CurrentWeapon.CurrentAmmo > 0)
+		if(CurrentWeapon.CurrentAmmo != CurrentWeapon.MagazineSize)
 		{
-			_weaponAnimator.Play("Reload Ammo Left");
-		}
-		else
-		{
-			_weaponAnimator.Play("Reload Out Of Ammo");
+			if (CurrentWeapon.isReloading())
+				return;
+			CurrentWeapon.Reload();
+			
+			if (CurrentWeapon.CurrentAmmo > 0)
+			{
+				_weaponAnimator.Play("Reload Ammo Left");
+			}
+			else
+			{
+				_weaponAnimator.Play("Reload Out Of Ammo");
+			}
 		}
 	}
 

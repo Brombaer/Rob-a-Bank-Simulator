@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _despawnTimer: 5
-  _impact: event:/Weapons/Weapon_Imapct
+  _impact: event:/Weapons/WeaponImpact
 --- !u!1 &1388083885036476
 GameObject:
   m_ObjectHideFlags: 0

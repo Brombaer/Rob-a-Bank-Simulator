@@ -9996,8 +9996,8 @@ MonoBehaviour:
   _shotFEvent: event:/Weapons/Glock48/Glock48_Fire
   _noAmmoFEvent: event:/Weapons/Glock48/Glock48_NoAmmo
   _reloadFEvent: event:/Weapons/Glock48/Glock48_Reload
-  _chargeFEvent: event:/Weapons/AK47/AK47_Charge
-  _playerDamageFEvent: 
+  _chargeFEvent: event:/Weapons/ChargeWeapon
+  _playerDamageFEvent: event:/UI/Damaged
   _cameraShake: {fileID: 0}
 --- !u!1 &4065713704443959736
 GameObject:

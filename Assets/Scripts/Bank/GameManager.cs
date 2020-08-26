@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour
 
 	private bool _doOnce = true;
 	private bool _inBank;
+	private bool _isDetected;
 
 	public float SpawnDelay { get => _spawnDelay; }
 
@@ -42,7 +43,8 @@ public class GameManager : MonoBehaviour
 
 	private void Update()
 	{
-		CheckIfHolstered();
+		if (_inBank && !_playerChar.IsHolstered) HasBeenDetected();
+		if(_isDetected) _spawnDelay -= Time.deltaTime;
 	}
 
 	private void OnTriggerEnter(Collider other)
@@ -61,14 +63,6 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
-	private void CheckIfHolstered()
-	{
-		if ( _inBank && !_playerChar.IsHolstered)
-		{
-			HasBeenDetected();
-		}
-	}
-
 	public void HasBeenDetected()
 	{
 		if (_doOnce && !_noDetection)
@@ -81,8 +75,8 @@ public class GameManager : MonoBehaviour
 
 			StartCoroutine(AlarmTriggered());
 			_doOnce = false;
+			_isDetected = true;
 		}
-		_spawnDelay -= Time.deltaTime;
 	}
 
 	IEnumerator AlarmTriggered()

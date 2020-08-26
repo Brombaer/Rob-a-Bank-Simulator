@@ -15,8 +15,8 @@ MonoBehaviour:
   SwitchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: C:/Users/eagee/OneDrive/Documents/FMOD Studio/GPR4300_RobABank/GPR4300_RobABank.fspro
-  sourceBankPath: C:/Users/eagee/OneDrive/Documents/FMOD Studio/GPR4300_RobABank/Build
+  sourceProjectPath: RobABankSim/RAB/RAB.fspro
+  sourceBankPath: RobABankSim\RAB\Build
   SourceBankPathUnformatted: 
   AutomaticEventLoading: 0
   BankLoadType: 0
