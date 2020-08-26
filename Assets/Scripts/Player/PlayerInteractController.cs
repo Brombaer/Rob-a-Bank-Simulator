@@ -9,10 +9,10 @@ public class PlayerInteractController : MonoBehaviour
     public GameObject Camera;
     [Space]
     [Header("Money information")]
-    [SerializeField]
-    private float _playerWallet;
-    [SerializeField]
-    private float _safedMoney;
+    //[SerializeField]
+    public float PlayerWallet;
+    //[SerializeField]
+    public float SafedMoney;
     [SerializeField]
     private float _onHitMoneyLossPercent;
     [Space]
@@ -22,11 +22,11 @@ public class PlayerInteractController : MonoBehaviour
     
     public float PlayerMaxLoadCapacity = 35000;
 
-    public float WalletAmount { get => _playerWallet; set => _playerWallet = value; }
+    public float WalletAmount { get => PlayerWallet; set => PlayerWallet = value; }
     [Space]
     [Space]
     [SerializeField]
-    private GameObject _Van;
+    private GameObject _van;
     [SerializeField]
     private HealthComponent _healthRef;
 
@@ -49,7 +49,7 @@ public class PlayerInteractController : MonoBehaviour
 
     private void OnHealthChanged(float arg1, bool arg2)
     {
-        _playerWallet *= 1- _onHitMoneyLossPercent;
+        PlayerWallet *= 1- _onHitMoneyLossPercent;
     }
 
     private void Update()
@@ -127,16 +127,16 @@ public class PlayerInteractController : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject == _Van)
-        {
-            _safedMoney = _playerWallet;
-            _playerWallet = 0;
-
-            PlayerCurrentLoad = 0;
-        }
-    }
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.gameObject == _van)
+    //    {
+    //        _safedMoney = _playerWallet;
+    //        _playerWallet = 0;
+    //
+    //        PlayerCurrentLoad = 0;
+    //    }
+    //}
 
     private void ShowOutline()
     {

@@ -137,7 +137,9 @@ MonoBehaviour:
   _isOpen: 0
   _openAngle: -90
   _closeAngle: 0
-  _rotationSpeed: 20
+  _rotationSpeed: 40
+  _targetAngle: 0
+  _currentAngle: 0
 --- !u!114 &8888736480637026314
 MonoBehaviour:
   m_ObjectHideFlags: 0
