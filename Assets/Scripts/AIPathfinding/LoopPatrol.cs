@@ -59,7 +59,7 @@ namespace Assets.Scripts.AIPathfinding
 				//decides whether or not its time to move
 				if (TargetReached())
 				{
-					if (_currentWaitTime >= _waitTime)
+					if (_currentWaitTime >= _waitTime && _waypoints.Count > 0)
 					{
 						FindNextWaypoint();
 					}

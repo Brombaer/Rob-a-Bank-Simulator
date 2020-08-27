@@ -23,8 +23,8 @@ TagManager:
   - PostProcessing
   - Interactable
   - Bullet
-  - 
-  - 
+  - Agents
+  - NotAgents
   - 
   - 
   - 
