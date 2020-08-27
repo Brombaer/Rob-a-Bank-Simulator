@@ -15,5 +15,7 @@ public class EndGame : Interactable
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+
+        Destroy(gameObject);
     }
 }

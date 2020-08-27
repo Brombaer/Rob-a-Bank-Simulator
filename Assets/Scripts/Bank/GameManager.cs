@@ -99,20 +99,28 @@ public class GameManager : MonoBehaviour
 			Instantiate(_enemyList[chooseRandomEnemy], _enemyLocationList[i].position, _enemyLocationList[i].rotation);
 		}
 
-
 		yield return new WaitForSeconds(2);
 
 		_detectedUIPrefab.SetActive(false);
 
-		yield return new WaitForSeconds(_secondWaveDelay);
+		float spawnMultiplier = 1;
 
+		while (true)
+        {
+			yield return new WaitForSeconds(_secondWaveDelay);
 
+			Debug.Log("Next wave of cops is spawning");
+			Debug.Log(_enemyLocationList.Count * spawnMultiplier);
 
-		for (int i = 0; i < _enemyLocationList.Count; i++)
-		{
-			int chooseRandomEnemy = UnityEngine.Random.Range(0, _enemyList.Count);
+			for (int i = 0; i < _enemyLocationList.Count * spawnMultiplier; i++)
+			{
+				int chooseRandomEnemy = UnityEngine.Random.Range(0, _enemyList.Count);
 
-			Instantiate(_enemyList[chooseRandomEnemy], _enemyLocationList[i].position, _enemyLocationList[i].rotation);
-		}
+				Instantiate(_enemyList[chooseRandomEnemy], _enemyLocationList[i % _enemyLocationList.Count].position, _enemyLocationList[i % _enemyLocationList.Count].rotation);
+			}
+
+			spawnMultiplier++;
+			AIHandler.Instance.AggroAll();
+        }
 	}
 }

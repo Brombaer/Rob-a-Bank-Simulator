@@ -61,6 +61,7 @@ public class PlayerInteractController : MonoBehaviour
         if (getsHealed == false)
         {
             _playerWallet *= 1- _onHitMoneyLossPercent;
+            PlayerCurrentLoad *= 1 - _onHitMoneyLossPercent;
         }
     }
 
