@@ -38,14 +38,31 @@ MonoBehaviour:
   Path: event:/Weapons/ChargeWeapon
   guid: af2d4e669e88694ea57a5e128a08728a
   Banks:
-  - {fileID: 3270513414203661162}
+  - {fileID: 6250137550324434174}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 200
+  Length: 515
+--- !u!114 &-8991544568534137793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Bank/State
+  m_EditorClassIdentifier: 
+  Name: State
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 1
 --- !u!114 &-8952468304598242454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102,7 +119,7 @@ MonoBehaviour:
   Path: event:/Ambiance/CityAmb
   guid: c32cd81815f70049b2245c683410a7c5
   Banks:
-  - {fileID: 3270513414203661162}
+  - {fileID: 6250137550324434174}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -126,6 +143,58 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 0
+  Exists: 0
+--- !u!114 &-8503217728370765238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Drill/DrillState
+  m_EditorClassIdentifier: 
+  Name: DrillState
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 0
+--- !u!114 &-8420022829042234750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Bank/State
+  m_EditorClassIdentifier: 
+  Name: State
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
+--- !u!114 &-8405802959235464138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD_Project/RAB/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637341211327356629
+  LoadResult: 0
+  FileSizes: []
   Exists: 0
 --- !u!114 &-8341845615006428742
 MonoBehaviour:
@@ -157,16 +226,33 @@ MonoBehaviour:
   m_Name: event:/UI/Death
   m_EditorClassIdentifier: 
   Path: event:/UI/Death
-  guid: abb4f35fbe8b59409ad9eb9757966215
+  guid: 6bd3159020238c43a9624842d37e1a70
   Banks:
-  - {fileID: 3270513414203661162}
+  - {fileID: 6250137550324434174}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 2486
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 3500
+--- !u!114 &-8009335932017224360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Bank/State
+  m_EditorClassIdentifier: 
+  Name: State
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
 --- !u!114 &-7993122843064914473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,7 +268,7 @@ MonoBehaviour:
   Path: event:/UI/Menu/OnClicked
   guid: 382fd3e044b106499438de72ac02c596
   Banks:
-  - {fileID: 3270513414203661162}
+  - {fileID: 6250137550324434174}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -255,6 +341,23 @@ MonoBehaviour:
   MinDistance: 300
   MaxDistance: 800
   Length: 60000
+--- !u!114 &-7755476976218160750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Bank/State
+  m_EditorClassIdentifier: 
+  Name: State
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
 --- !u!114 &-7751008319630456330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -421,7 +524,7 @@ MonoBehaviour:
   Path: event:/Ambiance/BankBell
   guid: 1d835be2905f2b40807697ee2b21ad13
   Banks:
-  - {fileID: 3270513414203661162}
+  - {fileID: 6250137550324434174}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -444,14 +547,31 @@ MonoBehaviour:
   Path: event:/Weapons/Glock48/Glock48_Fire
   guid: f27642acbea511438a7ad514f79568fe
   Banks:
-  - {fileID: 3270513414203661162}
+  - {fileID: 6250137550324434174}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 2.2
-  MaxDistance: 80
+  MaxDistance: 40
   Length: 5543
+--- !u!114 &-6464114587102525002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Drill/DrillState
+  m_EditorClassIdentifier: 
+  Name: DrillState
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 0
 --- !u!114 &-6294926889761425683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -525,7 +645,7 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-5883569613711106299
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -564,12 +684,12 @@ MonoBehaviour:
   Path: event:/Door/Drill
   guid: 902a78039c02864fa20ea2f6ae8ddec5
   Banks:
-  - {fileID: 3270513414203661162}
+  - {fileID: 6250137550324434174}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: -5995949514748648644}
+  - {fileID: 9127827335578871316}
   MinDistance: 1
   MaxDistance: 20
   Length: 12069
@@ -588,7 +708,7 @@ MonoBehaviour:
   Path: event:/Weapons/AK47/AK47_NoAmmo
   guid: daa6a5e5873d9f4d9a79b81d1110adf7
   Banks:
-  - {fileID: 3270513414203661162}
+  - {fileID: 6250137550324434174}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -699,6 +819,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2900
+--- !u!114 &-4463199338525725908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Drill/DrillState
+  m_EditorClassIdentifier: 
+  Name: DrillState
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 0
 --- !u!114 &-4423315427012832054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -745,6 +882,24 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 700
+--- !u!114 &-4380265805397834350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD_Project/RAB/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637341202273863725
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
 --- !u!114 &-4334843514833724094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -903,7 +1058,7 @@ MonoBehaviour:
   Path: event:/UI/Menu/OnHover
   guid: 881bec44ddc789468aa772a11922b6bf
   Banks:
-  - {fileID: 3270513414203661162}
+  - {fileID: 6250137550324434174}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -943,7 +1098,7 @@ MonoBehaviour:
   Path: event:/UI/Menu/StartGame
   guid: 44c41d72264f704d9a6ab6d1393e3382
   Banks:
-  - {fileID: 3270513414203661162}
+  - {fileID: 6250137550324434174}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -951,6 +1106,24 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2427
+--- !u!114 &-3777576481330760746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD_Project/RAB/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637341207386229030
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
 --- !u!114 &-3727286259582714620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1111,13 +1284,13 @@ MonoBehaviour:
   Path: event:/Weapons/WeaponImpact
   guid: 70df2b82c1f8d945919ed832a584af2c
   Banks:
-  - {fileID: 3270513414203661162}
+  - {fileID: 6250137550324434174}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 6.6
   Length: 395
 --- !u!114 &-2948873945614467664
 MonoBehaviour:
@@ -1158,7 +1331,7 @@ MonoBehaviour:
   Min: 0
   Max: 3
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-2888216028774285091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1174,7 +1347,7 @@ MonoBehaviour:
   Path: event:/UI/Detected
   guid: 8469f08336920f4f879e8f1e0a8351d3
   Banks:
-  - {fileID: 3270513414203661162}
+  - {fileID: 6250137550324434174}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1231,7 +1404,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: FMOD_Project/RAB/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637340550590157383
+  lastModified: 637341214871198802
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -1321,7 +1494,7 @@ MonoBehaviour:
   Path: event:/Weapons/Glock48/Glock48_NoAmmo
   guid: f8f4a23086e3e749846352b765263253
   Banks:
-  - {fileID: 3270513414203661162}
+  - {fileID: 6250137550324434174}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1403,6 +1576,23 @@ MonoBehaviour:
   Max: 5
   Default: 0
   Exists: 0
+--- !u!114 &-856937597064428984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Bank/State
+  m_EditorClassIdentifier: 
+  Name: State
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
 --- !u!114 &-759154690882974502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1426,6 +1616,23 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-732674356235053013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Drill/DrillState
+  m_EditorClassIdentifier: 
+  Name: DrillState
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 0
 --- !u!114 &-637649188793898476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1441,6 +1648,23 @@ MonoBehaviour:
   Name: State
   Min: 0
   Max: 3
+  Default: 0
+  Exists: 0
+--- !u!114 &-606770573473308886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Drill/DrillState
+  m_EditorClassIdentifier: 
+  Name: DrillState
+  Min: 0
+  Max: 2
   Default: 0
   Exists: 0
 --- !u!114 &-605693180888486286
@@ -1533,7 +1757,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: -2551693780085685036}
-  - {fileID: 3270513414203661162}
+  - {fileID: 6250137550324434174}
   EditorEvents:
   - {fileID: 4935816230707507502}
   - {fileID: 8335774066494432386}
@@ -1557,10 +1781,10 @@ MonoBehaviour:
   - {fileID: 8364815152848835551}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 3270513414203661162}
+  - {fileID: 6250137550324434174}
   StringsBanks:
   - {fileID: -2551693780085685036}
-  stringsBankWriteTime: 637340550590157383
+  stringsBankWriteTime: 637341214871198802
   cacheVersion: 3
 --- !u!114 &44616312257872162
 MonoBehaviour:
@@ -1731,12 +1955,12 @@ MonoBehaviour:
   Path: event:/Music/Bank
   guid: e8cab0decb3afe4f95f12112197842ad
   Banks:
-  - {fileID: 3270513414203661162}
+  - {fileID: 6250137550324434174}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -2892601088234583233}
+  - {fileID: -8991544568534137793}
   MinDistance: 0
   MaxDistance: 0
   Length: 28812
@@ -1755,14 +1979,14 @@ MonoBehaviour:
   Path: event:/Weapons/AK47/AK47_Fire
   guid: 3a75f9f3f4b1404cb5e38c1ddab251d6
   Banks:
-  - {fileID: 3270513414203661162}
+  - {fileID: 6250137550324434174}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 3.4
-  MaxDistance: 80
-  Length: 45356
+  MaxDistance: 40
+  Length: 5605
 --- !u!114 &1625585799084537506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1998,6 +2222,24 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 7855
+--- !u!114 &3012493324182976528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD_Project/RAB/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637341213125677757
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
 --- !u!114 &3117265712604282305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2066,7 +2308,25 @@ MonoBehaviour:
   lastModified: 637340550590117511
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
+--- !u!114 &3452672289277126414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD_Project/RAB/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637341204353888411
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
 --- !u!114 &3505530440663251542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2278,6 +2538,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1326
+--- !u!114 &4647765771455992245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Bank/State
+  m_EditorClassIdentifier: 
+  Name: State
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
 --- !u!114 &4788003642704517248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2361,7 +2638,7 @@ MonoBehaviour:
   Path: event:/UI/GameCompleted
   guid: 0ca23e10fbbc8f429ce9fafea9555cbc
   Banks:
-  - {fileID: 3270513414203661162}
+  - {fileID: 6250137550324434174}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2420,6 +2697,23 @@ MonoBehaviour:
   Max: 5
   Default: 0
   Exists: 1
+--- !u!114 &5337229132225472678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Bank/State
+  m_EditorClassIdentifier: 
+  Name: State
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
 --- !u!114 &5356274574100467044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2574,6 +2868,24 @@ MonoBehaviour:
   Max: 2
   Default: 0
   Exists: 0
+--- !u!114 &6250137550324434174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD_Project/RAB/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637341214871148953
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &6325781228172362465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2589,14 +2901,14 @@ MonoBehaviour:
   Path: event:/UI/Damaged
   guid: 109ab36668e1bc489064ffe971b001b7
   Banks:
-  - {fileID: 3270513414203661162}
+  - {fileID: 6250137550324434174}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 1596
+  Length: 1000
 --- !u!114 &6365952748467361148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2781,7 +3093,7 @@ MonoBehaviour:
   Path: event:/Door/DoorOpen
   guid: 625662fc0787084899a6eb1d6c662679
   Banks:
-  - {fileID: 3270513414203661162}
+  - {fileID: 6250137550324434174}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -2789,6 +3101,24 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 10200
+--- !u!114 &8181879631479331138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD_Project/RAB/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637341213561558117
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
 --- !u!114 &8335774066494432386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2804,13 +3134,13 @@ MonoBehaviour:
   Path: event:/Weapons/AK47/AK47_Reload
   guid: 0e964065e490a940b1d71d9bae839626
   Banks:
-  - {fileID: 3270513414203661162}
+  - {fileID: 6250137550324434174}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 5.8
   Length: 2688
 --- !u!114 &8364815152848835551
 MonoBehaviour:
@@ -2827,14 +3157,14 @@ MonoBehaviour:
   Path: event:/Weapons/Glock48/Glock48_Reload
   guid: fb5d8e395e2f80498c307edd369e4f2f
   Banks:
-  - {fileID: 3270513414203661162}
+  - {fileID: 6250137550324434174}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 7
-  Length: 0
+  Length: 1125
 --- !u!114 &8367623165289754600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2907,6 +3237,23 @@ MonoBehaviour:
   Name: State
   Min: 0
   Max: 5
+  Default: 0
+  Exists: 0
+--- !u!114 &8653985069413905482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Drill/DrillState
+  m_EditorClassIdentifier: 
+  Name: DrillState
+  Min: 0
+  Max: 2
   Default: 0
   Exists: 0
 --- !u!114 &8664584142123969596
@@ -3006,6 +3353,23 @@ MonoBehaviour:
   Max: 5
   Default: 0
   Exists: 0
+--- !u!114 &9127827335578871316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Drill/DrillState
+  m_EditorClassIdentifier: 
+  Name: DrillState
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
 --- !u!114 &9178505590657799169
 MonoBehaviour:
   m_ObjectHideFlags: 0
