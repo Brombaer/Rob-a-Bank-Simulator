@@ -10,30 +10,35 @@ namespace Assets.Scripts.AIPathfinding
 	{
 
 		[SerializeField] private NavMeshAgent _navMeshAgent;
-		[SerializeField] private Weapon _weapon;
-		[SerializeField] private bool _isHandgun;
-		[SerializeField] private GameObject _riflePrefab;
-		[SerializeField] private GameObject _handgunPrefab;
+		[SerializeField] private Weapon _rifle;
+		[SerializeField] private Weapon _handgun;
 
 		[SerializeField] private Animator _animator;
 
-
+		[SerializeField] private NPCBase _npcBase;
 		private void Awake()
 		{
-			_handgunPrefab.SetActive(false);
-			_riflePrefab.SetActive(false);
+			_handgun.gameObject.SetActive(false);
+			_rifle.gameObject.SetActive(false);
 		}
 
 		private void Start()
 		{
-			_weapon.Fired += OnFired;
 
-			_animator.SetBool("isHandgun", _isHandgun);
 
-			if (_isHandgun)
-				_handgunPrefab.SetActive(true);
+			_rifle.Fired += OnFired;
+			_handgun.Fired += OnFired;
+
+			_animator.SetBool("isHandgun", _npcBase.UsingHandgun);
+
+			if (_npcBase.UsingHandgun)
+			{
+				_handgun.gameObject.SetActive(true);
+			}
 			else
-				_riflePrefab.SetActive(true);
+			{
+				_rifle.gameObject.SetActive(true);
+			}
 		}
 
 		private void OnFired()

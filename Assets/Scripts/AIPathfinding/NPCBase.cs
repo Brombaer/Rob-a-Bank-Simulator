@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.MemoryProfiler;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -30,11 +31,24 @@ namespace Assets.Scripts.AIPathfinding
 
 		protected Vector3? _targetPosition;
 
-		[SerializeField] private Weapon _weapon;
+		[SerializeField] private Weapon _rifle;
+		[SerializeField] private Weapon _handgun;
 
 		protected bool isCovered = false;
+		[SerializeField] private bool usingHandgun = false;
 
 		[SerializeField] private bool _instantCommando = false;
+
+		
+		public Weapon Weapon
+		{
+			get => usingHandgun? _handgun : _rifle;
+		}
+
+		public bool UsingHandgun
+		{
+			get => usingHandgun;
+		}
 
 		protected NPCStates _currentState;
 
@@ -50,10 +64,13 @@ namespace Assets.Scripts.AIPathfinding
 				_health.Death += OnDeath;
 
 			
+			
 		}
 
-		private void Start()
+		protected virtual void Start()
 		{
+			
+
 			AIHandler.Instance.Aggro += OnAggro;
 		}
 
@@ -148,16 +165,17 @@ namespace Assets.Scripts.AIPathfinding
 
 		private void TemporaryShooting()
 		{
-			if (_weapon.CurrentAmmo > 0)
+			Weapon weapon = Weapon;
+			if (weapon.CurrentAmmo > 0)
 			{
 				if (CanSeePlayer())
-					_weapon.BeginFire();
+					weapon.BeginFire();
 				else
-					_weapon.StopFire();
+					weapon.StopFire();
 			}
 			else
 			{
-				_weapon.Reload();
+				weapon.Reload();
 			}
 		}
 
@@ -171,7 +189,14 @@ namespace Assets.Scripts.AIPathfinding
 		private void OnDeath()
 		{
 			Destroy(gameObject);
+
 			GameObject ragdoll = Instantiate(_ragdoll, transform.position, transform.rotation);
+
+			Dictionary<string, Transform> childrenDictionary = new Dictionary<string, Transform>();
+
+			RecursiveAddName(childrenDictionary, transform);
+
+			MatchSourceSkeleton(childrenDictionary, _ragdoll.transform.Find("Root"));
 
 			SkinnedMeshRenderer ragdollRenderer = ragdoll.GetComponentInChildren<SkinnedMeshRenderer>();
 
@@ -179,6 +204,35 @@ namespace Assets.Scripts.AIPathfinding
 
 			ragdollRenderer.sharedMaterial = renderer.sharedMaterial;
 			ragdollRenderer.sharedMesh = renderer.sharedMesh;
+		}
+
+		private void RecursiveAddName(Dictionary<string, Transform> dictionary, Transform t)
+		{
+			dictionary[t.name] = t;
+
+			for (int i = 0; i < t.childCount; i++)
+			{
+				RecursiveAddName(dictionary, t.GetChild(i));
+			}
+		}
+
+		private void MatchSourceSkeleton(Dictionary<string, Transform> dictionary, Transform localBone)
+		{
+			Transform t = dictionary[localBone.name];
+			
+			if (t == null)
+			{
+				Debug.LogError("Cant Find " + localBone.name);
+				return;
+			}
+
+			localBone.localPosition = t.localPosition;
+			localBone.localRotation = t.localRotation;
+
+			for (int i = 0; i < localBone.childCount; i++)
+			{
+				MatchSourceSkeleton(dictionary, localBone.GetChild(i));
+			}
 		}
 
 		protected Transform GetPlayerTransform()

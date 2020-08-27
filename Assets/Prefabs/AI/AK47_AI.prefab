@@ -104,13 +104,14 @@ MonoBehaviour:
   _muzzleLocation: {fileID: 4356901760936928}
   _reloadTime: 2.7
   _magazineSize: 31
-  _bulletPrefab: {fileID: 1086664671600574, guid: d791bf904d354e6438a3ad32a4a60bce,
+  _bulletPrefab: {fileID: 1086664671600574, guid: 5953171a59c27394e9ad5cbb564affa8,
     type: 3}
   _bulletSpawnPoint: {fileID: 4865098306718012}
   _bulletForce: 400
   _raycastDistance: 50
   _damage: 3
-  _fleshParticlePrefab: {fileID: 0}
+  _fleshParticlePrefab: {fileID: 1671474790284636, guid: 4d7746559804f034daa8e1c8ee23a78a,
+    type: 3}
   weaponSway: 0
   swayAmount: 0.02
   maxSwayAmount: 0.05
