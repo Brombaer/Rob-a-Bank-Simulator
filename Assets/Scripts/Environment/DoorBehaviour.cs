@@ -42,7 +42,7 @@ public class DoorBehaviour : MonoBehaviour
 		}
 	}
 
-	public void SwitchDoorState()
+	public virtual void SwitchDoorState()
 	{
 		_isOpen = !_isOpen;
 

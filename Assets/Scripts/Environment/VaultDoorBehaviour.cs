@@ -29,10 +29,6 @@ public class VaultDoorBehaviour : DoorBehaviour
 	public float CurrentTimer { get => _timeLeft; }
 	public event Action<int> VaultDoorState;
 
-
-
-
-
 	private void Awake()
 	{
 		//_drillUI = _drillUIPrefab.GetComponent<DrillUI>();
@@ -94,5 +90,11 @@ public class VaultDoorBehaviour : DoorBehaviour
 			_timeLeft -= Time.deltaTime;
 		}
 		if (_isOpen) _closeAngle = _currentAngle;
+	}
+
+    public override void SwitchDoorState()
+    {
+		_isOpen = true;
+		_targetAngle = _openAngle;
 	}
 }

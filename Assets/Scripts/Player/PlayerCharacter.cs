@@ -162,6 +162,11 @@ public class PlayerCharacter : MonoBehaviour
 
 	private void RotateCamera()
 	{
+		if (Time.timeScale == 0)
+        {
+			return;
+        }
+
 		float mouseX = Input.GetAxis("Mouse X");
 		float mouseY = Input.GetAxis("Mouse Y");
 

@@ -118,15 +118,16 @@ public class PlayerInteractController : MonoBehaviour
     {
         if (_raycastHit.HasValue)
         {
-            RaycastHit raycastHit = _raycastHit.Value;
 
             if (Input.GetKeyDown(KeyCode.E))
             {
+                RaycastHit raycastHit = _raycastHit.Value;
+
                 if ((raycastHit.point - Camera.transform.position).magnitude < _maxInteractDistance)
                 {
                     var interactable = raycastHit.transform.GetComponent<Interactable>();
 
-                    if (interactable != null && interactable != _doorBehaviourScript._isOpen)
+                    if (interactable != null)
                     {
                         interactable.Interact(this);
                     }
