@@ -83,7 +83,7 @@ public class PlayerCharacter : MonoBehaviour
 		RotateCamera();
 
 
-		if (Input.GetKeyDown(KeyCode.Q))
+		if (Input.GetKeyDown(Keybindings.Hide_ShowWeapon))
 			HolsterWeapon();
 
 
@@ -92,7 +92,7 @@ public class PlayerCharacter : MonoBehaviour
 			Aim();
 			Shoot();
 
-			if (!_isSprinting && Input.GetKeyDown(KeyCode.R))
+			if (!_isSprinting && Input.GetKeyDown(Keybindings.ReloadWeapon))
 				Reload();
 		}
 	}
@@ -120,7 +120,7 @@ public class PlayerCharacter : MonoBehaviour
 			_isCrouched = false;
 
 			// Sprint & Crouch
-			if (!_isAiming && Input.GetKey(KeyCode.LeftShift) && moveZ == 1)
+			if (!_isAiming && Input.GetKey(Keybindings.PlayerSprint) && moveZ == 1)
 			{
 				_isSprinting = true;
 				
@@ -128,7 +128,7 @@ public class PlayerCharacter : MonoBehaviour
 
 				_weaponAnimator.SetBool("Run", true);
 			}
-			else if(!_isSprinting && Input.GetKey(KeyCode.LeftControl))
+			else if(!_isSprinting && Input.GetKey(Keybindings.PlayerCrouch))
 			{
 				_controller.height = 1.5f;
 				_moveSpeed = _crouchSpeed;
@@ -150,7 +150,7 @@ public class PlayerCharacter : MonoBehaviour
 
 			_moveDirection *= _moveSpeed;
 
-			if (Input.GetButtonDown("Jump"))
+			if (Input.GetKeyDown(Keybindings.PlayerJump))
 			{
 				_moveDirection.y += _jumpSpeed;
 			}

@@ -122,7 +122,7 @@ public class PlayerInteractController : MonoBehaviour
         if (_raycastHit.HasValue)
         {
 
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(Keybindings.Interact))
             {
                 RaycastHit raycastHit = _raycastHit.Value;
 
@@ -137,7 +137,6 @@ public class PlayerInteractController : MonoBehaviour
                 }
             }
         }
-        
     }
 
     //private void OnTriggerEnter(Collider other)

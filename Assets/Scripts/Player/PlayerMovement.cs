@@ -36,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
             _moveDirection = new Vector3(moveX, 0, moveZ);
             _moveDirection = transform.TransformDirection(_moveDirection);
 
-            if (Input.GetKey (KeyCode.LeftShift) && moveZ == 1)
+            if (Input.GetKey (Keybindings.PlayerSprint) && moveZ == 1)
             {
                 _moveSpeed = _sprintSpeed;
             }
