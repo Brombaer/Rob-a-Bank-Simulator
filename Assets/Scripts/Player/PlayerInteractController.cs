@@ -56,9 +56,12 @@ public class PlayerInteractController : MonoBehaviour
         _healthRef.HealthChanged += OnHealthChanged;
     }
 
-    private void OnHealthChanged(float arg1, bool arg2)
+    private void OnHealthChanged(float arg1, bool getsHealed)
     {
-        _playerWallet *= 1- _onHitMoneyLossPercent;
+        if (getsHealed == false)
+        {
+            _playerWallet *= 1- _onHitMoneyLossPercent;
+        }
     }
 
     private void Update()

@@ -12,6 +12,7 @@ public class EscapeVanBehaviour : MonoBehaviour
     [SerializeField] private VanRearDoorBehaviour _rightVanDoorScript;
 
     [SerializeField] private GameObject[] _stolenGoods;
+    [SerializeField] private float _moneyPerBag = 1;
 
     private void Awake()
     {
@@ -33,19 +34,16 @@ public class EscapeVanBehaviour : MonoBehaviour
         {
             _leftVanDoorScript.SwitchDoorState();
             _rightVanDoorScript.SwitchDoorState();
-            
-            _playerScript.SafedAmount += _playerScript.WalletAmount;
-            _playerScript.WalletAmount = 0;
 
-            _playerScript.PlayerCurrentLoad = 0;
+            if (_playerScript.WalletAmount > 0)
+            {
+                _playerScript.SafedAmount += _playerScript.WalletAmount;
+                _playerScript.WalletAmount = 0;
 
-            //for (int i = 0; i < _stolenGoods.Length; i++)
-            //{
-            //    if ()
-            //    {
-            //        _stolenGoods[i].gameObject.SetActive(true);
-            //    }
-            //}
+                _playerScript.PlayerCurrentLoad = 0;
+
+                UpdateVanContent();
+            }
         }
     }
 
@@ -55,6 +53,16 @@ public class EscapeVanBehaviour : MonoBehaviour
         {
             _leftVanDoorScript.SwitchDoorState();
             _rightVanDoorScript.SwitchDoorState();
+        }
+    }
+
+    private void UpdateVanContent()
+    {
+        int bagAmount = Mathf.Min(Mathf.RoundToInt(_playerScript.SafedAmount / _moneyPerBag), _stolenGoods.Length);
+
+        for (int i = 0; i < _stolenGoods.Length; i++)
+        {
+            _stolenGoods[i].SetActive(i < bagAmount);
         }
     }
 }
