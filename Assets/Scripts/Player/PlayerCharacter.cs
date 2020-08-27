@@ -23,6 +23,7 @@ public class PlayerCharacter : MonoBehaviour
 	[Space]
 	[Header("Animation References")]
 	[SerializeField] private Animator[] _camAnimator;
+	[SerializeField] private GameObject _crossHair;
 
 
 	[Range(0, 2)]
@@ -204,6 +205,7 @@ public class PlayerCharacter : MonoBehaviour
 			_weaponAnimator.SetBool("Aim", true);
 
 			_isAiming = true;
+			_crossHair.SetActive(false);
 
 			for (int i = 0; i < _camAnimator.Length; i++)
 				_camAnimator[i].SetBool("Aim", true);
@@ -214,7 +216,7 @@ public class PlayerCharacter : MonoBehaviour
 			_isAiming = false;
 
 			_weaponAnimator.SetBool("Aim", false);
-
+			_crossHair.SetActive(true);
 
 
 			_isAiming = false;

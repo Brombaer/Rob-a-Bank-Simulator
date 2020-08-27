@@ -39,6 +39,8 @@ namespace Assets.Scripts.AIPathfinding
 
 		[SerializeField] private bool _instantCommando = false;
 
+		public event Action Death;
+
 		
 		public Weapon Weapon
 		{
@@ -72,6 +74,14 @@ namespace Assets.Scripts.AIPathfinding
 			
 
 			AIHandler.Instance.Aggro += OnAggro;
+			AIHandler.Instance.AddEnemy(this);
+
+		}
+
+		private void OnDestroy()
+		{
+			if(AIHandler.Instance != null)
+				AIHandler.Instance.RemoveEnemy(this);
 		}
 
 		protected void OnAggro()
@@ -204,6 +214,8 @@ namespace Assets.Scripts.AIPathfinding
 
 			ragdollRenderer.sharedMaterial = renderer.sharedMaterial;
 			ragdollRenderer.sharedMesh = renderer.sharedMesh;
+
+			Death?.Invoke();
 		}
 
 		private void RecursiveAddName(Dictionary<string, Transform> dictionary, Transform t)

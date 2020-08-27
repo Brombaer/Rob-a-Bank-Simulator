@@ -5,15 +5,30 @@ using UnityEngine;
 public class EndGame : Interactable
 {
     [SerializeField] private CompleteGameUI _gameCompleteUIRef;
+    [SerializeField] private PlayerCharacter _playerCharacter;
+    [SerializeField] private GameObject _completeWarningUI;
 
     public override void Interact(PlayerInteractController interactor)
     {
         Debug.Log("End game");
 
         var ui = Instantiate(_gameCompleteUIRef.gameObject);
-        Time.timeScale = 0;
+        ui.GetComponent<CompleteGameUI>().UpdateUI((int)interactor.SafedAmount);
 
+        Time.timeScale = 0.1f;
+
+        _playerCharacter.enabled = false;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+    }
+
+	private void OnTriggerEnter(Collider other)
+	{
+        _completeWarningUI.SetActive(true);
+	}
+
+	private void OnTriggerExit(Collider other)
+	{
+        _completeWarningUI.SetActive(false);
     }
 }
