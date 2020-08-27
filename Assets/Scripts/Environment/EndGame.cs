@@ -4,16 +4,14 @@ using UnityEngine;
 
 public class EndGame : Interactable
 {
-    [SerializeField] private CompleteGameUI _gameCompleteUIRef;
+    [SerializeField] private GameObject _gameCompleteUIRef;
     [SerializeField] private PlayerCharacter _playerCharacter;
     [SerializeField] private GameObject _completeWarningUI;
 
     public override void Interact(PlayerInteractController interactor)
     {
-        Debug.Log("End game");
-
-        var ui = Instantiate(_gameCompleteUIRef.gameObject);
-        ui.GetComponent<CompleteGameUI>().UpdateUI((int)interactor.SafedAmount);
+        _gameCompleteUIRef.SetActive(true);
+        _gameCompleteUIRef.GetComponent<CompleteGameUI>().UpdateUI((int)interactor.SafedAmount);
 
         Time.timeScale = 0.1f;
 

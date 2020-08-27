@@ -14,9 +14,12 @@ public class CompleteGameUI : MonoBehaviour
 	[SerializeField] private TextMeshProUGUI _time;
 
 	[SerializeField] private HealthComponent _healthComp;
+	[SerializeField] private MusicPlayer _musicPlayer;
 
 	[FMODUnity.EventRef]
 	[SerializeField] private string _onClicked;
+	[FMODUnity.EventRef]
+	[SerializeField] private string _complete;
 
 	private int _seconds;
 	private int _minutes;
@@ -35,9 +38,14 @@ public class CompleteGameUI : MonoBehaviour
 		_kills.text = $"Kills: {AIHandler.Instance.KillCount.ToString("#,#", CultureInfo.InvariantCulture)}";
 	}
 
+	private void Start()
+	{
+		FMODUnity.RuntimeManager.PlayOneShot(_complete, gameObject.transform.position);
+	}
+
 	public void UpdateUI(int money)
 	{
-		_money.text = $"Money Stolen {money.ToString("C")}";
+		_money.text = $"Money Stolen: {money.ToString("C")}";
 	}
 
 	public void ExitToMainMenu()
@@ -58,7 +66,10 @@ public class CompleteGameUI : MonoBehaviour
 	{
 		FMODUnity.RuntimeManager.PlayOneShot(_onClicked, gameObject.transform.position);
 
-		yield return new WaitForSeconds(2);
+		yield return new WaitForSeconds(1.5f * Time.timeScale);
+		_musicPlayer.OnDeath();
+
+		Time.timeScale = 1;
 		SceneManager.LoadScene(0);
 	}
 }

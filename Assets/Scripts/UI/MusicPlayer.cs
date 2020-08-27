@@ -19,7 +19,7 @@ public class MusicPlayer : MonoBehaviour
 		_vault.VaultDoorState += VaultDoorOpened;
 	}
 
-	private void OnDeath()
+	public void OnDeath()
 	{
 		_eventInst.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
 	}

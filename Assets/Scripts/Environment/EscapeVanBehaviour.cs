@@ -14,6 +14,9 @@ public class EscapeVanBehaviour : MonoBehaviour
     [SerializeField] private GameObject[] _stolenGoods;
     [SerializeField] private float _moneyPerBag = 1;
 
+    [FMODUnity.EventRef]
+    [SerializeField] private string _deliver;
+
     private void Awake()
     {
         foreach (GameObject gameObject in _stolenGoods)
@@ -30,6 +33,7 @@ public class EscapeVanBehaviour : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+
         if (other.gameObject == _player)
         {
             _leftVanDoorScript.SwitchDoorState();
@@ -43,6 +47,7 @@ public class EscapeVanBehaviour : MonoBehaviour
                 _playerScript.PlayerCurrentLoad = 0;
 
                 UpdateVanContent();
+                FMODUnity.RuntimeManager.PlayOneShotAttached(_deliver, gameObject);
             }
         }
     }
