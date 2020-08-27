@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1468450800955162864}
   - component: {fileID: 4160642893992441771}
   - component: {fileID: 4226344454669615400}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 5403647731382840283}
   - component: {fileID: 5503980417592675889}
   - component: {fileID: 4641890266799774818}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Ammo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -306,7 +306,7 @@ GameObject:
   - component: {fileID: 1250314363437030057}
   - component: {fileID: 6072096670736445809}
   - component: {fileID: 7825829859005484835}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Crosshair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -381,7 +381,7 @@ GameObject:
   - component: {fileID: 392334825379138808}
   - component: {fileID: 7602157123459264870}
   - component: {fileID: 4840558657655945186}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Compass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -473,7 +473,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6058067910379009528}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -543,7 +543,7 @@ GameObject:
   - component: {fileID: 2063730387193928081}
   - component: {fileID: 3257605974247205455}
   - component: {fileID: 4877091310024122945}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CoinIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -617,7 +617,7 @@ GameObject:
   - component: {fileID: 3053363566052689547}
   - component: {fileID: 687525528398856095}
   - component: {fileID: 1873004855113033431}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Filler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -691,7 +691,7 @@ GameObject:
   - component: {fileID: 1224164041287532935}
   - component: {fileID: 2985616911839669909}
   - component: {fileID: 3587888554936454694}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CoinIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -942,7 +942,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 867081619968912261}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wallet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -968,7 +968,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 171, y: -52.2}
+  m_AnchoredPosition: {x: 171, y: -52.19995}
   m_SizeDelta: {x: 365.99524, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &3784894515803931903
@@ -982,7 +982,7 @@ GameObject:
   - component: {fileID: 9135294614735538228}
   - component: {fileID: 2085963465520352613}
   - component: {fileID: 1655510536427830412}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1056,7 +1056,7 @@ GameObject:
   - component: {fileID: 230891856788185902}
   - component: {fileID: 4977443323125958428}
   - component: {fileID: 995967831211678576}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: WeaponIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1130,7 +1130,7 @@ GameObject:
   - component: {fileID: 1595513117097934843}
   - component: {fileID: 4176086915373388814}
   - component: {fileID: 4672622866430457018}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1204,7 +1204,7 @@ GameObject:
   - component: {fileID: 2511744917973786433}
   - component: {fileID: 7263693920555670653}
   - component: {fileID: 6252697003050242462}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Amount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1464,7 +1464,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 100
-  _regenAmount: 2
+  _regenAmount: 1.5
 --- !u!114 &263930222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1714,7 +1714,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7197789385149385969}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Arms
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1870,7 +1870,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5866990862066296197}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Minimap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1910,7 +1910,7 @@ GameObject:
   - component: {fileID: 2030367127305473283}
   - component: {fileID: 5216075109438538200}
   - component: {fileID: 5273417959787237292}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Amount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2072,7 +2072,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4365951920148892930}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Safed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2111,7 +2111,7 @@ GameObject:
   - component: {fileID: 8230135304769648073}
   - component: {fileID: 9075556141615557622}
   - component: {fileID: 7793628491995680590}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WeaponName
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2330,10 +2330,20 @@ PrefabInstance:
       propertyPath: m_NavMeshLayer
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1761323629728902296, guid: 76fd6f3b01cb38d47adaa4330372d7f1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3354437190693886702, guid: 76fd6f3b01cb38d47adaa4330372d7f1,
         type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3354437190693886702, guid: 76fd6f3b01cb38d47adaa4330372d7f1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4065713703650777858, guid: 76fd6f3b01cb38d47adaa4330372d7f1,
         type: 3}
@@ -2657,6 +2667,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7197789385149385969}
     m_Modifications:
+    - target: {fileID: 830465209216112538, guid: 9da690435616d8b4bb8513c14cc29f13,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 830465209216112538, guid: 9da690435616d8b4bb8513c14cc29f13,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.668
+      objectReference: {fileID: 0}
+    - target: {fileID: 830465209216112538, guid: 9da690435616d8b4bb8513c14cc29f13,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.006
+      objectReference: {fileID: 0}
     - target: {fileID: 833417068440880384, guid: 9da690435616d8b4bb8513c14cc29f13,
         type: 3}
       propertyPath: m_NavMeshLayer
@@ -2951,6 +2976,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4103846495541623000, guid: 9da690435616d8b4bb8513c14cc29f13,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7528827870471116396, guid: 9da690435616d8b4bb8513c14cc29f13,
         type: 3}
