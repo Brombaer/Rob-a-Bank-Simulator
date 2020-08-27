@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class UIWaypoint : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class UIWaypoint : MonoBehaviour
 	[SerializeField] private GameObject _imagePrefab;
 	[SerializeField] private PlayerDeath _playerDeath;
 	[SerializeField] private float _distance = 30;
+	[SerializeField] private AnimationCurve _animCurve;
 
 	public Sprite CompassIcon { get => _compassIcon; }
 	private Image _img;
@@ -28,7 +30,7 @@ public class UIWaypoint : MonoBehaviour
 	{
 		if (!_playerDeath.IsDead)
 		{
-			Vector2 pos = Camera.main.WorldToScreenPoint(transform.position);
+			Vector2 pos = Camera.main.WorldToScreenPoint(transform.position + _offset);
 
 			if (Vector3.Dot(transform.position - _target.position, _target.forward) < 0)
 			{
@@ -42,7 +44,7 @@ public class UIWaypoint : MonoBehaviour
 			_img.transform.position = pos;
 
 			float dif = Vector3.Distance(_target.position, transform.position);
-			Color color = new Color(_img.color.r, _img.color.g, _img.color.b, dif / _distance);
+			Color color = new Color(_img.color.r, _img.color.g, _img.color.b, _animCurve.Evaluate(dif));
 			_img.color = color;
 
 

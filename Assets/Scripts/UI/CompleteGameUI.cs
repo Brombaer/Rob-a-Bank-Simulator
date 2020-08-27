@@ -1,9 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Collections;
 using System.Globalization;
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using Assets.Scripts.AIPathfinding;
 
 public class CompleteGameUI : MonoBehaviour
 {
@@ -16,35 +18,40 @@ public class CompleteGameUI : MonoBehaviour
 	[FMODUnity.EventRef]
 	[SerializeField] private string _onClicked;
 
-	public int KillCount { get; private set; }
-
-	private float _timer;
+	private int _seconds;
+	private int _minutes;
+	private int _hours;
 	private bool _doOnce = true;
 
 
 
 	private void Awake()
 	{
-		_healthComp.Death += KillCounter;
+		TotalTime();
+		TimeSpan _timeSpan = new TimeSpan(_hours, _minutes, _seconds);
+
+
+		_time.text = $"Total Time: {_timeSpan:c}";
+		_kills.text = $"Kills: {AIHandler.Instance.KillCount.ToString("#,#", CultureInfo.InvariantCulture)}";
 	}
 
-	private void KillCounter()
+	public void UpdateUI(int money)
 	{
-		KillCount++;
-	}
-
-	public void UpdateUI(int money, int hours, int seconds)
-	{
-		_money.text = $"Money Stolen {money.ToString("#,#", CultureInfo.InvariantCulture)}";
-
-		_kills.text = $"Kills: {KillCount.ToString("#,#", CultureInfo.InvariantCulture)}";
-
-		_time.text = $"Total Time: {hours}:{seconds}";
+		_money.text = $"Money Stolen {money.ToString("C")}";
 	}
 
 	public void ExitToMainMenu()
 	{
 		StartCoroutine(ButtonDelay());
+	}
+
+	private void TotalTime()
+	{
+		_seconds = Mathf.RoundToInt(Time.time);
+
+		_minutes = _seconds / 60;
+		_hours = _minutes / 60;
+		_seconds = _seconds % 60;
 	}
 
 	IEnumerator ButtonDelay()

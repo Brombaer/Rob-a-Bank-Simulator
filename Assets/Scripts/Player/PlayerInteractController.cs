@@ -39,12 +39,17 @@ public class PlayerInteractController : MonoBehaviour
     [Tooltip("The maximum distance in which objects get highlighted for the player.")]
     [SerializeField]
     private float _maxOutlineDistance = 5;
+    [SerializeField]
+    private GameObject _interactUI;
+    [SerializeField]
+    private GameObject _itemHeavyUI;
 	[SerializeField]
-	private GameObject _interactUI;
-	[SerializeField]
-	private GameObject _itemHeavyUI;
+	private GameObject _gameCompleteUI;
 
-	private OutlineController _prevController;
+
+
+	private CollectableItem _collectableItem;
+    private OutlineController _prevController;
     private OutlineController _currentController;
     private RaycastHit? _raycastHit;
 
@@ -54,6 +59,9 @@ public class PlayerInteractController : MonoBehaviour
     private void Start()
     {
         _healthRef.HealthChanged += OnHealthChanged;
+
+        _interactUI.SetActive(false);
+        _itemHeavyUI.SetActive(false);
     }
 
     private void OnHealthChanged(float arg1, bool getsHealed)
@@ -102,6 +110,7 @@ public class PlayerInteractController : MonoBehaviour
             if (raycastHit.collider.CompareTag("InteractableObject") && raycastHit.collider != null)
             {
                 _currentController = raycastHit.collider.GetComponent<OutlineController>();
+                _collectableItem = raycastHit.transform.GetComponent<CollectableItem>();
 
                 if (_prevController != _currentController)
                 {
@@ -158,7 +167,16 @@ public class PlayerInteractController : MonoBehaviour
             _currentController.ShowOutline();
         }
 
-		_interactUI.SetActive(true);
+        if (_collectableItem != null)
+        {
+            if(PlayerCurrentLoad < PlayerMaxLoadCapacity)
+                _interactUI.SetActive(true);
+            else
+            {
+                _itemHeavyUI.SetActive(true);
+            }
+        }
+        
 	}
 
     private void HideOutline()
@@ -168,7 +186,8 @@ public class PlayerInteractController : MonoBehaviour
             _prevController.HideOutline();
             _prevController = null;
 
-			_interactUI.SetActive(false);
-		}
+            _itemHeavyUI.SetActive(false);
+            _interactUI.SetActive(false);
+        }
     }
 }

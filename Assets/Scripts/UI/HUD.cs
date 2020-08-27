@@ -43,7 +43,7 @@ public class HUD : MonoBehaviour
 
 	private void UpdateWalletInfo()
 	{
-		_walletAmount.text = _interactController.WalletAmount.ToString("#,#", CultureInfo.InvariantCulture);
-		_safedAmount.text = _interactController.SafedAmount.ToString("#,#", CultureInfo.InvariantCulture);
+		_walletAmount.text = _interactController.WalletAmount.ToString("C");
+		_safedAmount.text = _interactController.SafedAmount.ToString("C");
 	}
 }

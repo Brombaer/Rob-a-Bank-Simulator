@@ -1323,7 +1323,7 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -39.34689, y: 0, z: -14.671696, w: 0}
+  m_margin: {x: -39.34689, y: 0, z: -427.36166, w: 0}
   m_textInfo:
     textComponent: {fileID: 6252697003050242462}
     characterCount: 11
@@ -1445,6 +1445,7 @@ MonoBehaviour:
   _camAnimator:
   - {fileID: 1874643576}
   - {fileID: 6254893266991522293}
+  _crossHair: {fileID: 138178332312114711}
   _aimTime: 0.085
   _currentAimTime: 3
   WeaponList:
@@ -1489,6 +1490,7 @@ MonoBehaviour:
   _maxOutlineDistance: 5
   _interactUI: {fileID: 0}
   _itemHeavyUI: {fileID: 0}
+  _gameCompleteUI: {fileID: 0}
   _doorBehaviourScript: {fileID: 0}
 --- !u!114 &430744573
 MonoBehaviour:
@@ -2037,7 +2039,7 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -41.32905, y: 0, z: -13.352631, w: 0}
+  m_margin: {x: -41.32905, y: 0, z: -270.93668, w: 0}
   m_textInfo:
     textComponent: {fileID: 5273417959787237292}
     characterCount: 9

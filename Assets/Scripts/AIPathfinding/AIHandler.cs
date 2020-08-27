@@ -11,8 +11,11 @@ namespace Assets.Scripts.AIPathfinding
 
 		private List<Waypoint> _coverPoints;
 		private static AIHandler _instance;
+		private List<NPCBase> _enemiesList = new List<NPCBase>();
 
 		public event Action Aggro;
+
+		public int KillCount { get; private set; }
 
 		public static AIHandler Instance
 		{
@@ -32,7 +35,7 @@ namespace Assets.Scripts.AIPathfinding
 		{
 			_coverPoints = new List<Waypoint>();
 
-			if(_instance == null)
+			if (_instance == null)
 			{
 				_instance = this;
 			}
@@ -43,11 +46,11 @@ namespace Assets.Scripts.AIPathfinding
 			}
 		}
 
-		
+
 
 		private void OnDestroy()
 		{
-			if(_instance == this)
+			if (_instance == this)
 			{
 				_instance = null;
 			}
@@ -66,6 +69,23 @@ namespace Assets.Scripts.AIPathfinding
 		public void RemoveCover(Waypoint oldWaypoint)
 		{
 			_coverPoints.Remove(oldWaypoint);
+		}
+
+		public void AddEnemy(NPCBase enemy)
+		{
+			_enemiesList.Add(enemy);
+			enemy.Death += OnDeath;
+		}
+
+		public void RemoveEnemy(NPCBase enemy)
+		{
+			_enemiesList.Remove(enemy);
+			enemy.Death -= OnDeath;
+		}
+
+		private void OnDeath()
+		{
+			KillCount++;
 		}
 	}
 }
