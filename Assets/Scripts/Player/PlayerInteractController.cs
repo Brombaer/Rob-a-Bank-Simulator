@@ -43,8 +43,6 @@ public class PlayerInteractController : MonoBehaviour
     private GameObject _interactUI;
     [SerializeField]
     private GameObject _itemHeavyUI;
-	[SerializeField]
-	private GameObject _gameCompleteUI;
 
 
 

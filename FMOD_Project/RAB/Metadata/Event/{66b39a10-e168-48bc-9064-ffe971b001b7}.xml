@@ -215,7 +215,7 @@
 	<object class="MixerBusFader" id="{bb77ec7f-f67b-420d-866b-df7af3236f31}" />
 	<object class="DistortionEffect" id="{5ffd985c-e64c-4db4-b074-cd364f541978}">
 		<property name="level">
-			<value>0.63500005</value>
+			<value>0.695000052</value>
 		</property>
 	</object>
 	<object class="MultibandEqEffect" id="{72d429fd-d860-4ec7-8d69-3ce5c8cf7366}">

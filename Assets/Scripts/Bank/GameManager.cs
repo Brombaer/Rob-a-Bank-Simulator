@@ -97,8 +97,12 @@ public class GameManager : MonoBehaviour
 			int chooseRandomEnemy = UnityEngine.Random.Range(0, _enemyList.Count);
 
 			Instantiate(_enemyList[chooseRandomEnemy], _enemyLocationList[i].position, _enemyLocationList[i].rotation);
-		}
 
+		}
+		yield return new WaitForSeconds(0.1f);
+
+		AIHandler.Instance.AggroAll();
+		
 		yield return new WaitForSeconds(2);
 
 		_detectedUIPrefab.SetActive(false);
@@ -120,6 +124,7 @@ public class GameManager : MonoBehaviour
 			}
 
 			spawnMultiplier++;
+			yield return new WaitForSeconds(0.1f);
 			AIHandler.Instance.AggroAll();
         }
 	}

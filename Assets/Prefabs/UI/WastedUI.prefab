@@ -992,7 +992,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _startButtonSound: event:/UI/Menu/OnClicked
   _clickButtonSound: event:/UI/Menu/StartGame
-  _buttonDelay: 2
+  _buttonDelay: 1
 --- !u!1 &7184726364351883982
 GameObject:
   m_ObjectHideFlags: 0

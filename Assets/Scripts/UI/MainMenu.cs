@@ -42,7 +42,12 @@ public class MainMenu : MonoBehaviour
 	IEnumerator DelayLoadLevel(float seconds)
 	{
 		yield return new WaitForSeconds(seconds);
-		GetComponent<FMODPlay>().StopAudio();
+		
+		FMODPlay music = GetComponent<FMODPlay>();
+
+		if (music != null)
+			music.StopAudio();
+
 		SceneManager.LoadScene(1);
 	}
 

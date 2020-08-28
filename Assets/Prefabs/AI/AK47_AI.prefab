@@ -109,7 +109,7 @@ MonoBehaviour:
   _bulletSpawnPoint: {fileID: 4865098306718012}
   _bulletForce: 400
   _raycastDistance: 50
-  _damage: 3
+  _damage: 1
   _fleshParticlePrefab: {fileID: 1671474790284636, guid: 4d7746559804f034daa8e1c8ee23a78a,
     type: 3}
   weaponSway: 0
