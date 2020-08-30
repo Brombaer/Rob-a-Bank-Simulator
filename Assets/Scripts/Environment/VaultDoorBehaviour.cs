@@ -32,7 +32,7 @@ public class VaultDoorBehaviour : DoorBehaviour
 	private void Awake()
 	{
 		//_drillUI = _drillUIPrefab.GetComponent<DrillUI>();
-		//_eventInst = FMODUnity.RuntimeManager.CreateInstance(_drillSound);
+		_eventInst = FMODUnity.RuntimeManager.CreateInstance(_drillSound);
 
 		_drillUIPrefab.SetActive(false);
 		_vaultDrill.SetActive(false);
