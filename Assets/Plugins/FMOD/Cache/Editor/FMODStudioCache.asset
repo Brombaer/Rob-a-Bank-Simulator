@@ -72,7 +72,7 @@ MonoBehaviour:
   Path: event:/Weapons/ChargeWeapon
   guid: af2d4e669e88694ea57a5e128a08728a
   Banks:
-  - {fileID: 7531560909445760025}
+  - {fileID: 1879694064201109963}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -170,7 +170,7 @@ MonoBehaviour:
   Path: event:/Ambiance/CityAmb
   guid: c32cd81815f70049b2245c683410a7c5
   Banks:
-  - {fileID: 7531560909445760025}
+  - {fileID: 1879694064201109963}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -279,7 +279,7 @@ MonoBehaviour:
   Path: event:/UI/Death
   guid: 6bd3159020238c43a9624842d37e1a70
   Banks:
-  - {fileID: 7531560909445760025}
+  - {fileID: 1879694064201109963}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -319,7 +319,7 @@ MonoBehaviour:
   Path: event:/UI/Menu/OnClicked
   guid: 382fd3e044b106499438de72ac02c596
   Banks:
-  - {fileID: 7531560909445760025}
+  - {fileID: 1879694064201109963}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -449,6 +449,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2900
+--- !u!114 &-7644686737046587047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Bank/State
+  m_EditorClassIdentifier: 
+  Name: State
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
 --- !u!114 &-7540872815720738999
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -577,6 +594,23 @@ MonoBehaviour:
   Max: 2
   Default: 0
   Exists: 0
+--- !u!114 &-6921119354500885280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Drill/DrillState
+  m_EditorClassIdentifier: 
+  Name: DrillState
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 0
 --- !u!114 &-6866210755858921158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -609,7 +643,7 @@ MonoBehaviour:
   Path: event:/Ambiance/BankBell
   guid: 1d835be2905f2b40807697ee2b21ad13
   Banks:
-  - {fileID: 7531560909445760025}
+  - {fileID: 1879694064201109963}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -632,7 +666,7 @@ MonoBehaviour:
   Path: event:/Weapons/Glock48/Glock48_Fire
   guid: f27642acbea511438a7ad514f79568fe
   Banks:
-  - {fileID: 7531560909445760025}
+  - {fileID: 1879694064201109963}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -769,12 +803,12 @@ MonoBehaviour:
   Path: event:/Door/Drill
   guid: 902a78039c02864fa20ea2f6ae8ddec5
   Banks:
-  - {fileID: 7531560909445760025}
+  - {fileID: 1879694064201109963}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: -5585849446900772409}
+  - {fileID: -5365723726813914497}
   MinDistance: 3.8
   MaxDistance: 20
   Length: 12069
@@ -794,7 +828,7 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-5384792820950991571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -810,7 +844,7 @@ MonoBehaviour:
   Path: event:/Weapons/AK47/AK47_NoAmmo
   guid: daa6a5e5873d9f4d9a79b81d1110adf7
   Banks:
-  - {fileID: 7531560909445760025}
+  - {fileID: 1879694064201109963}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -835,6 +869,23 @@ MonoBehaviour:
   Max: 3
   Default: 0
   Exists: 0
+--- !u!114 &-5365723726813914497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Drill/DrillState
+  m_EditorClassIdentifier: 
+  Name: DrillState
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
 --- !u!114 &-5302990850425083914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1248,7 +1299,7 @@ MonoBehaviour:
   Path: event:/UI/Menu/OnHover
   guid: 881bec44ddc789468aa772a11922b6bf
   Banks:
-  - {fileID: 7531560909445760025}
+  - {fileID: 1879694064201109963}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1288,7 +1339,7 @@ MonoBehaviour:
   Path: event:/UI/Menu/StartGame
   guid: 44c41d72264f704d9a6ab6d1393e3382
   Banks:
-  - {fileID: 7531560909445760025}
+  - {fileID: 1879694064201109963}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1474,7 +1525,7 @@ MonoBehaviour:
   Path: event:/Weapons/WeaponImpact
   guid: 70df2b82c1f8d945919ed832a584af2c
   Banks:
-  - {fileID: 7531560909445760025}
+  - {fileID: 1879694064201109963}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1537,7 +1588,7 @@ MonoBehaviour:
   Path: event:/UI/Detected
   guid: 8469f08336920f4f879e8f1e0a8351d3
   Banks:
-  - {fileID: 7531560909445760025}
+  - {fileID: 1879694064201109963}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1612,11 +1663,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: FMOD_Project/RAB/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637344225292800654
+  lastModified: 637344249704934423
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1846
+    Value: 1986
   Exists: 1
 --- !u!114 &-2382742007494300464
 MonoBehaviour:
@@ -1634,7 +1685,7 @@ MonoBehaviour:
   Min: 0
   Max: 3
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-2317518273563542418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1673,7 +1724,7 @@ MonoBehaviour:
   Path: event:/Music/Menu
   guid: c63b4b79457e0c48a27732d4f105f9fb
   Banks:
-  - {fileID: 7531560909445760025}
+  - {fileID: 1879694064201109963}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -1777,7 +1828,7 @@ MonoBehaviour:
   Path: event:/Weapons/Glock48/Glock48_NoAmmo
   guid: f8f4a23086e3e749846352b765263253
   Banks:
-  - {fileID: 7531560909445760025}
+  - {fileID: 1879694064201109963}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1915,6 +1966,24 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 0
+  Exists: 0
+--- !u!114 &-723708822683735871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD_Project/RAB/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637344246174205965
+  LoadResult: 0
+  FileSizes: []
   Exists: 0
 --- !u!114 &-668759305106043727
 MonoBehaviour:
@@ -2057,7 +2126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: -2551693780085685036}
-  - {fileID: 7531560909445760025}
+  - {fileID: 1879694064201109963}
   EditorEvents:
   - {fileID: 4935816230707507502}
   - {fileID: 8335774066494432386}
@@ -2082,10 +2151,10 @@ MonoBehaviour:
   - {fileID: -2115850237053877098}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 7531560909445760025}
+  - {fileID: 1879694064201109963}
   StringsBanks:
   - {fileID: -2551693780085685036}
-  stringsBankWriteTime: 637344225292800654
+  stringsBankWriteTime: 637344249704934423
   cacheVersion: 3
 --- !u!114 &44616312257872162
 MonoBehaviour:
@@ -2361,12 +2430,12 @@ MonoBehaviour:
   Path: event:/Music/Bank
   guid: e8cab0decb3afe4f95f12112197842ad
   Banks:
-  - {fileID: 7531560909445760025}
+  - {fileID: 1879694064201109963}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -2382742007494300464}
+  - {fileID: 7744692601414155621}
   MinDistance: 0
   MaxDistance: 0
   Length: 28812
@@ -2402,7 +2471,7 @@ MonoBehaviour:
   Path: event:/Weapons/AK47/AK47_Fire
   guid: 3a75f9f3f4b1404cb5e38c1ddab251d6
   Banks:
-  - {fileID: 7531560909445760025}
+  - {fileID: 1879694064201109963}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -2468,6 +2537,24 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 508
+--- !u!114 &1879694064201109963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD_Project/RAB/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637344249704879112
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &2173276980602545857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3148,7 +3235,7 @@ MonoBehaviour:
   Path: event:/UI/GameCompleted
   guid: 0ca23e10fbbc8f429ce9fafea9555cbc
   Banks:
-  - {fileID: 7531560909445760025}
+  - {fileID: 1879694064201109963}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -3428,7 +3515,7 @@ MonoBehaviour:
   Path: event:/UI/Damaged
   guid: 109ab36668e1bc489064ffe971b001b7
   Banks:
-  - {fileID: 7531560909445760025}
+  - {fileID: 1879694064201109963}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -3596,7 +3683,7 @@ MonoBehaviour:
   lastModified: 637344225292750788
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &7599387900923414232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3650,6 +3737,23 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &7744692601414155621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Bank/State
+  m_EditorClassIdentifier: 
+  Name: State
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 1
 --- !u!114 &7834889246739940936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3689,7 +3793,7 @@ MonoBehaviour:
   Path: event:/Door/DoorOpen
   guid: 625662fc0787084899a6eb1d6c662679
   Banks:
-  - {fileID: 7531560909445760025}
+  - {fileID: 1879694064201109963}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -3730,7 +3834,7 @@ MonoBehaviour:
   Path: event:/Weapons/AK47/AK47_Reload
   guid: 0e964065e490a940b1d71d9bae839626
   Banks:
-  - {fileID: 7531560909445760025}
+  - {fileID: 1879694064201109963}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -3753,7 +3857,7 @@ MonoBehaviour:
   Path: event:/Weapons/Glock48/Glock48_Reload
   guid: fb5d8e395e2f80498c307edd369e4f2f
   Banks:
-  - {fileID: 7531560909445760025}
+  - {fileID: 1879694064201109963}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1

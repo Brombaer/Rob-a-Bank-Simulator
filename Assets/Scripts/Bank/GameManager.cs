@@ -124,6 +124,7 @@ public class GameManager : MonoBehaviour
 			}
 
 			spawnMultiplier++;
+			_secondWaveDelay += 10;
 			yield return new WaitForSeconds(0.1f);
 			AIHandler.Instance.AggroAll();
         }
