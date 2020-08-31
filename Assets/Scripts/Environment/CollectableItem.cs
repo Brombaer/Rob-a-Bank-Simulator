@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class CollectableItem : Interactable
 {
+	[FMODUnity.EventRef]
+	[SerializeField] private string _money;
+
 	public string ItemType;
 	public float ItemValue;
 	public float ItemWeight;
@@ -19,6 +22,7 @@ public class CollectableItem : Interactable
 			interactor.WalletAmount += ItemValue;
 			interactor.PlayerCurrentLoad += ItemWeight;
 
+			FMODUnity.RuntimeManager.PlayOneShot(_money, gameObject.transform.position);
 			Destroy(gameObject);
 		}
 		else

@@ -19,7 +19,7 @@ GameObject:
   m_TagString: InteractableObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &438844
 Transform:
@@ -97,9 +97,11 @@ MonoBehaviour:
   OnInteracted:
     m_PersistentCalls:
       m_Calls: []
+  _money: event:/PickUps/Money
   ItemType: Money stack 1
   ItemValue: 500000
   ItemWeight: 15000
+  _isMoney: 0
 --- !u!65 &-8590461641562474717
 BoxCollider:
   m_ObjectHideFlags: 0

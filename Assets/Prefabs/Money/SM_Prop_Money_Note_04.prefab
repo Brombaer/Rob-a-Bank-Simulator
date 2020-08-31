@@ -97,9 +97,11 @@ MonoBehaviour:
   OnInteracted:
     m_PersistentCalls:
       m_Calls: []
+  _money: event:/PickUps/Money
   ItemType: Money note 4
   ItemValue: 4700
   ItemWeight: 1000
+  _isMoney: 0
 --- !u!65 &-1377149759867532807
 BoxCollider:
   m_ObjectHideFlags: 0
