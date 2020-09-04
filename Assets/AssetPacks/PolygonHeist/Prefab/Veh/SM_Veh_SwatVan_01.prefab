@@ -803,8 +803,7 @@ GameObject:
   - component: {fileID: 408630}
   - component: {fileID: 3335820}
   - component: {fileID: 2320958}
-  - component: {fileID: 1400213719819743518}
-  - component: {fileID: 2661342875429203645}
+  - component: {fileID: 264389584690560809}
   m_Layer: 0
   m_Name: SM_Veh_SwatVan_01
   m_TagString: Untagged
@@ -882,8 +881,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &1400213719819743518
-BoxCollider:
+--- !u!64 &264389584690560809
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -892,19 +891,7 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.4654853, y: 1.725497, z: 6.0095587}
-  m_Center: {x: 0, y: 0.8849863, z: 0.18873644}
---- !u!65 &2661342875429203645
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 185134}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.4654853, y: 2.248931, z: 4.3949747}
-  m_Center: {x: 0, y: 1.4337766, z: -0.61855555}
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 3009030741d7f35438bfdbc618b57fe5, type: 3}

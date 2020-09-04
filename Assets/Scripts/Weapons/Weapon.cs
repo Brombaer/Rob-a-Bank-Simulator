@@ -27,16 +27,16 @@ public class Weapon : MonoBehaviour
 	[SerializeField] private float _raycastDistance = 50;
 	[SerializeField] private float _damage = 10;
 	[SerializeField] private GameObject _fleshParticlePrefab;
-	
-	[Space][Space]
+
+	[Space] [Space]
 	[Header("Weapon Sway Settings")]
 	[SerializeField] private bool weaponSway;
 	[SerializeField] private float swayAmount = 0.02f;
 	[SerializeField] private float maxSwayAmount = 0.06f;
 	[SerializeField] private float swaySmoothValue = 4.0f;
 
-	[Space][Space]
-	[Header("FMOD Events")][FMODUnity.EventRef]
+	[Space] [Space]
+	[Header("FMOD Events")] [FMODUnity.EventRef]
 	[SerializeField] private string _shotFEvent;
 	[FMODUnity.EventRef]
 	[SerializeField] private string _noAmmoFEvent;
@@ -48,6 +48,10 @@ public class Weapon : MonoBehaviour
 	[SerializeField] private string _playerDamageFEvent;
 
 	[SerializeField] private CameraShake _cameraShake;
+
+	[Space]
+	[Space]
+	[SerializeField] private bool _debugMode;
 
 	private int _currentAmmo = 0;
 	private Vector3 initialSwayPosition;
@@ -118,6 +122,12 @@ public class Weapon : MonoBehaviour
 			
 			if(Physics.Raycast(_bulletSpawnPoint.position, _bulletSpawnPoint.forward, out RaycastHit hit, _raycastDistance))
 			{
+				if(_debugMode)
+				{
+					Debug.DrawLine(_bulletSpawnPoint.position, hit.point, Color.red, 1);
+					Debug.Log(hit.collider.name);
+				}
+
 				if(hit.collider.CompareTag("Player"))
 					FMODUnity.RuntimeManager.PlayOneShotAttached(_playerDamageFEvent, gameObject);
 

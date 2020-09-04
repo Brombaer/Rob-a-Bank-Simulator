@@ -275,8 +275,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4065713703755338544}
   m_LocalRotation: {x: -0, y: 1.1368684e-13, z: 2.842171e-14, w: 1}
-  m_LocalPosition: {x: -0, y: -0.9123, z: 0.3241}
-  m_LocalScale: {x: 1, y: 1.0000001, z: 1.0000001}
+  m_LocalPosition: {x: 0, y: -0.9123, z: 0.3241}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4065713703973278944}
   m_RootOrder: 2
@@ -9898,13 +9898,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4065713704097361192}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0295, y: -0.9033, z: 0.4854}
+  m_LocalRotation: {x: 0.012216953, y: -0.00087253604, z: 0.000010660531, w: 0.999925}
+  m_LocalPosition: {x: -0.03, y: -0.9029999, z: 0.3220001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4065713703973278944}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 1.4, y: -0.1, z: 0}
 --- !u!1 &4065713704157585308
 GameObject:
   m_ObjectHideFlags: 0
@@ -9915,7 +9915,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4065713704157585309}
   - component: {fileID: 4065713704157585305}
-  - component: {fileID: 546095782007988184}
+  - component: {fileID: -4795992028693639322}
   m_Layer: 0
   m_Name: Glock48_AI
   m_TagString: Untagged
@@ -9961,7 +9961,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &546095782007988184
+--- !u!114 &-4795992028693639322
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9970,26 +9970,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 4065713704157585308}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 451a6d9b4444f864c89119860c361cec, type: 3}
+  m_Script: {fileID: 11500000, guid: b57ec256c976e5348b84d838bd05ed27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Glock48
+  Name: 
   WeaponIcon: {fileID: 0}
   _isSingleFire: 0
   _fireRate: 100
   _muzzleParticle: {fileID: 4065713703755338547}
   _muzzleLight: {fileID: 4065713704595975820}
   _muzzleLocation: {fileID: 4065713703755338545}
-  _reloadTime: 2.5
-  _magazineSize: 11
+  _reloadTime: 0
+  _magazineSize: 31
   _bulletPrefab: {fileID: 1086664671600574, guid: 5953171a59c27394e9ad5cbb564affa8,
     type: 3}
-  _bulletSpawnPoint: {fileID: 7361330989382889125}
-  _bulletForce: 400
+  _bulletSpawnPoint: {fileID: 4065713704097361193}
+  _bulletForce: 300
   _raycastDistance: 50
   _damage: 3
-  _fleshParticlePrefab: {fileID: 1671474790284636, guid: 4d7746559804f034daa8e1c8ee23a78a,
-    type: 3}
+  _fleshParticlePrefab: {fileID: 0}
   weaponSway: 0
   swayAmount: 0.02
   maxSwayAmount: 0.06
@@ -9998,8 +9997,9 @@ MonoBehaviour:
   _noAmmoFEvent: event:/Weapons/Glock48/Glock48_NoAmmo
   _reloadFEvent: event:/Weapons/Glock48/Glock48_Reload
   _chargeFEvent: event:/Weapons/ChargeWeapon
-  _playerDamageFEvent: event:/UI/Damaged
+  _playerDamageFEvent: 
   _cameraShake: {fileID: 0}
+  _debugMode: 0
 --- !u!1 &4065713704443959736
 GameObject:
   m_ObjectHideFlags: 0

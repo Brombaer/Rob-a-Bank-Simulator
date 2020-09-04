@@ -40,7 +40,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4404726041521182}
   - component: {fileID: 95149528063872140}
-  - component: {fileID: 7200387730130782410}
+  - component: {fileID: 3988359231524561856}
   m_Layer: 8
   m_Name: AK47_AI
   m_TagString: Untagged
@@ -83,7 +83,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &7200387730130782410
+--- !u!114 &3988359231524561856
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -92,36 +92,36 @@ MonoBehaviour:
   m_GameObject: {fileID: 1164455801716708}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c55a0d010df63714eb0ffbdadffd059b, type: 3}
+  m_Script: {fileID: 11500000, guid: b57ec256c976e5348b84d838bd05ed27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Name: AK47
   WeaponIcon: {fileID: 0}
   _isSingleFire: 0
-  _fireRate: 300
+  _fireRate: 350
   _muzzleParticle: {fileID: 198527494405496654}
   _muzzleLight: {fileID: 108499269170948386}
   _muzzleLocation: {fileID: 4356901760936928}
   _reloadTime: 2.7
-  _magazineSize: 20
+  _magazineSize: 31
   _bulletPrefab: {fileID: 1086664671600574, guid: 5953171a59c27394e9ad5cbb564affa8,
     type: 3}
   _bulletSpawnPoint: {fileID: 4865098306718012}
-  _bulletForce: 400
+  _bulletForce: 300
   _raycastDistance: 50
   _damage: 1
-  _fleshParticlePrefab: {fileID: 1671474790284636, guid: 4d7746559804f034daa8e1c8ee23a78a,
-    type: 3}
+  _fleshParticlePrefab: {fileID: 0}
   weaponSway: 0
   swayAmount: 0.02
-  maxSwayAmount: 0.05
-  swaySmoothValue: 2
-  _shotFEvent: event:/Weapons/AK47/AK47_Fire
+  maxSwayAmount: 0.06
+  swaySmoothValue: 4
+  _shotFEvent: event:/Weapons/AK47/AK47
   _noAmmoFEvent: event:/Weapons/AK47/AK47_NoAmmo
   _reloadFEvent: event:/Weapons/AK47/AK47_Reload
   _chargeFEvent: event:/Weapons/ChargeWeapon
-  _playerDamageFEvent: event:/UI/Damaged
+  _playerDamageFEvent: 
   _cameraShake: {fileID: 0}
+  _debugMode: 0
 --- !u!1 &1246054412923670
 GameObject:
   m_ObjectHideFlags: 0

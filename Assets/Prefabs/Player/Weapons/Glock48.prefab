@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 8679066202756710896}
   - component: {fileID: 487804777250006112}
   - component: {fileID: 3046640347835839992}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WeaponIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!224 &8679066202756710896
@@ -83,11 +83,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7361330989382889125}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Fire Spawn Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &7361330989382889125
@@ -98,7 +98,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3354437190693886702}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: -1.07, z: 0.6237}
+  m_LocalPosition: {x: -0, y: -1.07, z: -0.297}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4065713704443959737}
@@ -117,7 +117,7 @@ GameObject:
   m_Name: Grenade_Spawn_Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4065713703650777859
@@ -148,7 +148,7 @@ GameObject:
   m_Name: handgun_01_iron_sights
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4065713703711194892
@@ -264,7 +264,7 @@ GameObject:
   m_Name: Muzzleflash Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4065713703755338545
@@ -5002,7 +5002,7 @@ GameObject:
   m_Name: finger_01_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4065713703792224189
@@ -5033,7 +5033,7 @@ GameObject:
   m_Name: hand_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4065713703816724244
@@ -5066,7 +5066,7 @@ GameObject:
   m_Name: Casing Spawn Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4065713703873179566
@@ -5096,7 +5096,7 @@ GameObject:
   m_Name: knife
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4065713703939605421
@@ -5128,7 +5128,7 @@ GameObject:
   m_Name: SparkParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4065713703942540309
@@ -9947,7 +9947,7 @@ GameObject:
   m_Name: arm_target_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4065713703962774006
@@ -9977,7 +9977,7 @@ GameObject:
   m_Name: Components
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4065713703973278944
@@ -10012,7 +10012,7 @@ GameObject:
   m_Name: Armature
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4065713704070029512
@@ -10051,7 +10051,7 @@ GameObject:
   m_Name: Bullet Spawn Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4065713704097361193
@@ -10081,7 +10081,7 @@ GameObject:
   m_Name: middle_finger_01_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4065713704100823934
@@ -10112,7 +10112,7 @@ GameObject:
   m_Name: arm_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4065713704119398518
@@ -10140,12 +10140,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4065713704157585309}
   - component: {fileID: 4065713704157585305}
-  - component: {fileID: 958996287757162902}
+  - component: {fileID: 1822344802570249177}
   m_Layer: 8
   m_Name: Glock48
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4065713704157585309
@@ -10185,7 +10185,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &958996287757162902
+--- !u!114 &1822344802570249177
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10194,29 +10194,37 @@ MonoBehaviour:
   m_GameObject: {fileID: 4065713704157585308}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 451a6d9b4444f864c89119860c361cec, type: 3}
+  m_Script: {fileID: 11500000, guid: b57ec256c976e5348b84d838bd05ed27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _weaponHUD: {fileID: 0}
   Name: Glock 48
+  WeaponIcon: {fileID: 21300000, guid: d6e4dc2ab496ac845a119b14c5abbb91, type: 3}
   _isSingleFire: 1
-  _fireRate: 600
+  _fireRate: 400
   _muzzleParticle: {fileID: 4065713703755338547}
   _muzzleLight: {fileID: 4065713704595975820}
-  _muzzleLocation: {fileID: 7361330989382889125}
-  _reloadTime: 2.5
+  _muzzleLocation: {fileID: 4065713704097361193}
+  _reloadTime: 2
+  _magazineSize: 11
   _bulletPrefab: {fileID: 1086664671600574, guid: 5953171a59c27394e9ad5cbb564affa8,
     type: 3}
   _bulletSpawnPoint: {fileID: 4065713704097361193}
   _bulletForce: 400
+  _raycastDistance: 100
+  _damage: 50
+  _fleshParticlePrefab: {fileID: 1862702955490848, guid: ec8d3f2d1e540084399da023f13f87d7,
+    type: 3}
   weaponSway: 1
   swayAmount: 0.02
   maxSwayAmount: 0.06
   swaySmoothValue: 4
-  _shotFEvent: 
-  _noAmmoFEvent: 
-  _reloadFEvent: 
-  _chargeFEvent: 
+  _shotFEvent: event:/Weapons/Glock48/Glock48_Fire
+  _noAmmoFEvent: event:/Weapons/Glock48/Glock48_NoAmmo
+  _reloadFEvent: event:/Weapons/Glock48/Glock48_Reload
+  _chargeFEvent: event:/Weapons/ChargeWeapon
+  _playerDamageFEvent: event:/UI/Damaged
+  _cameraShake: {fileID: 0}
+  _debugMode: 1
 --- !u!1 &4065713704189243701
 GameObject:
   m_ObjectHideFlags: 0
@@ -10230,7 +10238,7 @@ GameObject:
   m_Name: middle_finger_01_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4065713704189243702
@@ -10261,7 +10269,7 @@ GameObject:
   m_Name: IK_arm_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4065713704255707947
@@ -10292,7 +10300,7 @@ GameObject:
   m_Name: handgun_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4065713704443959737
@@ -10409,7 +10417,7 @@ GameObject:
   m_Name: slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4065713704462270527
@@ -10439,7 +10447,7 @@ GameObject:
   m_Name: finger_02_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4065713704518516163
@@ -10470,7 +10478,7 @@ GameObject:
   m_Name: middle_finger_02_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4065713704538350549
@@ -10501,7 +10509,7 @@ GameObject:
   m_Name: arm_target_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4065713704548424104
@@ -10532,7 +10540,7 @@ GameObject:
   m_Name: knife 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4065713704577934451
@@ -10647,7 +10655,7 @@ GameObject:
   m_Name: Muzzleflash Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4065713704595975923
@@ -10738,7 +10746,7 @@ GameObject:
   m_Name: middle_finger_03_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4065713704615035141
@@ -10768,7 +10776,7 @@ GameObject:
   m_Name: lower_arm_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4065713704750270383
@@ -10799,7 +10807,7 @@ GameObject:
   m_Name: thumb_01_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4065713704779556573
@@ -10830,7 +10838,7 @@ GameObject:
   m_Name: finger_03_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4065713704807701707
@@ -10861,7 +10869,7 @@ GameObject:
   m_Name: arms
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4065713704867377608
@@ -10977,7 +10985,7 @@ GameObject:
   m_Name: finger_03_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4065713704878348856
@@ -11007,7 +11015,7 @@ GameObject:
   m_Name: mag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4065713704898256168
@@ -11037,7 +11045,7 @@ GameObject:
   m_Name: arm_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4065713704934122738
@@ -11068,7 +11076,7 @@ GameObject:
   m_Name: weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4065713704950042329
@@ -11101,7 +11109,7 @@ GameObject:
   m_Name: bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4065713705009668115
@@ -11215,7 +11223,7 @@ GameObject:
   m_Name: thumb_03_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4065713705010016430
@@ -11245,7 +11253,7 @@ GameObject:
   m_Name: lower_arm_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4065713705267642715
@@ -11276,7 +11284,7 @@ GameObject:
   m_Name: thumb_01_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4065713705293376635
@@ -11307,7 +11315,7 @@ GameObject:
   m_Name: middle_finger_02_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4065713705296542656
@@ -11338,7 +11346,7 @@ GameObject:
   m_Name: thumb_02_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4065713705340113857
@@ -11369,7 +11377,7 @@ GameObject:
   m_Name: hand_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4065713705407765854
@@ -11402,7 +11410,7 @@ GameObject:
   m_Name: middle_finger_03_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4065713705490658137
@@ -11432,7 +11440,7 @@ GameObject:
   m_Name: thumb_02_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4065713705527455983
@@ -11463,7 +11471,7 @@ GameObject:
   m_Name: finger_01_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4065713705539424080
@@ -11494,7 +11502,7 @@ GameObject:
   m_Name: thumb_03_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4065713705576152952
@@ -11524,7 +11532,7 @@ GameObject:
   m_Name: finger_02_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4065713705630662109
@@ -11555,7 +11563,7 @@ GameObject:
   m_Name: IK_arm_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4065713705636743093
