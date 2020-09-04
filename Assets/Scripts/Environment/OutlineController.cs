@@ -6,10 +6,8 @@ public class OutlineController : MonoBehaviour
 {
     private MeshRenderer _renderer;
 
-    [SerializeField]
-    private float _maxOutlineWidth;
-    [SerializeField]
-    private Color _outlineColor;
+    [SerializeField] private float _maxOutlineWidth;
+    [SerializeField] private Color _outlineColor;
 
     // Start is called before the first frame update
     void Start()

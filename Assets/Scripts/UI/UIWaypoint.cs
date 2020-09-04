@@ -48,9 +48,6 @@ public class UIWaypoint : MonoBehaviour
 			float dif = Vector3.Distance(_target.position, transform.position);
 			Color color = new Color(_img.color.r, _img.color.g, _img.color.b, _animCurve.Evaluate(dif));
 			_img.color = color;
-
-
-			//_meter.text = Mathf.RoundToInt(Vector3.Distance(transform.position, _target.position)).ToString();
 		}
 	}
 }

@@ -20,14 +20,12 @@ namespace Assets.Scripts.AIPathfinding
 		private float _currentWaitTime = 4.0f;
 		[SerializeField] private float _waitTime = 4.0f;
 
-
 		protected override void Start()
 		{
 			base.Start();
 
 			_player = AIHandler.Instance.PlayerTransform.GetComponent<PlayerCharacter>();
 		}
-
 
 		protected override void Update()
 		{
@@ -40,7 +38,6 @@ namespace Assets.Scripts.AIPathfinding
 					AIHandler.Instance.AggroAll();
 				}
 				
-
 				if (!AtBestWaypoint())
 				{
 					if (_closestCover != null)
@@ -53,7 +50,6 @@ namespace Assets.Scripts.AIPathfinding
 			else
 			{
 				_currentState = NPCStates.Alert;
-
 
 				//decides whether or not its time to move
 				if (TargetReached())
@@ -117,10 +113,7 @@ namespace Assets.Scripts.AIPathfinding
 					else if (PlayerDistanceTo(current.transform) < PlayerDistanceTo(_closestCover.transform) && !current.IsUsed)
 					{
 						_closestCover = current;
-
 					}
-				
-
 				}
 			}
 			else
@@ -137,7 +130,6 @@ namespace Assets.Scripts.AIPathfinding
 			{
 				Debug.Log("Can't find cover.");
 			}
-			
 		}
 
 		private bool AtBestWaypoint()
@@ -165,7 +157,6 @@ namespace Assets.Scripts.AIPathfinding
 							isBest = false;
 						}
 					}
-					
 				}
 			}
 

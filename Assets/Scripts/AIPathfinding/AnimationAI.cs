@@ -5,7 +5,6 @@ namespace Assets.Scripts.AIPathfinding
 {
 	public class AnimationAI : MonoBehaviour
 	{
-
 		[SerializeField] private NavMeshAgent _navMeshAgent;
 		[SerializeField] private Weapon _rifle;
 		[SerializeField] private Weapon _handgun;
@@ -21,8 +20,6 @@ namespace Assets.Scripts.AIPathfinding
 
 		private void Start()
 		{
-
-
 			_rifle.Fired += OnFired;
 			_handgun.Fired += OnFired;
 

@@ -12,8 +12,6 @@ public class CollectableItem : Interactable
 	public float ItemWeight;
 	public bool _isMoney;
 
-
-
 	public override void Interact(PlayerInteractController interactor)
 	{
 		if (interactor.PlayerCurrentLoad < interactor.PlayerMaxLoadCapacity)
@@ -24,10 +22,6 @@ public class CollectableItem : Interactable
 
 			FMODUnity.RuntimeManager.PlayOneShot(_money, gameObject.transform.position);
 			Destroy(gameObject);
-		}
-		else
-		{
-
 		}
 	}
 }

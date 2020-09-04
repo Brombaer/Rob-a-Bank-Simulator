@@ -11,8 +11,6 @@ public class HealthBar : MonoBehaviour
 	private Coroutine _updateHealthCoroutine;
 	private float _targetHealth;
 
-
-
 	private void Start()
 	{
 		SetMaxHealth(_health.MaxHealth);

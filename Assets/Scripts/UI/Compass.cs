@@ -2,7 +2,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-
 public class Compass : MonoBehaviour
 {
 	[SerializeField] private GameObject _wayPointIcon;
@@ -13,8 +12,6 @@ public class Compass : MonoBehaviour
 
 	private Vector3 _northDirection;
 	private List<CompassWaypoint> _compassWaypoints = new List<CompassWaypoint>();
-
-
 
 	private void Start()
 	{
@@ -53,12 +50,10 @@ public class Compass : MonoBehaviour
 
 		Vector3 rotation = new Vector3(0, 0, Vector3.Angle(dir, _player.forward));
 
-
 		if (Vector3.Dot(Vector3.Cross(dir, Vector3.up), _player.forward) > 0)
 		{
 			rotation = -rotation;
 		}
-
 
 		_compassWaypoints[index].transform.eulerAngles = rotation;
 

@@ -6,13 +6,11 @@ public class FadeScreen : MonoBehaviour
 	[SerializeField] private bool _fadeIn;
 	[SerializeField] private float _fadeDuration = 2;
 
-
 	public Animator FadeAnimator { get; set; } 
 
 	private void Awake()
 	{
 		gameObject.SetActive(true);
-
 
 		FadeAnimator = GetComponent<Animator>();
 

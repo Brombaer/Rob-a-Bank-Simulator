@@ -9,14 +9,11 @@ namespace Assets.Scripts.AIPathfinding
 	public enum NPCStates
 	{
 		Idle,
-
 		Alert,
-
 		Aggro,
-
 		Commando
-
 	}
+
 	public class NPCBase : MonoBehaviour
 	{
 		[SerializeField] float _maxSightConeAngle;
@@ -40,7 +37,6 @@ namespace Assets.Scripts.AIPathfinding
 
 		public event Action Death;
 
-		
 		public Weapon Weapon
 		{
 			get => usingHandgun? _handgun : _rifle;
@@ -63,18 +59,12 @@ namespace Assets.Scripts.AIPathfinding
 				Destroy(this);
 			else
 				_health.Death += OnDeath;
-
-			
-			
 		}
 
 		protected virtual void Start()
 		{
-			
-
 			AIHandler.Instance.Aggro += OnAggro;
 			AIHandler.Instance.AddEnemy(this);
-
 		}
 
 		private void OnDestroy()
@@ -193,8 +183,6 @@ namespace Assets.Scripts.AIPathfinding
 			return Vector3.Distance(GetPlayerTransform().position, target.position);
 		}
 
-		
-
 		private void OnDeath()
 		{
 			Destroy(gameObject);
@@ -251,5 +239,4 @@ namespace Assets.Scripts.AIPathfinding
 			return AIHandler.Instance.PlayerTransform.transform;
 		}
 	}
-
 }

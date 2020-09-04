@@ -19,7 +19,6 @@ public class HUD : MonoBehaviour
 	private PlayerCharacter _playerCharacterRef;
 	private PlayerInteractController _interactController;
 
-
 	private void Awake()
 	{
 		_playerCharacterRef = _playerPrefab.GetComponent<PlayerCharacter>();

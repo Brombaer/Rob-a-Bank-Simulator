@@ -9,8 +9,6 @@ public class CompassWaypoint : MonoBehaviour
 	[SerializeField] private float _distanceMax;
 	[SerializeField] private float _worldSpaceToCompass;
 
-
-
 	public void SetDefaultSprite(Sprite sprite)
 	{
 		_icon.sprite = sprite;

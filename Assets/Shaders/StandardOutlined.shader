@@ -390,4 +390,3 @@ Shader "Standard (Outlined)" {
     FallBack "Standard"
     // CustomEditor "CustomStandardShaderGUI"
 }
- 

@@ -24,7 +24,6 @@ public class HurtScreen : MonoBehaviour
 			_timer = 0.1f;
 			_camShake.ShakeCamera(0.1f, 0.0015f);
 		}
-
 	}
 
 	private void Update()

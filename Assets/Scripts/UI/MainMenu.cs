@@ -12,8 +12,6 @@ public class MainMenu : MonoBehaviour
 
 	[SerializeField] private float _buttonDelay;
 
-
-
 	private void Start()
 	{
 		Cursor.lockState = CursorLockMode.None;

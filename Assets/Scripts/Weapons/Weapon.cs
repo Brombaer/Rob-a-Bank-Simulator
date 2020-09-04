@@ -117,8 +117,6 @@ public class Weapon : MonoBehaviour
 			// Spawn Bullet
 			GameObject bullet = Instantiate(_bulletPrefab, _bulletSpawnPoint.position, _bulletSpawnPoint.rotation);
 			bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * _bulletForce;
-
-		
 			
 			if(Physics.Raycast(_bulletSpawnPoint.position, _bulletSpawnPoint.forward, out RaycastHit hit, _raycastDistance))
 			{

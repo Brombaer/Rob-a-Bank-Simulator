@@ -48,8 +48,6 @@ public class PlayerCharacter : MonoBehaviour
 	private bool _isCrouched;
 	private bool _isSprinting;
 
-
-
 	private void Awake()
 	{
 		Cursor.lockState = CursorLockMode.Locked;
@@ -79,14 +77,11 @@ public class PlayerCharacter : MonoBehaviour
 		if(Input.mouseScrollDelta.y != 0)
 			ChangeWeapon();
 
-
 		Move();
 		RotateCamera();
 
-
 		if (Input.GetKeyDown(Keybindings.Hide_ShowWeapon))
 			HolsterWeapon();
-
 
 		if (!IsHolstered)
 		{
@@ -223,7 +218,6 @@ public class PlayerCharacter : MonoBehaviour
 
 			for (int i = 0; i < _camAnimator.Length; i++)
 				_camAnimator[i].SetBool("Aim", false);
-			
 		}
 		else
 			_currentAimTime += 2.5f * Time.deltaTime;

@@ -10,8 +10,6 @@ public class WeaponHUD : MonoBehaviour
 	[SerializeField] private Text _maxAmmo;
 	[SerializeField] private Image _weaponIcon;
 
-
-
 	private void Update()
 	{
 		UpdateWeaponInfo();

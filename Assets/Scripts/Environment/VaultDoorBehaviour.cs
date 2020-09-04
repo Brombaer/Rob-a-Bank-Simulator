@@ -3,23 +3,15 @@ using UnityEngine;
 
 public class VaultDoorBehaviour : DoorBehaviour
 {
-	[SerializeField]
-	private GameObject _vaultDrill;
-	[SerializeField]
-	private GameObject _vaultDoorHandle;
-	[SerializeField]
-	private float _timeLeft;
-	[SerializeField]
-	private GameObject _drillUIPrefab;
+	[SerializeField] private GameObject _vaultDrill;
+	[SerializeField] private GameObject _vaultDoorHandle;
+	[SerializeField] private GameObject _drillUIPrefab;
+	[SerializeField] private float _timeLeft;
 
 	[FMODUnity.EventRef]
-	[SerializeField]
-	private string _openDoor;
-
+	[SerializeField] private string _openDoor;
 	[FMODUnity.EventRef]
-	[SerializeField]
-	private string _drillSound;
-
+	[SerializeField] private string _drillSound;
 
 	private FMOD.Studio.EventInstance _eventInst;
 	private DrillUI _drillUI;
@@ -31,7 +23,6 @@ public class VaultDoorBehaviour : DoorBehaviour
 
 	private void Awake()
 	{
-		//_drillUI = _drillUIPrefab.GetComponent<DrillUI>();
 		_eventInst = FMODUnity.RuntimeManager.CreateInstance(_drillSound);
 
 		_drillUIPrefab.SetActive(false);
@@ -48,7 +39,6 @@ public class VaultDoorBehaviour : DoorBehaviour
 		}
 		_currentAngle = transform.localEulerAngles.y;
 	}
-
 
 	// Update is called once per frame
 	private void Update()

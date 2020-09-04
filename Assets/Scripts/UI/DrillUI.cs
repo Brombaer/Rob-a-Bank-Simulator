@@ -6,9 +6,7 @@ public class DrillUI : MonoBehaviour
 	[SerializeField] private VaultDoorBehaviour _doorTimer;
 	[SerializeField] private PlayerDeath _playerDeath;
 
-
 	private TextMeshProUGUI _text;
-
 
 	private void Awake()
 	{

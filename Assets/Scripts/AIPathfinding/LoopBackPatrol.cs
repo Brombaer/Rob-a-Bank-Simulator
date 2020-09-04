@@ -25,7 +25,6 @@ namespace Assets.Scripts.AIPathfinding
 				//resets timer 
 				_currentWaitTime = 0;
 
-				
 				//finds the next destination
 				_destination = _waypoints[_waypointCounter].transform;
 				_destination.position = _waypoints[_waypointCounter].transform.position;
@@ -39,7 +38,6 @@ namespace Assets.Scripts.AIPathfinding
 					_waypointCounter++;
 				if (isReverse)
 					_waypointCounter--;
-				
 			}
 
 			//decides whether or not its time to move
@@ -51,7 +49,6 @@ namespace Assets.Scripts.AIPathfinding
 			{
 				_currentWaitTime += 1 * Time.deltaTime;
 			}
-
 		}
 	}
 }

@@ -39,8 +39,6 @@ public class GameManager : MonoBehaviour
 
 	public float SpawnDelay { get => _spawnDelay; }
 
-
-
 	private void Update()
 	{
 		if (_inBank && !_playerChar.IsHolstered) HasBeenDetected();

@@ -26,13 +26,10 @@ public class CompleteGameUI : MonoBehaviour
 	private int _hours;
 	private bool _doOnce = true;
 
-
-
 	private void Awake()
 	{
 		TotalTime();
 		TimeSpan _timeSpan = new TimeSpan(_hours, _minutes, _seconds);
-
 
 		_time.text = $"Total Time: {_timeSpan:c}";
 		_kills.text = $"Kills: {AIHandler.Instance.KillCount.ToString("#,#", CultureInfo.InvariantCulture)}";

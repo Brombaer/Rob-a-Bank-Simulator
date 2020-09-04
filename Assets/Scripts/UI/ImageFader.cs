@@ -13,7 +13,6 @@ public class ImageFader : MonoBehaviour
 	private Color _currentColor;
 	private bool _doOnce = true;
 
-
 	private void Awake()
 	{
 		_image = GetComponent<Image>();
@@ -23,16 +22,6 @@ public class ImageFader : MonoBehaviour
 	{
 		_currentColor = _image.color;
 		StartCoroutine(FadeImage(_fadeOut));
-	}
-
-	private void Update()
-	{
-		if (_doOnce)
-		{
-			//_fadeOut = true;
-			//StartCoroutine(FadeImage(_fadeOut));
-			//_doOnce = false;
-		}
 	}
 
 	IEnumerator FadeImage(bool fadeAway)

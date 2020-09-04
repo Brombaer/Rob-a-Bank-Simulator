@@ -42,7 +42,6 @@ namespace Assets.Scripts.AIPathfinding
 			{
 				_currentWaitTime += 1 * Time.deltaTime;
 			}
-			
 		}
 	}
 }

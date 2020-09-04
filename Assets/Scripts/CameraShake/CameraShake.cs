@@ -18,14 +18,10 @@ public class CameraShake : MonoBehaviour
 	[SerializeField] private bool smooth;
 	[SerializeField] private float smoothAmount = 5f;
 
-	
-	
-	
 	void Start()
 	{
 		if (_debugMode) ShakeCamera();
 	}
-
 
 	void ShakeCamera()
 	{
@@ -44,7 +40,6 @@ public class CameraShake : MonoBehaviour
 
 		if (!_isRunning) StartCoroutine(Shake());
 	}
-
 
 	IEnumerator Shake()
 	{

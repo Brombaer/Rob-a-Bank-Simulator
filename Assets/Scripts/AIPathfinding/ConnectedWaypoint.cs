@@ -28,7 +28,6 @@ namespace Assets.Scripts.AIPathfinding
 					}
 				}
 			}
-
 		}
 
 		public override void OnDrawGizmos()
@@ -38,10 +37,7 @@ namespace Assets.Scripts.AIPathfinding
 
 			Gizmos.color = Color.yellow;
 			Gizmos.DrawWireSphere(transform.position, _connectiviyRadius);
-
-
 		}
-
 
 		public ConnectedWaypoint NextWaypoint(ConnectedWaypoint previousWaypoint)
 		{
@@ -68,10 +64,6 @@ namespace Assets.Scripts.AIPathfinding
 
 				return nextWaypoint;
 			}
-		}
-		private void Update()
-		{
-
 		}
 	}
 }

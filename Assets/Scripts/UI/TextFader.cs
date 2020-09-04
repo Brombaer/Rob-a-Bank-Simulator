@@ -12,8 +12,6 @@ public class TextFader : MonoBehaviour
 	private Color _currentColor;
 	private bool _doOnce = true;
 
-
-
 	private void Awake()
 	{
 		_text = GetComponent<TextMeshProUGUI>();

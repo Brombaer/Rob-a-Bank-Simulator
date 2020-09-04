@@ -4,13 +4,10 @@ using UnityEngine;
 
 public class PlayerView : MonoBehaviour
 {
-	[SerializeField]
-	private Transform _player;
-	[SerializeField]
-	private Transform _playerArms;
+	[SerializeField] private Transform _player;
+	[SerializeField] private Transform _playerArms;
 
-	[SerializeField]
-	private float _mouseSensitivity;
+	[SerializeField] private float _mouseSensitivity;
 
 	private float _xAxisClamp = 0;
 
@@ -55,6 +52,5 @@ public class PlayerView : MonoBehaviour
 
 		_playerArms.rotation = Quaternion.Euler(rotPlayerArms);
 		_player.rotation = Quaternion.Euler(rotPlayer);
-
 	}
 }

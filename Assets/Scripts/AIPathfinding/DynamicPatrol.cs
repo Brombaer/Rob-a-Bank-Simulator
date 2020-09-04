@@ -5,11 +5,8 @@ namespace Assets.Scripts.AIPathfinding
 {
 	public class DynamicPatrol : MonoBehaviour
 	{
-
 		[SerializeField] bool _patrolWaiting;
-
 		[SerializeField] float _totalWaitTime = 3f;
-
 		[SerializeField] float _switchProbability = 0.2f;
 
 		NavMeshAgent _navMeshAgent;
@@ -47,8 +44,6 @@ namespace Assets.Scripts.AIPathfinding
 								_currentWaypoint = startingWaypoint;
 							}
 						}
-
-						
 					}
 					else
 					{
@@ -89,7 +84,6 @@ namespace Assets.Scripts.AIPathfinding
 				}
 			}
 		}
-
 
 		private void SetDestination()
 		{

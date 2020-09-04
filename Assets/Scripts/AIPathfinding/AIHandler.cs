@@ -46,8 +46,6 @@ namespace Assets.Scripts.AIPathfinding
 			}
 		}
 
-
-
 		private void OnDestroy()
 		{
 			if (_instance == this)

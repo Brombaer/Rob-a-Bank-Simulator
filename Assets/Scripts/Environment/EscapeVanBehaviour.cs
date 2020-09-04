@@ -25,15 +25,8 @@ public class EscapeVanBehaviour : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     private void OnTriggerEnter(Collider other)
     {
-
         if (other.gameObject == _player)
         {
             _leftVanDoorScript.SwitchDoorState();

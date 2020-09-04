@@ -9,17 +9,13 @@ public class PlayerInteractController : MonoBehaviour
     public GameObject Camera;
     [Space]
     [Header("Money information")]
-    [SerializeField]
-    private float _playerWallet;
-    [SerializeField]
-    private float _safedMoney;
-    [SerializeField]
-    private float _onHitMoneyLossPercent;
+    [SerializeField] private float _playerWallet;
+    [SerializeField] private float _safedMoney;
+    [SerializeField] private float _onHitMoneyLossPercent;
     [Space]
     [Space]
     
     public float PlayerCurrentLoad;
-    
     public float PlayerMaxLoadCapacity = 35000;
 
     public float WalletAmount { get => _playerWallet; set => _playerWallet = value; }
@@ -27,30 +23,22 @@ public class PlayerInteractController : MonoBehaviour
 
 	[Space]
     [Space]
-    [SerializeField]
-    private HealthComponent _healthRef;
+    [SerializeField] private HealthComponent _healthRef;
 
     [Space]
     [Tooltip("The maximum distance in which the player can interact with objects. ")]
-    [SerializeField]
-    private float _maxInteractDistance = 2;
+    [SerializeField] private float _maxInteractDistance = 2;
     [Tooltip("The maximum distance in which objects get highlighted for the player.")]
-    [SerializeField]
-    private float _maxOutlineDistance = 5;
-    [SerializeField]
-    private GameObject _interactUI;
-    [SerializeField]
-    private GameObject _itemHeavyUI;
-
-
+    [SerializeField] private float _maxOutlineDistance = 5;
+    [SerializeField] private GameObject _interactUI;
+    [SerializeField] private GameObject _itemHeavyUI;
 
 	private CollectableItem _collectableItem;
     private OutlineController _prevController;
     private OutlineController _currentController;
     private RaycastHit? _raycastHit;
 
-    [SerializeField]
-    private DoorBehaviour _doorBehaviourScript;
+    [SerializeField] private DoorBehaviour _doorBehaviourScript;
 
     private void Start()
     {
@@ -60,6 +48,13 @@ public class PlayerInteractController : MonoBehaviour
         _itemHeavyUI.SetActive(false);
     }
 
+    private void Update()
+    {
+        Raycast();
+        OutlineInteractableObject();
+        InteractWithObject();
+    }
+
     private void OnHealthChanged(float arg1, bool getsHealed)
     {
         if (getsHealed == false)
@@ -67,13 +62,6 @@ public class PlayerInteractController : MonoBehaviour
             _playerWallet *= 1- _onHitMoneyLossPercent;
             PlayerCurrentLoad *= 1 - _onHitMoneyLossPercent;
         }
-    }
-
-    private void Update()
-    {
-        Raycast();
-        OutlineInteractableObject();
-        InteractWithObject();
     }
 
     private void Raycast()
@@ -145,17 +133,6 @@ public class PlayerInteractController : MonoBehaviour
         }
     }
 
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.gameObject == _van)
-    //    {
-    //        _safedMoney = _playerWallet;
-    //        _playerWallet = 0;
-    //
-    //        PlayerCurrentLoad = 0;
-    //    }
-    //}
-
     private void ShowOutline()
     {
         if (_currentController != null)
@@ -172,7 +149,6 @@ public class PlayerInteractController : MonoBehaviour
                 _itemHeavyUI.SetActive(true);
             }
         }
-        
 	}
 
     private void HideOutline()

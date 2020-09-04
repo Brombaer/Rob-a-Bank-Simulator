@@ -7,7 +7,6 @@ public class CountDown : MonoBehaviour
 	[SerializeField] private GameManager _gameManager;
 	private TextMeshProUGUI _text;
 
-
 	private void Awake()
 	{
 		_text = GetComponent<TextMeshProUGUI>();

@@ -16,7 +16,6 @@ public class HealthComponent : MonoBehaviour, IDamageable
 	private float _currentHealth;
 	public float MaxHealth { get => _maxHealth; }
 
-
 	private void Awake()
 	{
 		_currentHealth = _maxHealth;
@@ -27,7 +26,6 @@ public class HealthComponent : MonoBehaviour, IDamageable
 		if (_regenAmount > 0)
 			StartCoroutine(Regenerate());
 	}
-
 
 	IEnumerator Regenerate()
 	{

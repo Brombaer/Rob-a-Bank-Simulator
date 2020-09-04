@@ -5,7 +5,6 @@ using UnityEngine;
 public class DoorBehaviour : MonoBehaviour
 {
 	[Header("Door Settings")]
-	//[SerializeField] protected
 	public bool _isOpen;
 	[SerializeField] protected float _openAngle;
 	[SerializeField] protected float _closeAngle;
@@ -13,7 +12,6 @@ public class DoorBehaviour : MonoBehaviour
 	[SerializeField] protected float _rotationSpeed = 10;
 	[SerializeField] protected float _targetAngle;
 	[SerializeField] protected float _currentAngle;
-
 
 	private void Awake()
 	{

@@ -11,7 +11,6 @@ public class MusicPlayer : MonoBehaviour
 
 	private FMOD.Studio.EventInstance _eventInst;
 
-
 	private void Awake()
 	{
 		_healthComp.Death += OnDeath;

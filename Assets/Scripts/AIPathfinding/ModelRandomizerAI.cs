@@ -36,12 +36,9 @@ namespace Assets.Scripts.AIPathfinding
 			}
 		}
 
-
 		private T SelectRandom<T>(T[] objects)
 		{
-
 			return objects[Random.Range(0, objects.Length)];
 		}
-		
 	}
 }
