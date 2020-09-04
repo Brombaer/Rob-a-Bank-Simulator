@@ -98,12 +98,12 @@ MonoBehaviour:
   Name: AK47
   WeaponIcon: {fileID: 0}
   _isSingleFire: 0
-  _fireRate: 500
+  _fireRate: 300
   _muzzleParticle: {fileID: 198527494405496654}
   _muzzleLight: {fileID: 108499269170948386}
   _muzzleLocation: {fileID: 4356901760936928}
   _reloadTime: 2.7
-  _magazineSize: 31
+  _magazineSize: 20
   _bulletPrefab: {fileID: 1086664671600574, guid: 5953171a59c27394e9ad5cbb564affa8,
     type: 3}
   _bulletSpawnPoint: {fileID: 4865098306718012}

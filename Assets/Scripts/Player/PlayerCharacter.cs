@@ -19,8 +19,6 @@ public class PlayerCharacter : MonoBehaviour
 	[SerializeField] private float _walkSpeed = 4;
 	[SerializeField] private float _sprintSpeed = 2;
 	[SerializeField] private float _crouchSpeed = 1;
-	[SerializeField] private Transform _grenadeSpawnPoint;
-	[SerializeField] private GameObject _grenadePrefab;
 	[Space]
 	[Space]
 	[Header("Animation References")]
@@ -299,11 +297,6 @@ public class PlayerCharacter : MonoBehaviour
 		
 		CurrentWeapon = WeaponList[WeaponIndex];
 		_weaponAnimator = CurrentWeapon.GetComponent<Animator>();
-	}
-
-	private void ThrowGrenade()
-	{
-		Instantiate(_grenadePrefab, _grenadeSpawnPoint);
 	}
 
 	private void OnControllerColliderHit(ControllerColliderHit hit)

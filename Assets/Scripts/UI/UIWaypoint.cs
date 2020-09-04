@@ -9,7 +9,6 @@ public class UIWaypoint : MonoBehaviour
 	[SerializeField] private Sprite _worldIcon;
 	[SerializeField] private Sprite _compassIcon;
 	[SerializeField] private Transform _target;
-	//[SerializeField] private Text _meter;
 	[SerializeField] private Vector3 _offset;
 	[SerializeField] private GameObject _imagePrefab;
 	[SerializeField] private PlayerDeath _playerDeath;
@@ -18,9 +17,12 @@ public class UIWaypoint : MonoBehaviour
 
 	public Sprite CompassIcon { get => _compassIcon; }
 	private Image _img;
+	private Camera _camera;
 
 	private void Start()
 	{
+		_camera = Camera.main;
+
 		_img = Instantiate(_imagePrefab).GetComponentInChildren<Image>();
 
 		_img.sprite = _worldIcon;
@@ -30,7 +32,7 @@ public class UIWaypoint : MonoBehaviour
 	{
 		if (!_playerDeath.IsDead)
 		{
-			Vector2 pos = Camera.main.WorldToScreenPoint(transform.position + _offset);
+			Vector2 pos = _camera.WorldToScreenPoint(transform.position + _offset);
 
 			if (Vector3.Dot(transform.position - _target.position, _target.forward) < 0)
 			{

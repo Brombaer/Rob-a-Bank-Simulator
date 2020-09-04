@@ -132,6 +132,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{309a0298-5a56-4c4a-8d81-2aea715d806f}">
+		<property name="volume">
+			<value>-9.5</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{994872f7-d582-4b5b-a58a-bf2ea916b023}</destination>
 		</relationship>
@@ -572,7 +575,7 @@
 			<value>2.20000005</value>
 		</property>
 		<property name="maximumDistance">
-			<value>40</value>
+			<value>80</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{2d3e0b0b-69b8-45ef-980f-3fe0ed369273}">
@@ -707,7 +710,7 @@
 	</object>
 	<object class="AutomationPoint" id="{31fb70fb-e27c-4d55-b7d3-ccbe736413b0}">
 		<property name="position">
-			<value>40</value>
+			<value>80</value>
 		</property>
 		<property name="value">
 			<value>-80</value>
@@ -726,7 +729,7 @@
 	</object>
 	<object class="AutomationPoint" id="{4f6a9cd5-d51b-4745-a668-23c1bf866dc5}">
 		<property name="position">
-			<value>40</value>
+			<value>80</value>
 		</property>
 		<property name="value">
 			<value>10</value>
@@ -742,7 +745,7 @@
 	</object>
 	<object class="AutomationPoint" id="{bdce074c-851c-4031-af70-02287801f388}">
 		<property name="position">
-			<value>40</value>
+			<value>80</value>
 		</property>
 		<property name="value">
 			<value>-73.3333359</value>
@@ -758,7 +761,7 @@
 	</object>
 	<object class="AutomationPoint" id="{3b852a8f-38ff-42c4-944b-7241743691d7}">
 		<property name="position">
-			<value>23</value>
+			<value>46</value>
 		</property>
 		<property name="value">
 			<value>-80</value>

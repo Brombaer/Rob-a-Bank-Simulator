@@ -28,8 +28,6 @@ public class PlayerInteractController : MonoBehaviour
 	[Space]
     [Space]
     [SerializeField]
-    private GameObject _van;
-    [SerializeField]
     private HealthComponent _healthRef;
 
     [Space]
