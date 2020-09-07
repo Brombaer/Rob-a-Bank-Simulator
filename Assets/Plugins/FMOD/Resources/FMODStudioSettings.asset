@@ -34,7 +34,7 @@ MonoBehaviour:
   - Platform: 1
     Value: 48000
   - Platform: 2
-    Value: 0
+    Value: 48000
   - Platform: 20
     Value: 0
   LiveUpdateSettings:
@@ -65,19 +65,20 @@ MonoBehaviour:
   - Platform: 1
     Value: 1024
   - Platform: 2
-    Value: 128
+    Value: 512
   - Platform: 20
     Value: 128
   RealChannelSettings:
   - Platform: 1
     Value: 256
   - Platform: 2
-    Value: 32
+    Value: 128
   - Platform: 20
     Value: 32
   Plugins: []
   MasterBanks:
   - Master
   Banks: []
-  BanksToLoad: []
+  BanksToLoad:
+  - Master.bank
   LiveUpdatePort: 9264
